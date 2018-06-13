@@ -1,0 +1,124 @@
+
+#button-disable {background-color: gray}
+
+.cap-icon-normal {float:left;margin-top:60px;margin-bottom:10px;width:220px;height:auto}
+
+.cap-icon-small {float:right;margin-left: 20px;margin-top: 40px}
+
+.cap-icon-small-special {margin-left: 20px;margin-top: 40px}
+
+.cap-icon-small-special {margin-top: 40px}
+
+.company-icon-login {width:80px;height:auto;float:right;margin-top:65px}
+
+.company-icon-login-director {width:80px;height:auto;float:right;margin-top:50px}
+
+.company-icon-not-login {width:80px;height:auto}
+
+.customer-menu {padding: 40px;font-weight:bold;margin:0px auto;margin-top:100px;width:80%}
+
+.customer-msg-text {text-align:center;font-size:x-large}
+
+.approval-form {font-family:Verdana;background-color:deepskyblue;color:white;border-color:transparent}
+
+.font-normal {font-size:19px}
+
+.form-font {font-size:18px}
+
+.form-rowA {color: darkblue}
+
+.form-rowB {font-family: Verdana;font-weight: normal}
+
+.header-main-rightside {float:right;margin-top:70px;width:30%}
+
+.header-title-icon {float:left;margin-top:77px;margin-left:50px;width:25px}
+
+.header-page-title {float:left;margin-top:77px;margin-left:10px;font-weight:bold}
+
+.header-profile-namerole {float:left;text-align:right;margin-right:15px}
+
+.header-profile-pic {width:45px;margin-right:15px}
+
+.interview-row {color: #685277;margin:0px auto;padding-top: 10px;padding-bottom:10px;border-top: 0.5px solid #707070}
+
+.interview-col-select {color: #14a3e7}
+
+.interview-row-submit {background-color: white;padding-top: 20px;border-top: 0px}
+
+.interview-col-textarea {}
+
+.link {color:blue}
+
+.login-btn {background-color:deepskyblue;border-color:transparent;width:35%;}
+
+.login-field {background-color:#ececec;border: 0px solid #ccc;border-bottom: 1px solid grey}
+
+.login-form-group {padding-top: 25px;margin-bottom:50px}
+
+.login-image {float:left}
+
+#login_lost_btn {float:right;color:grey;background-color:transparent;border-color:transparent;box-shadow:none}
+
+.login-userType {text-align: center;margin-top:35px}
+
+.landing-page-title {margin-top:40px}
+
+.menu-btn-group {font-size:17px}
+
+.menu-btn-group-first {margin-left:4px;margin-bottom:30px}
+
+.menu-btn-group-row {margin-top:30px}
+
+.modal-btn {background-color:white;border-color:transparent;width:35%;color:deepskyblue;margin-bottom:25px}
+
+.modal-body {color:white}
+
+.modal-color {background-color: #ececec;}
+
+.modal-content {background-color: deepskyblue}
+
+.deny-modal-content {background-color:#00A9DE}
+
+#new_user_btn {float:left;color:grey;background-color:transparent;border-color:transparent;box-shadow:none}
+
+.paragraph-text {margin-top:10px;color:#13a9f0}
+
+.paragraph-text-normal {margin-top:20px;color:#13a9f0}
+
+.paragraph-text-event {margin-top:50px;color:#13a9f0}
+
+.promosTable-Header {width: 100%;max-width: 100%;margin-top:20px;margin-bottom:20px}
+
+.promosTable-content {margin-bottom:0px;color:#5d546d;font-size:large;width: 100%;max-width: 100%}
+
+#promotionsTable {width:100%}
+
+.readonlyText {opacity: 0.5}
+
+#sign-in-screen {width:35%;margin: 0 auto;}
+
+.subtitle-normal {color:#13a9f0;width:60%;margin-top:40px}
+
+.subtitle-alternate {color:darkblue;width:60%;margin-top:40px}
+
+.subtitle-big {font-size:25px;color:#13a9f0;width:60%;margin-top:40px}
+
+.subtitle-row-small {margin-bottom:15px}
+
+.subtitle-row-med {margin-bottom:30px}
+
+.subtitle-row-large {margin-bottom:45px}
+
+table.promo-table-borders tr {border: solid grey}
+
+.promo-pending {background-color:deepskyblue}
+
+.promo-approved {background-color:transparent}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  border-top: 1px solid black;border-bottom: 1px solid black;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #dff0d8;
+}

@@ -1,0 +1,13 @@
+branch-defaults:
+  default:
+    environment: blockchain-ui-dev
+    group_suffix: null
+  test:
+    environment: blockchain-ui-test
+global:
+  application_name: blockchain-ui
+  default_ec2_keyname: aws-eb
+  default_platform: Node.js
+  default_region: us-east-1
+  profile: blockchainUI-eb-cli
+  sc: null
