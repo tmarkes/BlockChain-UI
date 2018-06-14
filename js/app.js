@@ -13,7 +13,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "LoginDirectorCtrl",
         template: "<div id=\"sign-in-screen\">"+
         "<div class=\"row\">"+
-        "<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
         "</div>"+
         "<div class=\"row modal-color\">"+
@@ -56,7 +56,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "LoginAssociateCtrl",
         template: "<div id=\"sign-in-screen\">"+
         "<div class=\"row\">"+
-        "<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/associate_company_logo.png\" class=\"company-icon-login\" />"+
         "</div>"+
         "<div class=\"row modal-color\">"+
@@ -99,7 +99,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "LoginCustomerCtrl",
         template: "<div id=\"sign-in-screen\">"+
         "<div class=\"row\">"+
-        "<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
         "</div>"+
         "<div class=\"row modal-color\">"+
@@ -144,7 +144,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "LoginSuccessfulCustomerCtrl",
         template: "<div id=\"sign-in-screen\">"+
         "<div class=\"row\">"+
-        "<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
         "</div>"+
         "<div class=\"row modal-color\">"+
@@ -189,7 +189,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "LoginRejectedCustomerCtrl",
         template: "<div id=\"sign-in-screen\">"+
         "<div class=\"row\">"+
-        "<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
         "</div>"+
         "<div class=\"row modal-color\">"+
@@ -231,7 +231,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promoCreation",
         controller: "PromoCreationCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-        	"<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+        	"<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
           "<img ng-click=\"logUser( user.name )\" src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
           "<div class=\"header-page-title\" ng-click=\"logUser( user.name )\" >New Promotion</div>"+
           "<div class=\"header-main-rightside\">"+
@@ -327,7 +327,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promoList",
         controller: "LoadPromosCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-        "<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
         "<div class=\"header-page-title\">Marketing Promotions</div>"+
         "<div class=\"header-main-rightside\">"+
@@ -368,7 +368,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promoApproval",
         controller: "PromoApprovalCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-        "<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
         "<div class=\"header-page-title\">Approve/Deny Promotion</div>"+
         "<div class=\"header-main-rightside\">"+
@@ -482,7 +482,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/editPromotion",
         controller: "PromoEditCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-          "<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+          "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
           "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
           "<div class=\"header-page-title\">Update Promotion</div>"+
           "<div class=\"header-main-rightside\">"+
@@ -577,7 +577,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promoApply",
         controller: "PromoApplyCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-          "<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+          "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
           "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
           "<div class=\"header-page-title\">Apply for Promotion</div>"+
           "<div class=\"header-main-rightside\">"+
@@ -658,7 +658,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promotionAccepted",
         controller: "PromotionAcceptedCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-        "<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
         "<div class=\"header-page-title\">Promotion Status</div>"+
         "<div class=\"header-main-rightside\">"+
@@ -690,7 +690,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promotionRejected",
         controller: "PromotionRejectedCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-        "<img src=\"resources/static/Company_DCP_logo_old.png\" class=\"cap-icon-normal\" />"+
+        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
         "<div class=\"header-page-title\">Promotion Status</div>"+
         "<div class=\"header-main-rightside\">"+
