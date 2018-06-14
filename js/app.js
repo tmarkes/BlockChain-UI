@@ -1064,11 +1064,17 @@ angular.module('blockApp', ['ui.router'])
     $scope.goBackToEdit = function( promoId, promoName, promoBenefit,
       promoDesc, promoTerms, promoStart, promoEnd, promoRuleTyp, promoRuleVal,
       promoReminder, promoEnrollment, promoStatus, promoCusBenefit ) {
-      var dateFormat = require('dateformat');
+        var newStartDate = new Date(promoStart);
+        var newEndDate = new Date(promoEnd);
+        var startDateFormat = ("0" + (newStartDate.getMonth() + 1)).slice(-2)
+        +"/"+("0" + newStartDate.getDate()).slice(-2)+"/"+newStartDate.getFullYear();
+        var endDateFormat = ("0" + (newEndDate.getMonth() + 1)).slice(-2)
+        +"/"+("0" + newEndDate.getDate()).slice(-2)+"/"+newEndDate.getFullYear();
+
       $state.go( "promoApproval", { promoId : promoId, promoName : promoName,
         promoBenefit : promoBenefit, promoDesc : promoDesc,
-        promoTerms : promoTerms, promoStartDate : dateformat(new Date(promoStart).toDateString(),"MM/DD/YYYY").toDateString(),
-        promoEndDate : dateformat(new Date(promoEnd).toDateString(),"MM/DD/YYYY").toDateString(), promoRuleTyp : promoRuleTyp, promoRuleVal : promoRuleVal,
+        promoTerms : promoTerms, promoStartDate : startDateFormat,
+        promoEndDate : endDateFormat, promoRuleTyp : promoRuleTyp, promoRuleVal : promoRuleVal,
         promoReminder : promoReminder, promoEnrollment : promoEnrollment,
         promoStatus : promoStatus, promoCusBenefit : promoCusBenefit }
       );
