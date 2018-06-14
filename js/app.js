@@ -1066,8 +1066,8 @@ angular.module('blockApp', ['ui.router'])
       promoReminder, promoEnrollment, promoStatus, promoCusBenefit ) {
       $state.go( "promoApproval", { promoId : promoId, promoName : promoName,
         promoBenefit : promoBenefit, promoDesc : promoDesc,
-        promoTerms : promoTerms, promoStartDate : promoStart,
-        promoEndDate : promoEnd, promoRuleTyp : promoRuleTyp, promoRuleVal : promoRuleVal,
+        promoTerms : promoTerms, promoStartDate : new Date(promoStart).toDateString(),
+        promoEndDate : new Date(promoEnd).toDateString(), promoRuleTyp : promoRuleTyp, promoRuleVal : promoRuleVal,
         promoReminder : promoReminder, promoEnrollment : promoEnrollment,
         promoStatus : promoStatus, promoCusBenefit : promoCusBenefit }
       );
@@ -1093,8 +1093,6 @@ angular.module('blockApp', ['ui.router'])
         $http.post('/update/promotion', postData)
         .then(function (data) {
           $scope.promo.id = data["data"]["hash"];
-          $scope.promo.startDate = data["data"]["startDate"];
-          $scope.promo.endDate = data["data"]["endDate"];
         }).catch(function(error) {
           console.log(error);
         });
