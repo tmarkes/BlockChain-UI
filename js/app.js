@@ -1066,8 +1066,8 @@ angular.module('blockApp', ['ui.router'])
       promoReminder, promoEnrollment, promoStatus, promoCusBenefit ) {
       $state.go( "promoApproval", { promoId : promoId, promoName : promoName,
         promoBenefit : promoBenefit, promoDesc : promoDesc,
-        promoTerms : promoTerms, promoStartDate : new Date(promoStart).toDateString(),
-        promoEndDate : new Date(promoEnd).toDateString(), promoRuleTyp : promoRuleTyp, promoRuleVal : promoRuleVal,
+        promoTerms : promoTerms, promoStartDate : dateformat(new Date(promoStart).toDateString(),"MM/DD/YYYY").toDateString(),
+        promoEndDate : dateformat(new Date(promoEnd).toDateString(),"MM/DD/YYYY").toDateString(), promoRuleTyp : promoRuleTyp, promoRuleVal : promoRuleVal,
         promoReminder : promoReminder, promoEnrollment : promoEnrollment,
         promoStatus : promoStatus, promoCusBenefit : promoCusBenefit }
       );
