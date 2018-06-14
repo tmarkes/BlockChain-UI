@@ -128,7 +128,7 @@ angular.module('blockApp', ['ui.router'])
                       "<button type=\"button\" class=\"btn new_user_btn\">Register Now</button>"+
                   "</div>"+
                 "</div>"+
-                "<div id=\"viewCusStatusDiv\" ><button type=\"button\" ng-click=\"ng-click=\"logCustomerSuccess(promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+                "<div id=\"viewCusStatusDiv\"><button type=\"button\" ng-click=\"logCustomerSuccess( promo.id, promo.customerName, promo.customerBilling, promo.name, "+
                 "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
                 "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary viewStatus-btn\">"+
                   "View Customer Status"+
@@ -1087,8 +1087,9 @@ angular.module('blockApp', ['ui.router'])
         $http.post('/update/promotion', postData)
         .then(function (data) {
           $scope.promo.id = data["data"]["hash"];
-          $scope.promo.startDate = data["data"][0]["startDate"];
-          $scope.promo.endDate = data["data"][0]["endDate"];
+          console.log( data["data"] );
+        //  $scope.promo.startDate = data["data"][0]["startDate"];
+        //  $scope.promo.endDate = data["data"][0]["endDate"];
         }).catch(function(error) {
           console.log(error);
         });
