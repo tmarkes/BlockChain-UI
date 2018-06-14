@@ -625,10 +625,8 @@ angular.module('blockApp', ['ui.router'])
               "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
-              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
-              "<select class=\"col-md-2 form-textBox text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
-                  "ng-options=\"deadline for deadline in promo.deadlineList\" disabled=\"true\">"+
-              "</select>"+
+              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoEnrollment\" type=\"text\" ng-model=\"promo.enrollmentDeadline\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Post Promotion Customer Billing Information: </label>"+
