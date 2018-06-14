@@ -8,6 +8,129 @@ angular.module('blockApp', ['ui.router'])
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
   $stateProvider
+      .state('login', {
+        url: "/",
+        controller: "LoginCtrl",
+        template: "<div><div id=\"sign-in-screen\">"+
+        "<div class=\"row\">"+
+        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
+        "<img src=\"resources/static/associate_company_logo.png\" class=\"company-icon-login\" />"+
+        "</div>"+
+        "<div class=\"row modal-color-login\">"+
+        		"<div class=\"col-md-12\">"+
+              "<div class=\"row\">"+
+                "<p class=\"login-userType\">Marketing Associate Sign-In</p>"+
+              "</div>"+
+        			"<form role=\"form\">"+
+        				"<div class=\"login-form-group-input\">"+
+        					"<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
+        					"<div class=\"col-sm-11\">"+
+        						"<input type=\"email\" ng-model=\"login.associate\" class=\"login-field\" required>"+
+        					"</div>"+
+        				"</div>"+
+                "<div class=\"login-form-group-input\">"+
+        					"<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
+        					"<div class=\"col-sm-11\">"+
+        						"<input type=\"password\" ng-model=\"login.associatePW\" class=\"login-field\" required>"+
+        					"</div>"+
+        				"</div>"+
+        				"<div class=\"login-form-group\">"+
+                "<div id=\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
+        						"<button type=\"button\" ng-click=\"logAssociate( login.associate )\" class=\"btn btn-primary login-btn\">"+
+        							"Login"+
+        						"</button>"+
+                    "<button id=\"login_lost_btn\" type=\"button\" class=\"btn\">Forgot Password</button>"+
+        					"</div>"+
+        				"</div>"+
+        				"</div>"+
+        			"</form>"+
+              "<div id=\"login-newUser-line\" class=\"col-sm-10\">"+
+                  "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
+                "</div>"+
+        		"</div>"+
+        	"</div>"+
+          "</div>"+
+          "<div id=\"sign-in-screen\">"+
+          "<div class=\"row\">"+
+          "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
+          "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
+          "</div>"+
+          "<div class=\"row modal-color-login\">"+
+              "<div class=\"col-md-12\">"+
+                "<div class=\"row\">"+
+                  "<p class=\"login-userType\">Marketing Director Sign-In</p>"+
+                "</div>"+
+                "<form role=\"form\">"+
+                  "<div class=\"login-form-group-input\">"+
+                    "<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
+                    "<div class=\"col-sm-11\">"+
+                      "<input type=\"email\" ng-model=\"login.director\" class=\"login-field\" required>"+
+                    "</div>"+
+                  "</div>"+
+                  "<div class=\"login-form-group-input\">"+
+                    "<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
+                    "<div class=\"col-sm-11\">"+
+                      "<input type=\"password\" ng-model=\"login.directorPW\" class=\"login-field\" required>"+
+                    "</div>"+
+                  "</div>"+
+                  "<div class=\"login-form-group\">"+
+                    "<div id=\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
+                      "<button type=\"button\" ng-click=\"logDirector()\" class=\"btn btn-primary login-btn\">"+
+                        "Login"+
+                      "</button>"+
+                      "<button id=\"login_lost_btn\" type=\"button\" class=\"btn\">Forgot Password</button>"+
+                    "</div>"+
+                  "</div>"+
+                  "</div>"+
+                "</form>"+
+                "<div id=\"login-newUser-line\" class=\"col-sm-10\">"+
+                  "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
+                "</div>"+
+              "</div>"+
+            "</div>"+
+            "</div>"+
+            "<div id=\"sign-in-screen\">"+
+            "<div class=\"row\">"+
+            "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
+            "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
+            "</div>"+
+            "<div class=\"row modal-color-login\">"+
+                "<div class=\"col-md-12\">"+
+                  "<div class=\"row\">"+
+                    "<p class=\"login-userType\">Customer Sign-In</p>"+
+                  "</div>"+
+                  "<form role=\"form\">"+
+                  "<div class=\"login-form-group-input\">"+
+                      "<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
+                      "<div class=\"col-sm-11\">"+
+                        "<input type=\"email\" ng-model=\"login.customer\" class=\"login-field\" required>"+
+                      "</div>"+
+                    "</div>"+
+                    "<div class=\"login-form-group-input\">"+
+                      "<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
+                      "<div class=\"col-sm-11\">"+
+                        "<input type=\"password\" ng-model=\"login.customerPW\" class=\"login-field\" required>"+
+                      "</div>"+
+                    "</div>"+
+                    "<div class=\"login-form-group\">"+
+                    "<div id=\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
+                        "<button type=\"button\" ng-click=\"logCustomer(promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+                        "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
+                        "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary login-btn\">"+
+                          "Login"+
+                        "</button>"+
+                        "<button id=\"login_lost_btn\" type=\"button\" class=\"btn\">Forgot Password</button>"+
+                      "</div>"+
+                    "</div>"+
+                    "</div>"+
+                  "</form>"+
+                  "<div id=\"login-newUser-line\" class=\"col-sm-10\">"+
+                      "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
+                    "</div>"+
+                "</div>"+
+              "</div>"+
+          "</div></div>"
+      })
       .state('loginDirector', {
         url: "/login/director",
         controller: "LoginDirectorCtrl",
@@ -52,7 +175,7 @@ angular.module('blockApp', ['ui.router'])
           "</div>"
       })
       .state('loginAssociate', {
-        url: "/",
+        url: "/login/associate",
         controller: "LoginAssociateCtrl",
         template: "<div id=\"sign-in-screen\">"+
         "<div class=\"row\">"+
@@ -1210,6 +1333,58 @@ angular.module('blockApp', ['ui.router'])
       };
     $scope.logUser = function() {
       $state.go("promoList");
+    }
+  })
+  .controller("LoginCtrl", function($scope, $state, $http) {
+    $scope.login = {
+        customer: 'Joshua Smith',
+        customerPW: 'Revenue',
+        director: 'Williams',
+        directorPW: 'Sales',
+        associate: 'Christopher',
+        associatePW: 'Margin'
+    };
+
+    $http.get('/retrieve/approvedPromotion')
+      .then(function (data) {
+        $scope.promo = {
+          id: data["data"][0]["hash"],
+          name: data["data"][0]["data"].promoName,
+          customerName: $scope.login.customer,
+          customerBilling: '$30 per month',
+          longDesc: data["data"][0]["data"].promoLongDescription,
+          selectedTC: data["data"][0]["data"].tc,
+          startDate: new Date(data["data"][0]["data"].startDate),
+          endDate: new Date(data["data"][0]["data"].endDate),
+          notificationDaysRemind: data["data"][0]["data"].reminderNotificationDays,
+          reminderList: [ "5", "10", "15" ],
+          enrollmentDeadline: data["data"][0]["data"].enrollmentDeadlineDays,
+          deadlineList: [ "5", "10", "15" ],
+          postPromoBilling: data["data"][0]["data"].benefit,
+          status: data["data"][0]["data"].status
+        };
+    });
+
+    $scope.logAssociate = function( userName ) {
+        $state.go("promoCreation", {
+          userName : userName }
+        );
+    }
+
+    $scope.logDirector = function() {
+      $state.go("promoList");
+    }
+
+    $scope.logCustomer = function( promoId, customerName, customerBilling, promoName,
+      promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
+      promoEnrollment, postPromoBilling ) {
+        $state.go("customerAppliesForPromo", { promoId : promoId, promoName : promoName,
+          customerName : customerName, promoDesc : promoDesc,
+          promoTerms : promoTerms, promoStartDate : promoStart,
+          promoEndDate : promoEnd, customerBilling : customerBilling,
+          promoReminder : promoReminder, promoEnrollment : promoEnrollment,
+          postPromoBilling : postPromoBilling }
+        );
     }
   });
 
