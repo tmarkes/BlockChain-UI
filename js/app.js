@@ -44,9 +44,9 @@ angular.module('blockApp', ['ui.router'])
         				"</div>"+
         				"</div>"+
         			"</form>"+
-                "<div id\"login-newUser-line\" class=\"col-sm-10\">"+
-                  "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
-                "</div>"+
+              "<div id=\"login-newUser-line\" class=\"col-sm-10\">"+
+                "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
+              "</div>"+
         		"</div>"+
         	"</div>"+
           "</div>"
