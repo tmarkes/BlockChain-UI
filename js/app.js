@@ -22,7 +22,7 @@ angular.module('blockApp', ['ui.router'])
                 "<p class=\"login-userType\">Marketing Director Sign-In</p>"+
               "</div>"+
         			"<form role=\"form\">"+
-        				"<div class=\"login-form-group-input\">"+
+        				"<div class=\"login-form-group-input\" style=\"display:unset\">"+
         					"<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
         					"<div class=\"col-sm-11\">"+
         						"<input type=\"email\" ng-model=\"login.username\" class=\"login-field\" required>"+
