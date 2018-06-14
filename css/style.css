@@ -23,7 +23,10 @@
 
 .customer-msg-text {text-align:center;font-size:x-large}
 
-.approval-form {font-family:Verdana;background-color:deepskyblue;color:white;border-color:transparent}
+.approval-form {
+  float:right;color:#bebbc3;background-color:transparent;border-color:transparent;
+  box-shadow:none;font-family:Verdana;font-weight:bold;color:white
+}
 
 .font-normal {font-size:19px}
 
