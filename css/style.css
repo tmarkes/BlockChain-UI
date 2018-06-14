@@ -51,7 +51,10 @@
 
 .login-btn {background-color:deepskyblue;border-color:transparent;width:35%;border-radius:50px}
 
-.login-field {background-color:#F3F3F3;border: 0px solid #ccc;border-bottom: 1px solid grey;color:#685277;font-family:Verdana}
+.login-field {
+  background-color:#F3F3F3;border: 0px solid #ccc;border-bottom: 1px solid grey;
+  color:#685277;font-family:Verdana;width:100%;height:auto;
+}
 
 .login-form-group {padding-top: 25px;margin-bottom:50px}
 
