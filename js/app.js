@@ -391,11 +391,11 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
       				"<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-      				"<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/>"+
+      				"<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"text\" ng-model=\"promo.startDate\" jqdatepicker/>"+
       			"</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"text\" ng-model=\"promo.endDate\" jqdatepicker/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Type: </label>"+
@@ -846,6 +846,22 @@ angular.module('blockApp', ['ui.router'])
         promoEnrollment : null, postPromoBilling : null
       }
     })
+  })
+  .directive('jqdatepicker', function () {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+         link: function (scope, element, attrs, ngModelCtrl) {
+           element.datepicker({
+                dateFormat: 'MM/DD/YYY',
+                onSelect: function (date) {
+                  scope.reviewPromoForm.promoStartDate = date;
+                }
+                scope.$apply();
+                }
+            });
+        }
+    };
   })
   .controller("LoadPromosCtrl", function($scope, $state, $http) {
     $http.get('/retrieve/promotion')
