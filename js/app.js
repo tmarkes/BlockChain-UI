@@ -1190,8 +1190,8 @@ angular.module('blockApp', ['ui.router'])
             "\"promoLongDescription\" : \""+promoDesc+"\", "+
             "\"businessBenefit\" : \""+promoBenefit+"\", "+
             "\"tc\" : \""+promoTerms+"\", "+
-            "\"startDate\" : \""+promoStart.value+"\", "+
-            "\"endDate\" : \""+promoEnd.value+"\", "+
+            "\"startDate\" : \""+promoStart+"\", "+
+            "\"endDate\" : \""+promoEnd+"\", "+
             "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
             "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
             "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
