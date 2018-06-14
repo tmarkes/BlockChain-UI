@@ -3,7 +3,7 @@
 
 .cap-icon-normal-login {float:left;margin-top:60px;margin-bottom:10px;width:220px;height:auto}
 
-.cap-icon-normal-pageHeader {float:left;margin-top:60px;width:220px;height:auto}
+.cap-icon-normal-pageHeader {float:left;margin-top:75px;width:220px;height:auto}
 
 .cap-icon-small {float:right;margin-left: 20px;margin-top: 40px}
 
@@ -31,11 +31,11 @@
 
 .form-rowB {font-family: Verdana;font-weight: normal}
 
-.header-main-rightside {float:right;margin-top:70px;width:30%}
+.header-main-rightside {float:right;margin-top:72px;width:30%}
 
 .header-title-icon {float:left;margin-top:84px;margin-left:50px;width:25px}
 
-.header-page-title {float:left;font-family:Verdana;margin-top:84px;margin-left:10px;font-weight:bold}
+.header-page-title {float:left;font-family:Verdana;color:#685277;margin-top:84px;margin-left:10px;font-weight:bold}
 
 .header-profile-namerole {float:left;text-align:right;margin-right:15px}
 
