@@ -22,20 +22,20 @@ angular.module('blockApp', ['ui.router'])
                 "<p class=\"login-userType\">Marketing Director Sign-In</p>"+
               "</div>"+
         			"<form role=\"form\">"+
-        				"<div class=\"login-form-group\">"+
+        				"<div class=\"login-form-group-input\">"+
         					"<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
         					"<div class=\"col-sm-11\">"+
         						"<input type=\"email\" ng-model=\"login.username\" class=\"login-field\" required>"+
         					"</div>"+
         				"</div>"+
-        				"<div class=\"login-form-group\">"+
+        				"<div class=\"login-form-group-input\">"+
         					"<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
         					"<div class=\"col-sm-11\">"+
         						"<input type=\"password\" ng-model=\"login.password\" class=\"login-field\" required>"+
         					"</div>"+
         				"</div>"+
         				"<div class=\"login-form-group\">"+
-        					"<div id\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
+        					"<div id=\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
         						"<button type=\"button\" ng-click=\"logUser()\" class=\"btn btn-primary login-btn\">"+
         							"Login"+
         						"</button>"+
