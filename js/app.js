@@ -1007,9 +1007,9 @@ angular.module('blockApp', ['ui.router'])
     };
 
     var startEnterDate = new Date($stateParams.promoStartDate);
-    startEnterDate.setDate(startEnterDate.getDate()-1);
+    startEnterDate.setDate(startEnterDate.getDate());
     var endEnterDate = new Date($stateParams.promoEndDate);
-    endEnterDate.setDate(endEnterDate.getDate()-1);
+    endEnterDate.setDate(endEnterDate.getDate());
 
     $scope.promo = {
       id: $stateParams.promoId,
