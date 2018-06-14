@@ -293,7 +293,7 @@ angular.module('blockApp', ['ui.router'])
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
-              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
+              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
               "<select class=\"col-md-2 text-center form-textBox interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
                   "ng-options=\"deadline for deadline in promo.deadlineList\">"+
               "</select>"+
@@ -432,7 +432,7 @@ angular.module('blockApp', ['ui.router'])
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
-              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
+              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
               "<select class=\"col-md-2 form-textBox text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
                   "ng-options=\"deadline for deadline in promo.deadlineList\" disabled=\"true\">"+
               "</select>"+
@@ -546,7 +546,7 @@ angular.module('blockApp', ['ui.router'])
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
-              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
+              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
               "<select class=\"col-md-2 form-textBox text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
                   "ng-options=\"deadline for deadline in promo.deadlineList\">"+
               "</select>"+
@@ -725,7 +725,6 @@ angular.module('blockApp', ['ui.router'])
     })
   })
   .controller("LoadPromosCtrl", function($scope, $state, $http) {
-    $state.reload();
     $http.get('/retrieve/promotion')
       .then(function (data) {
         var promoList = [];
