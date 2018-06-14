@@ -69,6 +69,8 @@ textarea, select, input, button { outline: none; }
 
 #login-button-pw-line {padding-left:10px}
 
+#login-newUser-line {padding-top:30px}
+
 .login-userType {text-align: center;margin-top:35px;color:#685277;font-family:Verdana}
 
 .landing-page-title {margin-top:40px}
