@@ -438,25 +438,7 @@ angular.module('blockApp', ['ui.router'])
               "</select>"+
             "</div>"+
           "<div class=\"row text-center interview-row-submit\">"+
-            "<button ng-hide=\"promo.status == 'Approved'\" id=\"{{buttonDisableEdit}}\" style=\"margin-left:10px\" class=\"menu-btn-group btn approval-form\" type=\"button\" "+
-            "ng-click=\"goEdit( promo.id, promo.name, promo.selectedBenefit, promo.longDesc, promo.selectedTC, "+
-            "promo.startDate, promo.endDate, promo.ruleTyp, promo.ruleVal, promo.notificationDaysRemind, promo.enrollmentDeadline, promo.status, promo.benefit )\">"+
-            "Edit</button>"+
             "<button ng-hide=\"promo.status != 'Approved'\" class=\"menu-btn-group btn approval-form\" type=\"button\" ng-click=\"logUser()\">Go Back</button>"+
-            "<button ng-hide=\"promo.status == 'Approved'\" type=\"button\" style=\"margin-left:10px\" id=\"{{buttonDisableApprove}}\" class=\"menu-btn-group btn approval-form\" data-toggle=\"modal\" data-target=\"#approveModal\""+
-            "ng-click=\"goApprove( promo.id, promo.name, promo.selectedBenefit, promo.longDesc, promo.selectedTC, "+
-            "promo.startDate, promo.endDate, promo.ruleTyp, promo.ruleVal, promo.notificationDaysRemind, promo.enrollmentDeadline, promo.status, promo.benefit )\">Approve</button>"+
-            "<div class=\"modal fade\" id=\"approveModal\" tabindex=\"-1\" role=\"dialog\">"+
-              "<div class=\"modal-dialog\">"+
-                "<div class=\"modal-content\">"+
-                  "<img src=\"resources/static/check_mark_icon.png\" class=\"cap-icon-small-special\" />"+
-                  "<div class=\"modal-body\">"+
-                    "<p>Promotion approved<br />with<br />Hash Code: {{promo.id}}<br />Block 2 is complete.</p>"+
-                  "</div>"+
-                  "<button type=\"button\" class=\"btn btn-primary modal-btn\" ng-click=\"logUser()\" data-dismiss=\"modal\">OK</button>"+
-                "</div>"+
-              "</div>"+
-            "</div>"+
             "<button ng-hide=\"promo.status == 'Approved'\" type=\"button\" style=\"margin-left:10px\" id=\"{{buttonDisableDeny}}\" class=\"menu-btn-group btn approval-form\" data-toggle=\"modal\" data-target=\"#denyModal\""+
             "ng-click=\"goDeny( promo.id, promo.name, promo.selectedBenefit, promo.longDesc, promo.selectedTC, "+
             "promo.startDate, promo.endDate, promo.ruleTyp, promo.ruleVal, promo.notificationDaysRemind, promo.enrollmentDeadline, promo.status, promo.benefit )\">Deny</button>"+
@@ -471,6 +453,24 @@ angular.module('blockApp', ['ui.router'])
                 "</div>"+
               "</div>"+
             "</div>"+
+            "<button ng-hide=\"promo.status == 'Approved'\" type=\"button\" style=\"margin-left:10px\" id=\"{{buttonDisableApprove}}\" class=\"menu-btn-group btn approval-form\" data-toggle=\"modal\" data-target=\"#approveModal\""+
+            "ng-click=\"goApprove( promo.id, promo.name, promo.selectedBenefit, promo.longDesc, promo.selectedTC, "+
+            "promo.startDate, promo.endDate, promo.ruleTyp, promo.ruleVal, promo.notificationDaysRemind, promo.enrollmentDeadline, promo.status, promo.benefit )\">Approve</button>"+
+            "<div class=\"modal fade\" id=\"approveModal\" tabindex=\"-1\" role=\"dialog\">"+
+              "<div class=\"modal-dialog\">"+
+                "<div class=\"modal-content\">"+
+                  "<img src=\"resources/static/check_mark_icon.png\" class=\"cap-icon-small-special\" />"+
+                  "<div class=\"modal-body\">"+
+                    "<p>Promotion approved<br />with<br />Hash Code: {{promo.id}}<br />Block 2 is complete.</p>"+
+                  "</div>"+
+                  "<button type=\"button\" class=\"btn btn-primary modal-btn\" ng-click=\"logUser()\" data-dismiss=\"modal\">OK</button>"+
+                "</div>"+
+              "</div>"+
+            "</div>"+
+            "<button ng-hide=\"promo.status == 'Approved'\" id=\"{{buttonDisableEdit}}\" style=\"margin-left:10px\" class=\"menu-btn-group btn approval-form\" type=\"button\" "+
+            "ng-click=\"goEdit( promo.id, promo.name, promo.selectedBenefit, promo.longDesc, promo.selectedTC, "+
+            "promo.startDate, promo.endDate, promo.ruleTyp, promo.ruleVal, promo.notificationDaysRemind, promo.enrollmentDeadline, promo.status, promo.benefit )\">"+
+            "Edit</button>"+
           "</div>"+
           "</fieldset>"+
         "</form>"+
