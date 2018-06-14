@@ -22,7 +22,7 @@ angular.module('blockApp', ['ui.router'])
                 "<p class=\"login-userType\">Marketing Director Sign-In</p>"+
               "</div>"+
         			"<form role=\"form\">"+
-        				"<div class=\"login-form-group-input\" style=\"display:unset\">"+
+        				"<div class=\"login-form-group-input\">"+
         					"<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
         					"<div class=\"col-sm-11\">"+
         						"<input type=\"email\" ng-model=\"login.username\" class=\"login-field\" required>"+
@@ -65,20 +65,20 @@ angular.module('blockApp', ['ui.router'])
                 "<p class=\"login-userType\">Marketing Associate Sign-In</p>"+
               "</div>"+
         			"<form role=\"form\">"+
-        				"<div class=\"login-form-group\">"+
+        				"<div class=\"login-form-group-input\">"+
         					"<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
-        					"<div class=\"col-sm-10\">"+
+        					"<div class=\"col-sm-11\">"+
         						"<input type=\"email\" ng-model=\"login.username\" class=\"login-field\" required>"+
         					"</div>"+
         				"</div>"+
-        				"<div class=\"login-form-group\">"+
+                "<div class=\"login-form-group-input\">"+
         					"<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
-        					"<div class=\"col-sm-10\">"+
+        					"<div class=\"col-sm-11\">"+
         						"<input type=\"password\" ng-model=\"login.password\" class=\"login-field\" required>"+
         					"</div>"+
         				"</div>"+
         				"<div class=\"login-form-group\">"+
-        					"<div class=\"form-horizontal col-sm-12\">"+
+                "<div id=\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
         						"<button type=\"button\" ng-click=\"logUser( login.username )\" class=\"btn btn-primary login-btn\">"+
         							"Login"+
         						"</button>"+
@@ -87,7 +87,7 @@ angular.module('blockApp', ['ui.router'])
         				"</div>"+
         				"</div>"+
         			"</form>"+
-                "<div class=\"col-sm-10\">"+
+              "<div id=\"login-newUser-line\" class=\"col-sm-10\">"+
                   "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
                 "</div>"+
         		"</div>"+
@@ -108,20 +108,20 @@ angular.module('blockApp', ['ui.router'])
                 "<p class=\"login-userType\">Customer Sign-In</p>"+
               "</div>"+
         			"<form role=\"form\">"+
-        				"<div class=\"login-form-group\">"+
+              "<div class=\"login-form-group-input\">"+
         					"<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
-        					"<div class=\"col-sm-10\">"+
+        					"<div class=\"col-sm-11\">"+
         						"<input type=\"email\" ng-model=\"login.username\" class=\"login-field\" required>"+
         					"</div>"+
         				"</div>"+
-        				"<div class=\"login-form-group\">"+
+                "<div class=\"login-form-group-input\">"+
         					"<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
-        					"<div class=\"col-sm-10\">"+
+        					"<div class=\"col-sm-11\">"+
         						"<input type=\"password\" ng-model=\"login.password\" class=\"login-field\" required>"+
         					"</div>"+
         				"</div>"+
         				"<div class=\"login-form-group\">"+
-        					"<div class=\"form-horizontal col-sm-12\">"+
+                "<div id=\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
         						"<button type=\"button\" ng-click=\"logUser(promo.id, promo.customerName, promo.customerBilling, promo.name, "+
                     "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
                     "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary login-btn\">"+
@@ -132,7 +132,7 @@ angular.module('blockApp', ['ui.router'])
         				"</div>"+
         				"</div>"+
         			"</form>"+
-                "<div class=\"col-sm-10\">"+
+              "<div id=\"login-newUser-line\" class=\"col-sm-10\">"+
                   "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
                 "</div>"+
         		"</div>"+
@@ -153,20 +153,20 @@ angular.module('blockApp', ['ui.router'])
                 "<p class=\"login-userType\">Customer Sign-In</p>"+
               "</div>"+
               "<form role=\"form\">"+
-                "<div class=\"login-form-group\">"+
+              "<div class=\"login-form-group-input\">"+
                   "<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
-                  "<div class=\"col-sm-10\">"+
+                  "<div class=\"col-sm-11\">"+
                     "<input type=\"email\" ng-model=\"login.username\" class=\"login-field\" required>"+
                   "</div>"+
                 "</div>"+
-                "<div class=\"login-form-group\">"+
+                "<div class=\"login-form-group-input\">"+
                   "<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
-                  "<div class=\"col-sm-10\">"+
+                  "<div class=\"col-sm-11\">"+
                     "<input type=\"password\" ng-model=\"login.password\" class=\"login-field\" required>"+
                   "</div>"+
                 "</div>"+
                 "<div class=\"login-form-group\">"+
-                  "<div class=\"form-horizontal col-sm-12\">"+
+                "<div id=\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
                     "<button type=\"button\" ng-click=\"logUser(promo.id, promo.customerName, promo.customerBilling, promo.name, "+
                     "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
                     "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary login-btn\">"+
@@ -177,7 +177,7 @@ angular.module('blockApp', ['ui.router'])
                 "</div>"+
                 "</div>"+
               "</form>"+
-                "<div class=\"col-sm-10\">"+
+              "<div id=\"login-newUser-line\" class=\"col-sm-10\">"+
                   "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
                 "</div>"+
             "</div>"+
@@ -198,20 +198,20 @@ angular.module('blockApp', ['ui.router'])
                 "<p class=\"login-userType\">Customer Sign-In</p>"+
               "</div>"+
               "<form role=\"form\">"+
-                "<div class=\"login-form-group\">"+
+              "<div class=\"login-form-group-input\">"+
                   "<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
-                  "<div class=\"col-sm-10\">"+
+                  "<div class=\"col-sm-11\">"+
                     "<input type=\"email\" ng-model=\"login.username\" class=\"login-field\" required>"+
                   "</div>"+
                 "</div>"+
-                "<div class=\"login-form-group\">"+
+                "<div class=\"login-form-group-input\">"+
                   "<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
-                  "<div class=\"col-sm-10\">"+
+                  "<div class=\"col-sm-11\">"+
                     "<input type=\"password\" ng-model=\"login.password\" class=\"login-field\" required>"+
                   "</div>"+
                 "</div>"+
                 "<div class=\"login-form-group\">"+
-                  "<div class=\"form-horizontal col-sm-12\">"+
+                "<div id=\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
                     "<button type=\"button\" ng-click=\"logUser( login.username )\" class=\"btn btn-primary login-btn\">"+
                       "Login"+
                     "</button>"+
@@ -220,7 +220,7 @@ angular.module('blockApp', ['ui.router'])
                 "</div>"+
                 "</div>"+
               "</form>"+
-                "<div class=\"col-sm-10\">"+
+              "<div id=\"login-newUser-line\" class=\"col-sm-10\">"+
                   "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
                 "</div>"+
             "</div>"+
