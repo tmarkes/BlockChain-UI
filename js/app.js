@@ -725,6 +725,7 @@ angular.module('blockApp', ['ui.router'])
     })
   })
   .controller("LoadPromosCtrl", function($scope, $state, $http) {
+    $state.reload();
     $http.get('/retrieve/promotion')
       .then(function (data) {
         var promoList = [];

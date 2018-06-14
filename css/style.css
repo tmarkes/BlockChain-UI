@@ -132,7 +132,7 @@ textarea, select, input, button { outline: none; }
 
 .subtitle-big {font-size:25px;color:#13a9f0;width:60%;margin-top:40px}
 
-.subtitle-row-small {margin-bottom:15px}
+.subtitle-row-small {margin-bottom:15px;margin-right:0px}
 
 .subtitle-row-med {margin-bottom:30px}
 
