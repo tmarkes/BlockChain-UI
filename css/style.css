@@ -62,7 +62,10 @@ textarea, select, input, button { outline: none; }
 
 .login-image {float:left}
 
-#login_lost_btn {float:right;color:grey;background-color:transparent;border-color:transparent;box-shadow:none}
+#login_lost_btn {
+  float:right;color:#bebbc3;background-color:transparent;border-color:transparent;
+  box-shadow:none;font-family:Verdana;font-weight:bold;padding-right:0px
+}
 
 .login-userType {text-align: center;margin-top:35px;color:#685277;font-family:Verdana}
 
