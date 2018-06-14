@@ -1007,7 +1007,9 @@ angular.module('blockApp', ['ui.router'])
     };
 
     var startEnterDate = new Date($stateParams.promoStartDate);
+    startEnterDate.setDate(startEnterDate.getDate()-1);
     var endEnterDate = new Date($stateParams.promoEndDate);
+    endEnterDate.setDate(endEnterDate.getDate()-1);
 
     $scope.promo = {
       id: $stateParams.promoId,
@@ -1015,8 +1017,8 @@ angular.module('blockApp', ['ui.router'])
       selectedBenefit: $stateParams.promoBenefit,
       longDesc: $stateParams.promoDesc,
       selectedTC: $stateParams.promoTerms,
-      startDate: startEnterDate.setDate(startEnterDate.getDate()-1).getDate(),
-      endDate: endEnterDate.setDate(endEnterDate.getDate()-1).getDate(),
+      startDate: startEnterDate.getDate(),
+      endDate: endEnterDate.getDate(),
       ruleTyp: $stateParams.promoRuleTyp,
       ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
       ruleVal: $stateParams.promoRuleVal,
