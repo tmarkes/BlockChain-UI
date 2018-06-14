@@ -1064,6 +1064,7 @@ angular.module('blockApp', ['ui.router'])
     $scope.goBackToEdit = function( promoId, promoName, promoBenefit,
       promoDesc, promoTerms, promoStart, promoEnd, promoRuleTyp, promoRuleVal,
       promoReminder, promoEnrollment, promoStatus, promoCusBenefit ) {
+      var dateFormat = require('dateformat');
       $state.go( "promoApproval", { promoId : promoId, promoName : promoName,
         promoBenefit : promoBenefit, promoDesc : promoDesc,
         promoTerms : promoTerms, promoStartDate : dateformat(new Date(promoStart).toDateString(),"MM/DD/YYYY").toDateString(),

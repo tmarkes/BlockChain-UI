@@ -3,7 +3,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
 var moment = require('moment');
-var dateformat = require('dateformat');
 
 var app = express();
 app.use(express.static(__dirname));
