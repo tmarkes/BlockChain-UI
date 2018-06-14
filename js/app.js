@@ -95,7 +95,7 @@ angular.module('blockApp', ['ui.router'])
           "</div>"
       })
       .state('loginCustomer', {
-        url: "/login/customer/promotion/:userPromoId",
+        url: "/login/customer",
         controller: "LoginCustomerCtrl",
         template: "<div id=\"sign-in-screen\">"+
         "<div class=\"row\">"+
@@ -122,7 +122,9 @@ angular.module('blockApp', ['ui.router'])
         				"</div>"+
         				"<div class=\"login-form-group\">"+
         					"<div class=\"form-horizontal col-sm-12\">"+
-        						"<button type=\"button\" ng-click=\"logUser( login.username )\" class=\"btn btn-primary login-btn\">"+
+        						"<button type=\"button\" ng-click=\"logUser(promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+                    "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
+                    "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary login-btn\">"+
         							"Login"+
         						"</button>"+
                     "<button id=\"login_lost_btn\" type=\"button\" class=\"btn\">Forgot Password</button>"+
@@ -138,7 +140,7 @@ angular.module('blockApp', ['ui.router'])
           "</div>"
       })
       .state('loginSuccessfulCustomer', {
-        url: "/login/customerSuccess/promotion/:userPromoId",
+        url: "/login/customerSuccess",
         controller: "LoginSuccessfulCustomerCtrl",
         template: "<div id=\"sign-in-screen\">"+
         "<div class=\"row\">"+
@@ -183,7 +185,7 @@ angular.module('blockApp', ['ui.router'])
           "</div>"
       })
       .state('loginRejectedCustomer', {
-        url: "/login/customerRejection/promotion/:userPromoId",
+        url: "/login/customerRejection",
         controller: "LoginRejectedCustomerCtrl",
         template: "<div id=\"sign-in-screen\">"+
         "<div class=\"row\">"+
@@ -937,33 +939,26 @@ angular.module('blockApp', ['ui.router'])
         });
       }
   })
-  .controller("PromoApplyCtrl", function($scope, $state, $http, $stateParams) {
+  .controller("PromoApplyCtrl", function($scope, $state, $stateParams) {
       $scope.promoApplyDisable = false;
       $scope.user = {
         name: $stateParams.customerName,
         role: 'Customer'
       };
-      var putData = "{ "+
-        "\"hashCode\" : \""+$stateParams.promoId+"\" "+
-      "}";
-      $http.put('/retrieve/promotionByHashCode', putData)
-      .then(function (data) {
-        $scope.promo = {
-          id: data["data"]["hash"],
-          name: data["data"]["data"].promoName,
-          customerName: $stateParams.customerName,
-          customerBilling: '$35 per month',
-          longDesc: data["data"]["data"].promoLongDescription,
-          selectedTC: data["data"]["data"].tc,
-          startDate: new Date(data["data"]["data"].startDate),
-          endDate: new Date(data["data"]["data"].endDate),
-          enrollmentDeadline: data["data"]["data"].enrollmentDeadlineDays,
-          deadlineList: [ "5", "10", "15" ],
-          postPromoBilling: data["data"]["data"].benefit
-        };
-      }).catch(function(error) {
-        console.log(error);
-      });
+
+      $scope.promo = {
+        id: $stateParams.promoId,
+        name: $stateParams.promoName,
+        customerName: $stateParams.customerName,
+        customerBilling: $stateParams.customerBilling,
+        postPromoBilling: $stateParams.postPromoBilling,
+        longDesc: $stateParams.promoDesc,
+        selectedTC: $stateParams.promoTerms,
+        startDate: new Date($stateParams.promoStartDate),
+        endDate: new Date($stateParams.promoEndDate),
+        enrollmentDeadline: $stateParams.promoEnrollment,
+        deadlineList: [ "5", "10", "15" ],
+      };
 
       $scope.changeButtonColor = function() {
         $scope.buttonDisable="button-disable";
@@ -1095,44 +1090,68 @@ angular.module('blockApp', ['ui.router'])
         );
     }
   })
-  .controller("LoginCustomerCtrl", function($scope, $state, $http, $stateParams) {
+  .controller("LoginCustomerCtrl", function($scope, $state, $http) {
     $scope.login = {
         username: 'Joshua Smith',
         password: 'Revenue'
     };
 
-    $scope.logUser = function( customerName ) {
-        $state.go("customerAppliesForPromo",
-          { promoId : decodeURIComponent($stateParams.userPromoId), customerName : customerName }
+    $http.get('/retrieve/approvedPromotion')
+      .then(function (data) {
+        $scope.promo = {
+          id: data["data"][0]["hash"],
+          name: data["data"][0]["data"].promoName,
+          customerName: $scope.login.username,
+          customerBilling: '$30 per month',
+          longDesc: data["data"][0]["data"].promoLongDescription,
+          selectedTC: data["data"][0]["data"].tc,
+          startDate: new Date(data["data"][0]["data"].startDate),
+          endDate: new Date(data["data"][0]["data"].endDate),
+          notificationDaysRemind: data["data"][0]["data"].reminderNotificationDays,
+          reminderList: [ "5", "10", "15" ],
+          enrollmentDeadline: data["data"][0]["data"].enrollmentDeadlineDays,
+          deadlineList: [ "5", "10", "15" ],
+          postPromoBilling: data["data"][0]["data"].benefit,
+          status: data["data"][0]["data"].status
+        };
+    });
+
+    $scope.logUser = function( promoId, customerName, customerBilling, promoName,
+      promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
+      promoEnrollment, postPromoBilling ) {
+        $state.go("customerAppliesForPromo", { promoId : promoId, promoName : promoName,
+          customerName : customerName, promoDesc : promoDesc,
+          promoTerms : promoTerms, promoStartDate : promoStart,
+          promoEndDate : promoEnd, customerBilling : customerBilling,
+          promoReminder : promoReminder, promoEnrollment : promoEnrollment,
+          postPromoBilling : postPromoBilling }
         );
     }
   })
-  .controller("LoginSuccessfulCustomerCtrl", function($scope, $state, $http, $stateParams) {
+  .controller("LoginSuccessfulCustomerCtrl", function($scope, $state, $http) {
     $scope.login = {
         username: 'Joshua Smith',
         password: 'Revenue'
     };
 
-    var putData = "{ "+
-      "\"hashCode\" : \""+$stateParams.userPromoId+"\" "+
-    "}";
-    $http.put('/retrieve/promotionByHashCode', putData)
-    .then(function (data) {
-      $scope.promo = {
-        id: data["data"]["hash"],
-        name: data["data"]["data"].promoName,
-        customerName: $scope.login.username,
-        customerBilling: '$35 per month',
-        longDesc: data["data"]["data"].promoLongDescription,
-        selectedTC: data["data"]["data"].tc,
-        startDate: data["data"]["data"].startDate,
-        endDate: data["data"]["data"].endDate,
-        enrollmentDeadline: data["data"]["data"].enrollmentDeadlineDays,
-        deadlineList: [ "5", "10", "15" ],
-        postPromoBilling: data["data"]["data"].benefit
-      };
-    }).catch(function(error) {
-      console.log(error);
+    $http.get('/retrieve/approvedPromotion')
+      .then(function (data) {
+        $scope.promo = {
+          id: data["data"][0]["hash"],
+          name: data["data"][0]["data"].promoName,
+          customerName: $scope.login.username,
+          customerBilling: '$30 per month',
+          longDesc: data["data"][0]["data"].promoLongDescription,
+          selectedTC: data["data"][0]["data"].tc,
+          startDate: data["data"][0]["data"].startDate,
+          endDate: data["data"][0]["data"].endDate,
+          notificationDaysRemind: data["data"][0]["data"].reminderNotificationDays,
+          reminderList: [ "5", "10", "15" ],
+          enrollmentDeadline: data["data"][0]["data"].enrollmentDeadlineDays,
+          deadlineList: [ "5", "10", "15" ],
+          postPromoBilling: data["data"][0]["data"].benefit,
+          status: data["data"][0]["data"].status
+        };
     });
 
     $scope.logUser = function( promoId, customerName, customerBilling, promoName,
@@ -1147,31 +1166,30 @@ angular.module('blockApp', ['ui.router'])
         );
     }
   })
-  .controller("LoginRejectedCustomerCtrl", function($scope, $state, $http, $stateParams) {
+  .controller("LoginRejectedCustomerCtrl", function($scope, $state, $http) {
     $scope.login = {
         username: 'Joshua Smith',
         password: 'Revenue'
     };
-    var putData = "{ "+
-      "\"hashCode\" : \""+$stateParams.userPromoId+"\" "+
-    "}";
-    $http.put('/retrieve/promotionByHashCode', putData)
-    .then(function (data) {
-      $scope.promo = {
-        id: data["data"]["hash"],
-        name: data["data"]["data"].promoName,
-        customerName: $scope.login.username,
-        customerBilling: '$35 per month',
-        longDesc: data["data"]["data"].promoLongDescription,
-        selectedTC: data["data"]["data"].tc,
-        startDate: data["data"]["data"].startDate,
-        endDate: data["data"]["data"].endDate,
-        enrollmentDeadline: data["data"]["data"].enrollmentDeadlineDays,
-        deadlineList: [ "5", "10", "15" ],
-        postPromoBilling: data["data"]["data"].benefit
-      };
-    }).catch(function(error) {
-      console.log(error);
+
+    $http.get('/retrieve/approvedPromotion')
+      .then(function (data) {
+        $scope.promo = {
+          id: data["data"][0]["hash"],
+          name: data["data"][0]["data"].promoName,
+          customerName: $scope.login.username,
+          customerBilling: '$30 per month',
+          longDesc: data["data"][0]["data"].promoLongDescription,
+          selectedTC: data["data"][0]["data"].tc,
+          startDate: data["data"][0]["data"].startDate,
+          endDate: data["data"][0]["data"].endDate,
+          notificationDaysRemind: data["data"][0]["data"].reminderNotificationDays,
+          reminderList: [ "5", "10", "15" ],
+          enrollmentDeadline: data["data"][0]["data"].enrollmentDeadlineDays,
+          deadlineList: [ "5", "10", "15" ],
+          postPromoBilling: data["data"][0]["data"].benefit,
+          status: data["data"][0]["data"].status
+        };
     });
 
     $scope.logUser = function( customerName ) {
