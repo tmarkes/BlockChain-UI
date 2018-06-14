@@ -944,8 +944,8 @@ angular.module('blockApp', ['ui.router'])
             "\"promoLongDescription\" : \""+promoDesc+"\", "+
             "\"businessBenefit\" : \""+promoBenefit+"\", "+
             "\"tc\" : \""+promoTerms+"\", "+
-            "\"startDate\" : \""+promoStart+"\", "+
-            "\"endDate\" : \""+promoEnd+"\", "+
+            "\"startDate\" : \""+new Date(promoStart).toDateString()+"\", "+
+            "\"endDate\" : \""+new Date(promoEnd).toDateString()+"\", "+
             "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
             "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
             "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
@@ -969,8 +969,8 @@ angular.module('blockApp', ['ui.router'])
             "\"promoLongDescription\" : \""+promoDesc+"\", "+
             "\"businessBenefit\" : \""+promoBenefit+"\", "+
             "\"tc\" : \""+promoTerms+"\", "+
-            "\"startDate\" : \""+promoStart+"\", "+
-            "\"endDate\" : \""+promoEnd+"\", "+
+            "\"startDate\" : \""+new Date(promoStart).toDateString()+"\", "+
+            "\"endDate\" : \""+new Date(promoEnd).toDateString()+"\", "+
             "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
             "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
             "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
@@ -1051,8 +1051,8 @@ angular.module('blockApp', ['ui.router'])
           "\"promoLongDescription\" : \""+promoDesc+"\", "+
           "\"businessBenefit\" : \""+promoBenefit+"\", "+
           "\"tc\" : \""+promoTerms+"\", "+
-          "\"startDate\" : \""+promoStart+"\", "+
-          "\"endDate\" : \""+promoEnd+"\", "+
+          "\"startDate\" : \""+new Date(promoStart).toDateString()+"\", "+
+          "\"endDate\" : \""+new Date(promoEnd).toDateString()+"\", "+
           "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
           "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
           "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
@@ -1198,7 +1198,6 @@ angular.module('blockApp', ['ui.router'])
             "\"benefit\" : \""+promoCusBenefit+"\", "+
             "\"status\" : \""+promoStatus+"\" "+
           "}";
-          console.log(postData);
           $http.post('/create/promotion', postData)
           .then(function (data) {
             $scope.promo.id = data["data"]["hash"];

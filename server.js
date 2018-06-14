@@ -187,7 +187,6 @@ app.post('/create/promotion', function (req, res) {
     status : req.body.status
     }
   };
-  console.log(newPromoData);
   request.post(process.env.PROMO_API_HOSTNAME+'/promotion/savePromotion',
       { json: newPromoData },
       function (error, response, body) {
