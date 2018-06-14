@@ -114,7 +114,7 @@ angular.module('blockApp', ['ui.router'])
                     "</div>"+
                     "<div class=\"login-form-group\">"+
                     "<div class=\"form-horizontal col-sm-12 login-button-pw-line\">"+
-                        "<button type=\"button\" ng-click=\"logCustomer(promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+                        "<button type=\"button\" ng-click=\"logCustomer(login.customerPW,promo.id, promo.customerName, promo.customerBilling, promo.name, "+
                         "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
                         "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary login-btn\">"+
                           "Login"+
@@ -128,7 +128,7 @@ angular.module('blockApp', ['ui.router'])
                       "<button type=\"button\" class=\"btn new_user_btn\">Register Now</button>"+
                   "</div>"+
                 "</div>"+
-                "<div id=\"viewCusStatusDiv\"><button type=\"button\" ng-click=\"logCustomerSuccess( promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+                "<div id=\"viewCusStatusDiv\"><button type=\"button\" ng-click=\"logCustomerSuccess( login.customerPW,promo.id, promo.customerName, promo.customerBilling, promo.name, "+
                 "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
                 "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary viewStatus-btn\">"+
                   "View Customer Status"+
@@ -1116,6 +1116,38 @@ angular.module('blockApp', ['ui.router'])
         $state.go("login");
       }
 
+      var putData = '';
+
+      if( $stateParams.passwordPromoId != 'Revenue' ) {
+        putData = "{ "+
+          "\"hashCode\" : \""+$stateParams.passwordPromoId+"\" "+
+        "}";
+      } else {
+        putData = "{ "+
+          "\"hashCode\" : \""+$stateParams.promoId+"\" "+
+        "}";
+      }
+
+      $http.put('/retrieve/promotionByHashCode', putData)
+      .then(function (data) {
+        $scope.promo = {
+          id: data["data"]["hash"],
+          name: data["data"]["data"].promoName,
+          customerName: $stateParams.customerName,
+          customerBilling: '$35 per month',
+          longDesc: data["data"]["data"].promoLongDescription,
+          selectedTC: data["data"]["data"].tc,
+          startDate: new Date(data["data"]["data"].startDate),
+          endDate: new Date(data["data"]["data"].endDate),
+          enrollmentDeadline: data["data"]["data"].enrollmentDeadlineDays,
+          deadlineList: [ "5", "10", "15" ],
+          postPromoBilling: data["data"]["data"].benefit
+        };
+      }).catch(function(error) {
+        console.log(error);
+      });
+
+/*
       $scope.promo = {
         id: $stateParams.promoId,
         name: $stateParams.promoName,
@@ -1129,7 +1161,7 @@ angular.module('blockApp', ['ui.router'])
         enrollmentDeadline: $stateParams.promoEnrollment,
         deadlineList: [ "5", "10", "15" ],
       };
-
+*/
       $scope.changeButtonColor = function() {
         $scope.buttonDisable="button-disable";
       }
@@ -1302,10 +1334,11 @@ angular.module('blockApp', ['ui.router'])
         };
     });
 
-    $scope.logUser = function( promoId, customerName, customerBilling, promoName,
+    $scope.logUser = function( passwordPromoId, promoId, customerName, customerBilling, promoName,
       promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
       promoEnrollment, postPromoBilling ) {
-        $state.go("customerAppliesForPromo", { promoId : promoId, promoName : promoName,
+        $state.go("customerAppliesForPromo", { passwordPromoId : passwordPromoId,
+          promoId : promoId, promoName : promoName,
           customerName : customerName, promoDesc : promoDesc,
           promoTerms : promoTerms, promoStartDate : promoStart,
           promoEndDate : promoEnd, customerBilling : customerBilling,
@@ -1433,11 +1466,11 @@ angular.module('blockApp', ['ui.router'])
       $state.go("promoList");
     }
 
-    $scope.logCustomer = function( promoId, customerName, customerBilling, promoName,
+    $scope.logCustomer = function( passwordPromoId, promoId, customerName, customerBilling, promoName,
       promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
       promoEnrollment, postPromoBilling ) {
-        $state.go("customerAppliesForPromo", { promoId : promoId, promoName : promoName,
-          customerName : customerName, promoDesc : promoDesc,
+        $state.go("customerAppliesForPromo", { passwordPromoId : passwordPromoId,
+          promoId : promoId, customerName : customerName, promoDesc : promoDesc,
           promoTerms : promoTerms, promoStartDate : promoStart,
           promoEndDate : promoEnd, customerBilling : customerBilling,
           promoReminder : promoReminder, promoEnrollment : promoEnrollment,
@@ -1445,11 +1478,11 @@ angular.module('blockApp', ['ui.router'])
         );
     }
 
-    $scope.logCustomerSuccess = function( promoId, customerName, customerBilling, promoName,
+    $scope.logCustomerSuccess = function( passwordPromoId, promoId, customerName, customerBilling, promoName,
       promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
       promoEnrollment, postPromoBilling ) {
-        $state.go("customerBillingSuccess", { promoId : promoId, promoName : promoName,
-          customerName : customerName, promoDesc : promoDesc,
+        $state.go("customerBillingSuccess", { passwordPromoId : passwordPromoId,
+          promoId : promoId, customerName : customerName, promoDesc : promoDesc,
           promoTerms : promoTerms, promoStartDate : promoStart,
           promoEndDate : promoEnd, customerBilling : customerBilling,
           promoReminder : promoReminder, promoEnrollment : promoEnrollment,
