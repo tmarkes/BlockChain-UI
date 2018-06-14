@@ -51,7 +51,7 @@
 
 .login-btn {background-color:deepskyblue;border-color:transparent;width:35%;}
 
-.login-field {background-color:#F3F3F3;border: 0px solid #ccc;border-bottom: 1px solid grey}
+.login-field {background-color:#F3F3F3;border: 0px solid #ccc;border-bottom: 1px solid grey;color:#685277;font-family:Verdana}
 
 .login-form-group {padding-top: 25px;margin-bottom:50px}
 
@@ -59,7 +59,7 @@
 
 #login_lost_btn {float:right;color:grey;background-color:transparent;border-color:transparent;box-shadow:none}
 
-.login-userType {text-align: center;margin-top:35px}
+.login-userType {text-align: center;margin-top:35px;color:#685277;font-family:Verdana}
 
 .landing-page-title {margin-top:40px}
 
