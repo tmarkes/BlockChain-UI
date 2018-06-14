@@ -52,7 +52,7 @@
 .login-btn {background-color:deepskyblue;border-color:transparent;width:35%;border-radius:50px}
 
 .login-field {
-  background-color:#F3F3F3;border: 0px solid #ccc;border-bottom: 1px solid grey;
+  background-color:#F3F3F3;border: 0px solid #ccc;border-bottom: 0.25px solid #685277;
   color:#685277;font-family:Verdana;width:100%;height:auto;padding: 6px 12px
 }
 
