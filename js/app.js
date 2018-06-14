@@ -530,11 +530,11 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
       				"<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-      				"<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/ disabled>"+
+      				"<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoStartDate\" type=\"text\" ng-model=\"promo.startDate\"/ disabled>"+
       			"</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoEndDate\" type=\"text\" ng-model=\"promo.endDate\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Type: </label>"+
@@ -741,11 +741,11 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoStartDate\" type=\"text\" ng-model=\"promo.startDate\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoEndDate\" type=\"text\" ng-model=\"promo.endDate\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
@@ -911,17 +911,14 @@ angular.module('blockApp', ['ui.router'])
         role: 'Marketing Director'
       };
 
-      console.log( "Coming in Date: "+$stateParams.promoStartDate);
-      console.log( "My Date: "+new Date(Date.parse($stateParams.promoStartDate)).toString());
-
       $scope.promo = {
         id: $stateParams.promoId,
         name: $stateParams.promoName,
         selectedBenefit: $stateParams.promoBenefit,
         longDesc: $stateParams.promoDesc,
         selectedTC: $stateParams.promoTerms,
-        startDate: new Date(Date.parse($stateParams.promoStartDate)),
-        endDate: new Date(Date.parse($stateParams.promoEndDate)),
+        startDate: $stateParams.promoStartDate,
+        endDate: $stateParams.promoEndDate,
         ruleTyp: $stateParams.promoRuleTyp,
         ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
         ruleVal: $stateParams.promoRuleVal,
@@ -1009,14 +1006,17 @@ angular.module('blockApp', ['ui.router'])
       role: 'Marketing Director'
     };
 
+    var startEnterDate = new Date($stateParams.promoStartDate);
+    var endEnterDate = new Date($stateParams.promoEndDate);
+
     $scope.promo = {
       id: $stateParams.promoId,
       name: $stateParams.promoName,
       selectedBenefit: $stateParams.promoBenefit,
       longDesc: $stateParams.promoDesc,
       selectedTC: $stateParams.promoTerms,
-      startDate: new Date($stateParams.promoStartDate),
-      endDate: new Date($stateParams.promoEndDate),
+      startDate: startEnterDate.setDate(startEnterDate.getDate()-1),
+      endDate: endEnterDate.setDate(endEnterDate.getDate()-1),
       ruleTyp: $stateParams.promoRuleTyp,
       ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
       ruleVal: $stateParams.promoRuleVal,
@@ -1085,8 +1085,8 @@ angular.module('blockApp', ['ui.router'])
         postPromoBilling: $stateParams.postPromoBilling,
         longDesc: $stateParams.promoDesc,
         selectedTC: $stateParams.promoTerms,
-        startDate: new Date($stateParams.promoStartDate),
-        endDate: new Date($stateParams.promoEndDate),
+        startDate: $stateParams.promoStartDate,
+        endDate: $stateParams.promoEndDate,
         enrollmentDeadline: $stateParams.promoEnrollment,
         deadlineList: [ "5", "10", "15" ],
       };
@@ -1236,8 +1236,8 @@ angular.module('blockApp', ['ui.router'])
           customerBilling: '$30 per month',
           longDesc: data["data"][0]["data"].promoLongDescription,
           selectedTC: data["data"][0]["data"].tc,
-          startDate: new Date(data["data"][0]["data"].startDate),
-          endDate: new Date(data["data"][0]["data"].endDate),
+          startDate: data["data"][0]["data"].startDate,
+          endDate: data["data"][0]["data"].endDate,
           notificationDaysRemind: data["data"][0]["data"].reminderNotificationDays,
           reminderList: [ "5", "10", "15" ],
           enrollmentDeadline: data["data"][0]["data"].enrollmentDeadlineDays,
@@ -1357,8 +1357,8 @@ angular.module('blockApp', ['ui.router'])
           customerBilling: '$30 per month',
           longDesc: data["data"][0]["data"].promoLongDescription,
           selectedTC: data["data"][0]["data"].tc,
-          startDate: new Date(data["data"][0]["data"].startDate),
-          endDate: new Date(data["data"][0]["data"].endDate),
+          startDate: data["data"][0]["data"].startDate,
+          endDate: data["data"][0]["data"].endDate,
           notificationDaysRemind: data["data"][0]["data"].reminderNotificationDays,
           reminderList: [ "5", "10", "15" ],
           enrollmentDeadline: data["data"][0]["data"].enrollmentDeadlineDays,
