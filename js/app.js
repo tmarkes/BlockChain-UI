@@ -11,7 +11,7 @@ angular.module('blockApp', ['ui.router'])
       .state('login', {
         url: "/",
         controller: "LoginCtrl",
-        template: "<div><div id=\"sign-in-screen\">"+
+        template: "<div><div class=\"sign-in-screen\">"+
         "<div class=\"row\">"+
         "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
         "<img src=\"resources/static/associate_company_logo.png\" class=\"company-icon-login\" />"+
@@ -35,22 +35,22 @@ angular.module('blockApp', ['ui.router'])
         					"</div>"+
         				"</div>"+
         				"<div class=\"login-form-group\">"+
-                "<div id=\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
+                "<div class=\"form-horizontal col-sm-12 login-button-pw-line\">"+
         						"<button type=\"button\" ng-click=\"logAssociate( login.associate )\" class=\"btn btn-primary login-btn\">"+
         							"Login"+
         						"</button>"+
-                    "<button id=\"login_lost_btn\" type=\"button\" class=\"btn\">Forgot Password</button>"+
+                    "<button type=\"button\" class=\"btn login_lost_btn\">Forgot Password</button>"+
         					"</div>"+
         				"</div>"+
         				"</div>"+
         			"</form>"+
-              "<div id=\"login-newUser-line\" class=\"col-sm-10\">"+
-                  "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
+              "<div class=\"col-sm-10 login-newUser-line\">"+
+                  "<button type=\"button\" class=\"btn new_user_btn\">Register Now</button>"+
                 "</div>"+
         		"</div>"+
         	"</div>"+
           "</div>"+
-          "<div id=\"sign-in-screen\">"+
+          "<div class=\"sign-in-screen\">"+
           "<div class=\"row\">"+
           "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
           "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
@@ -74,22 +74,22 @@ angular.module('blockApp', ['ui.router'])
                     "</div>"+
                   "</div>"+
                   "<div class=\"login-form-group\">"+
-                    "<div id=\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
+                    "<div class=\"form-horizontal col-sm-12 login-button-pw-line\">"+
                       "<button type=\"button\" ng-click=\"logDirector()\" class=\"btn btn-primary login-btn\">"+
                         "Login"+
                       "</button>"+
-                      "<button id=\"login_lost_btn\" type=\"button\" class=\"btn\">Forgot Password</button>"+
+                      "<button type=\"button\" class=\"btn login_lost_btn\">Forgot Password</button>"+
                     "</div>"+
                   "</div>"+
                   "</div>"+
                 "</form>"+
-                "<div id=\"login-newUser-line\" class=\"col-sm-10\">"+
-                  "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
+                "<div class=\"col-sm-10 login-newUser-line\">"+
+                  "<button type=\"button\" class=\"btn new_user_btn\">Register Now</button>"+
                 "</div>"+
               "</div>"+
             "</div>"+
             "</div>"+
-            "<div id=\"sign-in-screen\">"+
+            "<div class=\"sign-in-screen\">"+
             "<div class=\"row\">"+
             "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
             "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
@@ -113,19 +113,19 @@ angular.module('blockApp', ['ui.router'])
                       "</div>"+
                     "</div>"+
                     "<div class=\"login-form-group\">"+
-                    "<div id=\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
+                    "<div class=\"form-horizontal col-sm-12 login-button-pw-line\">"+
                         "<button type=\"button\" ng-click=\"logCustomer(promo.id, promo.customerName, promo.customerBilling, promo.name, "+
                         "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
                         "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary login-btn\">"+
                           "Login"+
                         "</button>"+
-                        "<button id=\"login_lost_btn\" type=\"button\" class=\"btn\">Forgot Password</button>"+
+                        "<button type=\"button\" class=\"btn login_lost_btn\">Forgot Password</button>"+
                       "</div>"+
                     "</div>"+
                     "</div>"+
                   "</form>"+
-                  "<div id=\"login-newUser-line\" class=\"col-sm-10\">"+
-                      "<button id=\"new_user_btn\" type=\"button\" class=\"btn\">Register Now</button>"+
+                  "<div class=\"col-sm-10 login-newUser-line\">"+
+                      "<button type=\"button\" class=\"btn new_user_btn\">Register Now</button>"+
                     "</div>"+
                 "</div>"+
               "</div>"+

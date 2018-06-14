@@ -85,9 +85,18 @@ textarea, select, input, button { outline: none; }
   box-shadow:none;font-family:Verdana;font-weight:bold;padding-right:0px
 }
 
+.login_lost_btn {
+  float:right;color:#bebbc3;background-color:transparent;border-color:transparent;
+  box-shadow:none;font-family:Verdana;font-weight:bold;padding-right:0px
+}
+
 #login-button-pw-line {padding-left:10px}
 
 #login-newUser-line {padding-top:30px}
+
+.login-button-pw-line {padding-left:10px}
+
+.login-newUser-line {padding-top:30px}
 
 .login-userType {text-align: center;margin-top:35px;color:#685277;font-family:Verdana}
 
@@ -116,6 +125,11 @@ textarea, select, input, button { outline: none; }
   box-shadow:none;font-family:Verdana;font-weight:bold
 }
 
+.new_user_btn {
+  float:left;color:#bebbc3;background-color:transparent;border-color:transparent;
+  box-shadow:none;font-family:Verdana;font-weight:bold
+}
+
 .paragraph-text {margin-top:10px;color:#13a9f0}
 
 .paragraph-text-normal {margin-top:20px;color:#13a9f0}
@@ -131,6 +145,8 @@ textarea, select, input, button { outline: none; }
 .readonlyText {opacity: 0.5}
 
 #sign-in-screen {width:35%;margin: 0 auto;}
+
+.sign-in-screen {width:35%;margin: 0 auto;}
 
 .subtitle-normal {color:#13a9f0;width:60%;margin-top:40px}
 
