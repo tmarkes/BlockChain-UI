@@ -1075,6 +1075,8 @@ angular.module('blockApp', ['ui.router'])
         $http.post('/update/promotion', postData)
         .then(function (data) {
           $scope.promo.id = data["data"]["hash"];
+          $scope.promo.startDate = data["data"][0]["startDate"];
+          $scope.promo.endDate = data["data"][0]["endDate"];
         }).catch(function(error) {
           console.log(error);
         });
