@@ -369,7 +369,7 @@ angular.module('blockApp', ['ui.router'])
             "<div style=\"float:right\">"+
               "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
               "<img src=\"resources/static/associate_profile_picture.png\" class=\"header-profile-pic\" />"+
-              "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
+              "<img ng-click=\"logout()\" src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
             	"<img src=\"resources/static/associate_company_logo.png\" class=\"company-icon-not-login\" />"+
             "</div>"+
           "</div>"+
@@ -466,7 +466,7 @@ angular.module('blockApp', ['ui.router'])
           "<div style=\"float:right\">"+
             "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
             "<img src=\"resources/static/director_profile_picture.png\" class=\"header-profile-pic\" />"+
-            "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
+            "<img ng-click=\"logout()\" src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
             "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
           "</div>"+
         "</div>"+
@@ -508,7 +508,7 @@ angular.module('blockApp', ['ui.router'])
           "<div style=\"float:right\">"+
             "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
             "<img src=\"resources/static/director_profile_picture.png\" class=\"header-profile-pic\" />"+
-            "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
+            "<img ng-click=\"logout()\" src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
             "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
           "</div>"+
         "</div>"+
@@ -623,7 +623,7 @@ angular.module('blockApp', ['ui.router'])
             "<div style=\"float:right\">"+
               "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
               "<img src=\"resources/static/director_profile_picture.png\" class=\"header-profile-pic\" />"+
-              "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
+              "<img ng-click=\"logout()\" src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
               "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
             "</div>"+
           "</div>"+
@@ -719,7 +719,7 @@ angular.module('blockApp', ['ui.router'])
             "<div style=\"float:right\">"+
               "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
               "<img src=\"resources/static/customer_profile_picture.png\" class=\"header-profile-pic\" />"+
-              "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
+              "<img ng-click=\"logout()\" src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
               "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
             "</div>"+
           "</div>"+
@@ -799,7 +799,7 @@ angular.module('blockApp', ['ui.router'])
           "<div style=\"float:right\">"+
             "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
             "<img src=\"resources/static/customer_profile_picture.png\" class=\"header-profile-pic\" />"+
-            "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
+            "<img ng-click=\"logout()\" src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
             "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
           "</div>"+
         "</div>"+
@@ -832,7 +832,7 @@ angular.module('blockApp', ['ui.router'])
           "<div style=\"float:right\">"+
             "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
             "<img src=\"resources/static/customer_profile_picture.png\" class=\"header-profile-pic\" />"+
-            "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
+            "<img ng-click=\"logout()\" src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
             "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
           "</div>"+
         "</div>"+
@@ -885,6 +885,10 @@ angular.module('blockApp', ['ui.router'])
         $scope.promos = promoList;
     });
 
+    $scope.logout = function() {
+      $state.go("login");
+    }
+
     $scope.user = {
       name: 'Williams',
       role: 'Marketing Director'
@@ -918,6 +922,10 @@ angular.module('blockApp', ['ui.router'])
         name: 'Williams',
         role: 'Marketing Director'
       };
+
+      $scope.logout = function() {
+        $state.go("login");
+      }
 
       $scope.promo = {
         id: $stateParams.promoId,
@@ -1043,6 +1051,10 @@ angular.module('blockApp', ['ui.router'])
       status: $stateParams.promoStatus
     };
 
+    $scope.logout = function() {
+      $state.go("login");
+    }
+
     $scope.goBackToEdit = function( promoId, promoName, promoBenefit,
       promoDesc, promoTerms, promoStart, promoEnd, promoRuleTyp, promoRuleVal,
       promoReminder, promoEnrollment, promoStatus, promoCusBenefit ) {
@@ -1089,6 +1101,10 @@ angular.module('blockApp', ['ui.router'])
         role: 'Customer'
       };
 
+      $scope.logout = function() {
+        $state.go("login");
+      }
+
       $scope.promo = {
         id: $stateParams.promoId,
         name: $stateParams.promoName,
@@ -1120,6 +1136,10 @@ angular.module('blockApp', ['ui.router'])
         role: 'Customer'
       };
 
+      $scope.logout = function() {
+        $state.go("login");
+      }
+
       $scope.promo = {
         id: $stateParams.promoId,
         name: $stateParams.promoName,
@@ -1140,6 +1160,10 @@ angular.module('blockApp', ['ui.router'])
         role: 'Customer',
         promo: $stateParams.promoName
       };
+
+      $scope.logout = function() {
+        $state.go("login");
+      }
   })
   .controller("PromoCreationCtrl", function($scope, $state, $http, $stateParams) {
       $scope.promoCreateDisable = false;
@@ -1147,6 +1171,10 @@ angular.module('blockApp', ['ui.router'])
         name: $stateParams.userName,
         role: 'Marketing Associate'
       };
+
+      $scope.logout = function() {
+        $state.go("login");
+      }
 
       $scope.promo = {
         ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
