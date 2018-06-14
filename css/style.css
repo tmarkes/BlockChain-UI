@@ -25,6 +25,8 @@
 
 .font-normal {font-size:19px}
 
+.form-textBox {width:20%}
+
 .form-font {font-size:18px}
 
 .form-rowA {color: darkblue}
@@ -49,7 +51,7 @@
 
 .interview-row-submit {background-color: white;padding-top: 20px;border-top: 0px}
 
-.interview-col-textarea {}
+.interview-col-textarea {width:20%}
 
 .link {color:blue}
 
@@ -61,6 +63,8 @@
 }
 
 textarea, select, input, button { outline: none; }
+
+#textarea-desc {height:128px}
 
 .login-form-group {padding-top: 25px;padding-bottom:50px}
 

@@ -248,19 +248,19 @@ angular.module('blockApp', ['ui.router'])
           "<fieldset ng-disabled=\"promoCreateDisable\">"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Promotion Name: </label>"+
-              "<input class=\"col-md-2\" name=\"promoName\" type=\"text\" ng-model=\"promo.name\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoName\" type=\"text\" ng-model=\"promo.name\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Business Benefits: </label>"+
-              "<input class=\"col-md-2\" name=\"promoBusinessBenefit\" type=\"text\" ng-model=\"promo.selectedBenefit\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoBusinessBenefit\" type=\"text\" ng-model=\"promo.selectedBenefit\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Customer Benefits: </label>"+
-              "<input class=\"col-md-2\" name=\"promoCustomerBenefit\" type=\"text\" ng-model=\"promo.benefit\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoCustomerBenefit\" type=\"text\" ng-model=\"promo.benefit\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Description: </label>"+
-              "<textarea class=\"col-md-2 interview-col-textarea\" name=\"promoLongDesc\" ng-model=\"promo.longDesc\"></textarea>"+
+              "<textarea id=\"textarea-desc\" class=\"col-md-2 interview-col-textarea\" name=\"promoLongDesc\" ng-model=\"promo.longDesc\"></textarea>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Terms and Conditions: </label>"+
@@ -268,33 +268,33 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
       				"<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-      				"<input class=\"col-md-2\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/>"+
+      				"<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/>"+
       			"</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Type: </label>"+
-              "<select ng-model=\"promo.ruleTyp\" class=\"col-md-2 text-center interview-col-select\"> "+
+              "<select ng-model=\"promo.ruleTyp\" class=\"col-md-2 text-center form-textBox interview-col-select\"> "+
                   "<option ng-repeat=\"r in promo.ruleTypes\">{{r.type}}</option>"+
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Specification: </label>"+
-              "<select ng-model=\"promo.ruleVal\" ng-disabled=\"!promo.ruleTyp\" class=\"col-md-2 text-center interview-col-select\">"+
+              "<select ng-model=\"promo.ruleVal\" ng-disabled=\"!promo.ruleTyp\" class=\"col-md-2 text-center form-textBox interview-col-select\">"+
                   "<option ng-repeat=\"r in promo.ruleValues | filter:promo.ruleTyp \">{{r.ruleValue}}</option>"+
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Reminder Notication Days: </label>"+
-              "<select class=\"col-md-2 text-center interview-col-select\" ng-model=\"promo.notificationDaysRemind\" "+
+              "<select class=\"col-md-2 text-center form-textBox interview-col-select\" ng-model=\"promo.notificationDaysRemind\" "+
                   "ng-options=\"reminder for reminder in promo.reminderList\">"+
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
-              "<select class=\"col-md-2 text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
+              "<select class=\"col-md-2 text-center form-textBox interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
                   "ng-options=\"deadline for deadline in promo.deadlineList\">"+
               "</select>"+
             "</div>"+
@@ -387,19 +387,19 @@ angular.module('blockApp', ['ui.router'])
           "<fieldset ng-disabled=\"promoUpdateDisable && promo.status != 'Approved'\" \">"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Promotion Name: </label>"+
-              "<input class=\"col-md-2 readonlyText\" name=\"promoName\" type=\"text\" ng-model=\"promo.name\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoName\" type=\"text\" ng-model=\"promo.name\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Business Benefits: </label>"+
-              "<input class=\"col-md-2 readonlyText\" name=\"promoBusinessBenefit\" type=\"text\" ng-model=\"promo.selectedBenefit\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoBusinessBenefit\" type=\"text\" ng-model=\"promo.selectedBenefit\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Customer Benefits: </label>"+
-              "<input class=\"col-md-2 readonlyText\" name=\"promoCustomerBenefit\" type=\"text\" ng-model=\"promo.benefit\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoCustomerBenefit\" type=\"text\" ng-model=\"promo.benefit\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Description: </label>"+
-              "<textarea class=\"col-md-2 readonlyText interview-col-textarea\" name=\"promoLongDesc\" ng-model=\"promo.longDesc\" disabled></textarea>"+
+              "<textarea id=\"textarea-desc\" class=\"col-md-2 readonlyText interview-col-textarea\" name=\"promoLongDesc\" ng-model=\"promo.longDesc\" disabled></textarea>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Terms and Conditions: </label>"+
@@ -407,33 +407,33 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
       				"<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-      				"<input class=\"col-md-2 readonlyText\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/ disabled>"+
+      				"<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/ disabled>"+
       			"</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2 readonlyText\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Type: </label>"+
-              "<select ng-model=\"promo.ruleTyp\" class=\"col-md-2 text-center interview-col-select\" disabled=\"true\"> "+
+              "<select ng-model=\"promo.ruleTyp\" class=\"col-md-2 form-textBox text-center interview-col-select\" disabled=\"true\"> "+
                   "<option ng-repeat=\"r in promo.ruleTypes\">{{r.type}}</option>"+
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Specification: </label>"+
-              "<select ng-model=\"promo.ruleVal\" class=\"col-md-2 text-center interview-col-select\" disabled=\"true\">"+
+              "<select ng-model=\"promo.ruleVal\" class=\"col-md-2 form-textBox text-center interview-col-select\" disabled=\"true\">"+
                   "<option ng-repeat=\"r in promo.ruleValues | filter:promo.ruleTyp \">{{r.ruleValue}}</option>"+
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Reminder Notication Days: </label>"+
-              "<select class=\"col-md-2 text-center interview-col-select\" ng-model=\"promo.notificationDaysRemind\" "+
+              "<select class=\"col-md-2 form-textBox text-center interview-col-select\" ng-model=\"promo.notificationDaysRemind\" "+
                   "ng-options=\"reminder for reminder in promo.reminderList\" disabled=\"true\">"+
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
-              "<select class=\"col-md-2 text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
+              "<select class=\"col-md-2 form-textBox text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
                   "ng-options=\"deadline for deadline in promo.deadlineList\" disabled=\"true\">"+
               "</select>"+
             "</div>"+
@@ -501,19 +501,19 @@ angular.module('blockApp', ['ui.router'])
         "<form id=\"reviewPromoForm\" action=\"\" name=\"reviewPromoForm\" class=\"form-font\" method=\"POST\">"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Promotion Name: </label>"+
-              "<input class=\"col-md-2\" name=\"promoName\" type=\"text\" ng-model=\"promo.name\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoName\" type=\"text\" ng-model=\"promo.name\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Business Benefits: </label>"+
-              "<input class=\"col-md-2\" name=\"promoBusinessBenefit\" type=\"text\" ng-model=\"promo.selectedBenefit\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoBusinessBenefit\" type=\"text\" ng-model=\"promo.selectedBenefit\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Customer Benefits: </label>"+
-              "<input class=\"col-md-2\" name=\"promoCustomerBenefit\" type=\"text\" ng-model=\"promo.benefit\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoCustomerBenefit\" type=\"text\" ng-model=\"promo.benefit\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Description: </label>"+
-              "<textarea class=\"col-md-2 interview-col-textarea\" name=\"promoLongDesc\" ng-model=\"promo.longDesc\"></textarea>"+
+              "<textarea id=\"textarea-desc\" class=\"col-md-2 interview-col-textarea\" name=\"promoLongDesc\" ng-model=\"promo.longDesc\"></textarea>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Terms and Conditions: </label>"+
@@ -521,33 +521,33 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-              "<input class=\"col-md-2\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Type: </label>"+
-              "<select ng-model=\"promo.ruleTyp\" class=\"col-md-2 text-center interview-col-select\"> "+
+              "<select ng-model=\"promo.ruleTyp\" class=\"col-md-2 form-textBox text-center interview-col-select\"> "+
                   "<option ng-repeat=\"r in promo.ruleTypes\">{{r.type}}</option>"+
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Specification: </label>"+
-              "<select ng-model=\"promo.ruleVal\" ng-disabled=\"!promo.ruleTyp\" class=\"col-md-2 text-center interview-col-select\">"+
+              "<select ng-model=\"promo.ruleVal\" ng-disabled=\"!promo.ruleTyp\" class=\"col-md-2 form-textBox text-center interview-col-select\">"+
                   "<option ng-repeat=\"r in promo.ruleValues | filter:promo.ruleTyp \">{{r.ruleValue}}</option>"+
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Reminder Notication Days: </label>"+
-              "<select class=\"col-md-2 text-center interview-col-select\" ng-model=\"promo.notificationDaysRemind\" "+
+              "<select class=\"col-md-2 form-textBox text-center interview-col-select\" ng-model=\"promo.notificationDaysRemind\" "+
                   "ng-options=\"reminder for reminder in promo.reminderList\">"+
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
-              "<select class=\"col-md-2 text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
+              "<select class=\"col-md-2 form-textBox text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
                   "ng-options=\"deadline for deadline in promo.deadlineList\">"+
               "</select>"+
             "</div>"+
@@ -598,19 +598,19 @@ angular.module('blockApp', ['ui.router'])
           "<fieldset ng-disabled=\"promoApplyDisable\">"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Customer Name: </label>"+
-              "<input class=\"col-md-2 readonlyText\" name=\"customerName\" type=\"text\" ng-model=\"promo.customerName\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"customerName\" type=\"text\" ng-model=\"promo.customerName\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Customer Billing Information: </label>"+
-              "<input class=\"col-md-2 readonlyText\" name=\"customerBilling\" type=\"text\" ng-model=\"promo.customerBilling\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"customerBilling\" type=\"text\" ng-model=\"promo.customerBilling\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Promotion Name: </label>"+
-              "<input class=\"col-md-2 readonlyText\" name=\"promoName\" type=\"text\" ng-model=\"promo.name\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoName\" type=\"text\" ng-model=\"promo.name\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Description: </label>"+
-              "<textarea class=\"col-md-2 readonlyText interview-col-textarea\" name=\"promoLongDesc\" ng-model=\"promo.longDesc\" disabled></textarea>"+
+              "<textarea id=\"textarea-desc\" class=\"col-md-2 readonlyText interview-col-textarea\" name=\"promoLongDesc\" ng-model=\"promo.longDesc\" disabled></textarea>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Terms and Conditions: </label>"+
@@ -618,21 +618,21 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-              "<input class=\"col-md-2 readonlyText\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2 readonlyText\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
-              "<select class=\"col-md-2 text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
+              "<select class=\"col-md-2 form-textBox text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
                   "ng-options=\"deadline for deadline in promo.deadlineList\" disabled=\"true\">"+
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Post Promotion Customer Billing Information: </label>"+
-              "<input class=\"col-md-2 readonlyText\" name=\"postPromoBilling\" type=\"text\" ng-model=\"promo.postPromoBilling\"/ disabled>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"postPromoBilling\" type=\"text\" ng-model=\"promo.postPromoBilling\"/ disabled>"+
             "</div>"+
           "<div class=\"row text-center interview-row-submit\">"+
             "<button type=\"button\" id=\"{{buttonDisable}}\" class=\"menu-btn-group btn approval-form\" data-toggle=\"modal\" data-target=\"#applyModal\" "+
