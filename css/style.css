@@ -67,6 +67,8 @@ textarea, select, input, button { outline: none; }
   box-shadow:none;font-family:Verdana;font-weight:bold;padding-right:0px
 }
 
+#login-button-pw-line {padding-left:10px}
+
 .login-userType {text-align: center;margin-top:35px;color:#685277;font-family:Verdana}
 
 .landing-page-title {margin-top:40px}
@@ -90,7 +92,7 @@ textarea, select, input, button { outline: none; }
 .deny-modal-content {background-color:#00A9DE}
 
 #new_user_btn {
-  float:left;color:grey;background-color:transparent;border-color:transparent;
+  float:left;color:#bebbc3;background-color:transparent;border-color:transparent;
   box-shadow:none;font-family:Verdana;font-weight:bold
 }
 

@@ -35,7 +35,7 @@ angular.module('blockApp', ['ui.router'])
         					"</div>"+
         				"</div>"+
         				"<div class=\"login-form-group\">"+
-        					"<div class=\"form-horizontal col-sm-12\">"+
+        					"<div id\"login-button-pw-line\" class=\"form-horizontal col-sm-12\">"+
         						"<button type=\"button\" ng-click=\"logUser()\" class=\"btn btn-primary login-btn\">"+
         							"Login"+
         						"</button>"+
