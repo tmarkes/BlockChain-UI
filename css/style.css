@@ -24,8 +24,8 @@
 .customer-msg-text {text-align:center;font-size:x-large}
 
 .approval-form {
-  float:right;color:white;background-color:#bebbc3;border-color:transparent;
-  box-shadow:none;font-family:Verdana;font-weight:bold;
+  float:right;color:white;font-size:16px;background-color:#39B9E2;
+  border-color:transparent;width:35%;border-radius:50px;font-weight:bold
 }
 
 .font-normal {font-size:19px}
@@ -60,7 +60,10 @@
 
 .link {color:blue}
 
-.login-btn {font-size:16px;background-color:#39B9E2;border-color:transparent;width:35%;border-radius:50px}
+.login-btn {
+  font-size:16px;background-color:#39B9E2;border-color:transparent;
+  width:35%;border-radius:50px
+}
 
 .login-field {
   background-color:#F3F3F3;border: 0px solid #ccc;
