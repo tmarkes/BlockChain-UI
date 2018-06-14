@@ -9,7 +9,7 @@ angular.module('blockApp', ['ui.router'])
 
   $stateProvider
       .state('login', {
-        url: "/loginSpecial",
+        url: "/",
         controller: "LoginCtrl",
         template: "<div><div class=\"sign-in-screen\">"+
         "<div class=\"row\">"+
@@ -24,13 +24,13 @@ angular.module('blockApp', ['ui.router'])
         			"<form role=\"form\">"+
         				"<div class=\"login-form-group-input\">"+
         					"<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
-        					"<div class=\"col-sm-11\">"+
+        					"<div class=\"col-sm-10\">"+
         						"<input type=\"email\" ng-model=\"login.associate\" class=\"login-field\" required>"+
         					"</div>"+
         				"</div>"+
                 "<div class=\"login-form-group-input\">"+
         					"<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
-        					"<div class=\"col-sm-11\">"+
+        					"<div class=\"col-sm-10\">"+
         						"<input type=\"password\" ng-model=\"login.associatePW\" class=\"login-field\" required>"+
         					"</div>"+
         				"</div>"+
@@ -63,13 +63,13 @@ angular.module('blockApp', ['ui.router'])
                 "<form role=\"form\">"+
                   "<div class=\"login-form-group-input\">"+
                     "<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
-                    "<div class=\"col-sm-11\">"+
+                    "<div class=\"col-sm-10\">"+
                       "<input type=\"email\" ng-model=\"login.director\" class=\"login-field\" required>"+
                     "</div>"+
                   "</div>"+
                   "<div class=\"login-form-group-input\">"+
                     "<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
-                    "<div class=\"col-sm-11\">"+
+                    "<div class=\"col-sm-10\">"+
                       "<input type=\"password\" ng-model=\"login.directorPW\" class=\"login-field\" required>"+
                     "</div>"+
                   "</div>"+
@@ -89,7 +89,7 @@ angular.module('blockApp', ['ui.router'])
               "</div>"+
             "</div>"+
             "</div>"+
-            "<div class=\"sign-in-screen\">"+
+            "<div class=\"sign-in-screen\" style=\"margin-right:0px\" >"+
             "<div class=\"row\">"+
             "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
             "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
@@ -102,13 +102,13 @@ angular.module('blockApp', ['ui.router'])
                   "<form role=\"form\">"+
                   "<div class=\"login-form-group-input\">"+
                       "<img class=\"login-image\" src=\"resources/static/User_pic.JPG\" />"+
-                      "<div class=\"col-sm-11\">"+
+                      "<div class=\"col-sm-10\">"+
                         "<input type=\"email\" ng-model=\"login.customer\" class=\"login-field\" required>"+
                       "</div>"+
                     "</div>"+
                     "<div class=\"login-form-group-input\">"+
                       "<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
-                      "<div class=\"col-sm-11\">"+
+                      "<div class=\"col-sm-10\">"+
                         "<input type=\"password\" ng-model=\"login.customerPW\" class=\"login-field\" required>"+
                       "</div>"+
                     "</div>"+
@@ -126,10 +126,18 @@ angular.module('blockApp', ['ui.router'])
                   "</form>"+
                   "<div class=\"col-sm-10 login-newUser-line\">"+
                       "<button type=\"button\" class=\"btn new_user_btn\">Register Now</button>"+
-                    "</div>"+
+                  "</div>"+
                 "</div>"+
+                "<div id=\"viewCusStatusDiv\" ><button type=\"button\" ng-click=\"ng-click=\"logCustomerSuccess(promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+                "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
+                "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary viewStatus-btn\">"+
+                  "View Customer Status"+
+                "</button></div>"+
               "</div>"+
-          "</div></div>"
+          "</div>"+
+          "<div id=\"viewCustomerStatus-line\">"+
+          "</div>"+
+          "</div>"
       })
       .state('loginDirector', {
         url: "/login/director",
@@ -175,7 +183,7 @@ angular.module('blockApp', ['ui.router'])
           "</div>"
       })
       .state('loginAssociate', {
-        url: "/",
+        url: "/login/associate",
         controller: "LoginAssociateCtrl",
         template: "<div id=\"sign-in-screen\">"+
         "<div class=\"row\">"+
@@ -1384,6 +1392,18 @@ angular.module('blockApp', ['ui.router'])
       promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
       promoEnrollment, postPromoBilling ) {
         $state.go("customerAppliesForPromo", { promoId : promoId, promoName : promoName,
+          customerName : customerName, promoDesc : promoDesc,
+          promoTerms : promoTerms, promoStartDate : promoStart,
+          promoEndDate : promoEnd, customerBilling : customerBilling,
+          promoReminder : promoReminder, promoEnrollment : promoEnrollment,
+          postPromoBilling : postPromoBilling }
+        );
+    }
+
+    $scope.logCustomerSuccess = function( promoId, customerName, customerBilling, promoName,
+      promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
+      promoEnrollment, postPromoBilling ) {
+        $state.go("customerBillingSuccess", { promoId : promoId, promoName : promoName,
           customerName : customerName, promoDesc : promoDesc,
           promoTerms : promoTerms, promoStartDate : promoStart,
           promoEndDate : promoEnd, customerBilling : customerBilling,

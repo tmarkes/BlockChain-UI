@@ -72,6 +72,13 @@
   width:35%;border-radius:50px
 }
 
+.viewStatus-btn {
+  font-size:16px;background-color:#39B9E2;border-color:transparent;
+  border-radius:50px
+}
+
+#viewCusStatusDiv {padding-top:30px;padding-left:75px}
+
 .login-field {
   background-color:#F3F3F3;border: 0px solid #ccc;
   color:#685277;font-family:Verdana;width:100%;height:auto;padding: 6px 12px
@@ -100,6 +107,8 @@ textarea, select, input, button { outline: none; }
 #login-button-pw-line {padding-left:10px}
 
 #login-newUser-line {padding-top:30px}
+
+#viewCustomerStatus-line {padding-top:30px;float:right}
 
 .login-button-pw-line {padding-left:10px}
 
@@ -153,7 +162,7 @@ textarea, select, input, button { outline: none; }
 
 #sign-in-screen {width:35%;margin: 0 auto;}
 
-.sign-in-screen {width:35%;float:left}
+.sign-in-screen {width:29%;float:left;margin-right:70px}
 
 .subtitle-normal {color:#13a9f0;width:60%;margin-top:40px}
 
