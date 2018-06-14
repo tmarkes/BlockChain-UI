@@ -73,7 +73,9 @@
 
 .modal-body {color:white}
 
-.modal-color {background-color: #ececec;}
+.modal-color {background-color: #ececec}
+
+.modal-color-login {background-color: #F3F3F3}
 
 .modal-content {background-color: deepskyblue}
 

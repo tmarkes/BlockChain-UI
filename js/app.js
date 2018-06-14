@@ -16,7 +16,7 @@ angular.module('blockApp', ['ui.router'])
         "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
         "</div>"+
-        "<div class=\"row modal-color\">"+
+        "<div class=\"row modal-color-login\">"+
         		"<div class=\"col-md-12\">"+
               "<div class=\"row\">"+
                 "<p class=\"login-userType\">Marketing Director Sign-In</p>"+
@@ -59,7 +59,7 @@ angular.module('blockApp', ['ui.router'])
         "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/associate_company_logo.png\" class=\"company-icon-login\" />"+
         "</div>"+
-        "<div class=\"row modal-color\">"+
+        "<div class=\"row modal-color-login\">"+
         		"<div class=\"col-md-12\">"+
               "<div class=\"row\">"+
                 "<p class=\"login-userType\">Marketing Associate Sign-In</p>"+
@@ -102,7 +102,7 @@ angular.module('blockApp', ['ui.router'])
         "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
         "</div>"+
-        "<div class=\"row modal-color\">"+
+        "<div class=\"row modal-color-login\">"+
         		"<div class=\"col-md-12\">"+
               "<div class=\"row\">"+
                 "<p class=\"login-userType\">Customer Sign-In</p>"+
@@ -147,7 +147,7 @@ angular.module('blockApp', ['ui.router'])
         "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
         "</div>"+
-        "<div class=\"row modal-color\">"+
+        "<div class=\"row modal-color-login\">"+
             "<div class=\"col-md-12\">"+
               "<div class=\"row\">"+
                 "<p class=\"login-userType\">Customer Sign-In</p>"+
@@ -192,7 +192,7 @@ angular.module('blockApp', ['ui.router'])
         "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal\" />"+
         "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
         "</div>"+
-        "<div class=\"row modal-color\">"+
+        "<div class=\"row modal-color-login\">"+
             "<div class=\"col-md-12\">"+
               "<div class=\"row\">"+
                 "<p class=\"login-userType\">Customer Sign-In</p>"+
