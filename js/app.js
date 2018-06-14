@@ -31,7 +31,7 @@ angular.module('blockApp', ['ui.router'])
         				"<div class=\"login-form-group\">"+
         					"<img class=\"login-image\" src=\"resources/static/Password_pic.JPG\" />"+
         					"<div class=\"col-sm-10\">"+
-        						"<input type=\"password\" ng-model=\"login.password\" class=\"form-control login-field\" required>"+
+        						"<input type=\"password\" ng-model=\"login.password\" class=\"login-field\" required>"+
         					"</div>"+
         				"</div>"+
         				"<div class=\"login-form-group\">"+
