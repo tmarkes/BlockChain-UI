@@ -24,8 +24,8 @@
 .customer-msg-text {text-align:center;font-size:x-large}
 
 .approval-form {
-  float:right;color:#bebbc3;background-color:transparent;border-color:transparent;
-  box-shadow:none;font-family:Verdana;font-weight:bold;color:white
+  float:right;color:white;background-color:#bebbc3;border-color:transparent;
+  box-shadow:none;font-family:Verdana;font-weight:bold;
 }
 
 .font-normal {font-size:19px}
