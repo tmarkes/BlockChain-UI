@@ -391,11 +391,11 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
       				"<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-      				"<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"text\" datetime=\"MM/DD/YYYY\" ng-model=\"promo.startDate\"/>"+
+      				"<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"date\" datetime=\"MM/DD/YYYY\" ng-model=\"promo.startDate\"/>"+
       			"</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"text\" datetime=\"MM/DD/YYYY\" ng-model=\"promo.endDate\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"date\" datetime=\"MM/DD/YYYY\" ng-model=\"promo.endDate\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Type: </label>"+
