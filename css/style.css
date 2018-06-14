@@ -17,6 +17,8 @@
 
 .company-icon-not-login {width:80px;height:auto}
 
+.companyDir-icon-not-login {width:65px;height:auto}
+
 .customer-menu {padding: 40px;font-weight:bold;margin:0px auto;margin-top:100px;width:80%}
 
 .customer-msg-text {text-align:center;font-size:x-large}
@@ -25,7 +27,7 @@
 
 .font-normal {font-size:19px}
 
-.form-textBox {width:20%}
+.form-textBox {width:25%}
 
 .form-font {font-size:18px}
 
@@ -51,7 +53,7 @@
 
 .interview-row-submit {background-color: white;padding-top: 20px;border-top: 0px}
 
-.interview-col-textarea {width:20%}
+.interview-col-textarea {width:25%}
 
 .link {color:blue}
 

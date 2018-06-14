@@ -336,7 +336,7 @@ angular.module('blockApp', ['ui.router'])
             "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
             "<img src=\"resources/static/director_profile_picture.png\" class=\"header-profile-pic\" />"+
             "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
-            "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-not-login\" />"+
+            "<img src=\"resources/static/`director_company_logo`.png\" class=\"companyDir-icon-not-login\" />"+
           "</div>"+
         "</div>"+
       "</div>"+
@@ -378,7 +378,7 @@ angular.module('blockApp', ['ui.router'])
             "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
             "<img src=\"resources/static/director_profile_picture.png\" class=\"header-profile-pic\" />"+
             "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
-            "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-not-login\" />"+
+            "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
           "</div>"+
         "</div>"+
       "</div>"+
@@ -493,7 +493,7 @@ angular.module('blockApp', ['ui.router'])
               "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
               "<img src=\"resources/static/director_profile_picture.png\" class=\"header-profile-pic\" />"+
               "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
-              "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-not-login\" />"+
+              "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
             "</div>"+
           "</div>"+
         "</div>"+
@@ -589,7 +589,7 @@ angular.module('blockApp', ['ui.router'])
               "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
               "<img src=\"resources/static/customer_profile_picture.png\" class=\"header-profile-pic\" />"+
               "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
-              "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-not-login\" />"+
+              "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
             "</div>"+
           "</div>"+
         "</div>"+
@@ -671,7 +671,7 @@ angular.module('blockApp', ['ui.router'])
             "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
             "<img src=\"resources/static/customer_profile_picture.png\" class=\"header-profile-pic\" />"+
             "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
-            "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-not-login\" />"+
+            "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
           "</div>"+
         "</div>"+
       "</div>"+
@@ -704,7 +704,7 @@ angular.module('blockApp', ['ui.router'])
             "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
             "<img src=\"resources/static/customer_profile_picture.png\" class=\"header-profile-pic\" />"+
             "<img src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
-            "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-not-login\" />"+
+            "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
           "</div>"+
         "</div>"+
       "</div>"+
