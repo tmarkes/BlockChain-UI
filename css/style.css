@@ -89,7 +89,10 @@ textarea, select, input, button { outline: none; }
 
 .deny-modal-content {background-color:#00A9DE}
 
-#new_user_btn {float:left;color:grey;background-color:transparent;border-color:transparent;box-shadow:none}
+#new_user_btn {
+  float:left;color:grey;background-color:transparent;border-color:transparent;
+  box-shadow:none;font-family:Verdana;font-weight:bold
+}
 
 .paragraph-text {margin-top:10px;color:#13a9f0}
 
