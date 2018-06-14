@@ -911,6 +911,9 @@ angular.module('blockApp', ['ui.router'])
         role: 'Marketing Director'
       };
 
+      console.log( "Coming in Date: "+$stateParams.promoStartDate);
+      console.log( "My Date: "+new Date($stateParams.promoStartDate).toString());
+
       $scope.promo = {
         id: $stateParams.promoId,
         name: $stateParams.promoName,
