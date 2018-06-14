@@ -912,7 +912,7 @@ angular.module('blockApp', ['ui.router'])
       };
 
       console.log( "Coming in Date: "+$stateParams.promoStartDate);
-      console.log( "My Date: "+new Date($stateParams.promoStartDate).toString());
+      console.log( "My Date: "+new Date(Date.parse($stateParams.promoStartDate)).toString());
 
       $scope.promo = {
         id: $stateParams.promoId,
@@ -920,8 +920,8 @@ angular.module('blockApp', ['ui.router'])
         selectedBenefit: $stateParams.promoBenefit,
         longDesc: $stateParams.promoDesc,
         selectedTC: $stateParams.promoTerms,
-        startDate: $stateParams.promoStartDate,
-        endDate: $stateParams.promoEndDate,
+        startDate: new Date(Date.parse($stateParams.promoStartDate)),
+        endDate: new Date(Date.parse($stateParams.promoEndDate)),
         ruleTyp: $stateParams.promoRuleTyp,
         ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
         ruleVal: $stateParams.promoRuleVal,
@@ -1015,8 +1015,8 @@ angular.module('blockApp', ['ui.router'])
       selectedBenefit: $stateParams.promoBenefit,
       longDesc: $stateParams.promoDesc,
       selectedTC: $stateParams.promoTerms,
-      startDate: $stateParams.promoStartDate,
-      endDate: $stateParams.promoEndDate,
+      startDate: new Date($stateParams.promoStartDate),
+      endDate: new Date($stateParams.promoEndDate),
       ruleTyp: $stateParams.promoRuleTyp,
       ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
       ruleVal: $stateParams.promoRuleVal,
@@ -1085,8 +1085,8 @@ angular.module('blockApp', ['ui.router'])
         postPromoBilling: $stateParams.postPromoBilling,
         longDesc: $stateParams.promoDesc,
         selectedTC: $stateParams.promoTerms,
-        startDate: $stateParams.promoStartDate,
-        endDate: $stateParams.promoEndDate,
+        startDate: new Date($stateParams.promoStartDate),
+        endDate: new Date($stateParams.promoEndDate),
         enrollmentDeadline: $stateParams.promoEnrollment,
         deadlineList: [ "5", "10", "15" ],
       };
@@ -1236,8 +1236,8 @@ angular.module('blockApp', ['ui.router'])
           customerBilling: '$30 per month',
           longDesc: data["data"][0]["data"].promoLongDescription,
           selectedTC: data["data"][0]["data"].tc,
-          startDate: data["data"][0]["data"].startDate,
-          endDate: data["data"][0]["data"].endDate,
+          startDate: new Date(data["data"][0]["data"].startDate),
+          endDate: new Date(data["data"][0]["data"].endDate),
           notificationDaysRemind: data["data"][0]["data"].reminderNotificationDays,
           reminderList: [ "5", "10", "15" ],
           enrollmentDeadline: data["data"][0]["data"].enrollmentDeadlineDays,
@@ -1357,8 +1357,8 @@ angular.module('blockApp', ['ui.router'])
           customerBilling: '$30 per month',
           longDesc: data["data"][0]["data"].promoLongDescription,
           selectedTC: data["data"][0]["data"].tc,
-          startDate: data["data"][0]["data"].startDate,
-          endDate: data["data"][0]["data"].endDate,
+          startDate: new Date(data["data"][0]["data"].startDate),
+          endDate: new Date(data["data"][0]["data"].endDate),
           notificationDaysRemind: data["data"][0]["data"].reminderNotificationDays,
           reminderList: [ "5", "10", "15" ],
           enrollmentDeadline: data["data"][0]["data"].enrollmentDeadlineDays,
