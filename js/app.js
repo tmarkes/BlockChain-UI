@@ -238,6 +238,7 @@ angular.module('blockApp', ['ui.router'])
             "<div style=\"float:right\">"+
               "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
               "<img src=\"resources/static/associate_profile_picture.png\" class=\"header-profile-pic\" />"+
+              "<img src=\"resources/static/logout_icon.png\" class=\"header-profile-pic\" />"+
             	"<img src=\"resources/static/associate_company_logo.png\" class=\"company-icon-not-login\" />"+
             "</div>"+
           "</div>"+
