@@ -9,7 +9,7 @@ angular.module('blockApp', ['ui.router'])
 
   $stateProvider
       .state('login', {
-        url: "/",
+        url: "/loginSpecial",
         controller: "LoginCtrl",
         template: "<div><div class=\"sign-in-screen\">"+
         "<div class=\"row\">"+
@@ -175,7 +175,7 @@ angular.module('blockApp', ['ui.router'])
           "</div>"
       })
       .state('loginAssociate', {
-        url: "/login/associate",
+        url: "/",
         controller: "LoginAssociateCtrl",
         template: "<div id=\"sign-in-screen\">"+
         "<div class=\"row\">"+
@@ -421,8 +421,8 @@ angular.module('blockApp', ['ui.router'])
                   "ng-options=\"deadline for deadline in promo.deadlineList\">"+
               "</select>"+
             "</div>"+
-          "<div class=\"row text-center interview-row-submit\">"+
-            "<button type=\"button\" id=\"{{buttonDisable}}\" class=\"menu-btn-group btn approval-form\" data-toggle=\"modal\" data-target=\"#createModal\" "+
+          "<div class=\"row text-center interview-row-submitApproval\">"+
+            "<button type=\"button\" id=\"{{buttonDisable}}\" class=\"menu-btn-group btn submit-approval-form\" data-toggle=\"modal\" data-target=\"#createModal\" "+
             "ng-click=\"goSubmit( promo.id, promo.name, promo.selectedBenefit, promo.longDesc, promo.selectedTC, "+
               "promo.startDate, promo.endDate, promo.ruleTyp, promo.ruleVal, promo.notificationDaysRemind, promo.enrollmentDeadline, "+
               "promo.status, promo.benefit )\">Submit for Approval</button>"+
@@ -755,8 +755,8 @@ angular.module('blockApp', ['ui.router'])
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Post Promotion Customer Billing Information: </label>"+
               "<input class=\"col-md-2 form-textBox readonlyText\" name=\"postPromoBilling\" type=\"text\" ng-model=\"promo.postPromoBilling\"/ disabled>"+
             "</div>"+
-          "<div class=\"row text-center interview-row-submit\">"+
-            "<button type=\"button\" id=\"{{buttonDisable}}\" class=\"menu-btn-group btn approval-form\" data-toggle=\"modal\" data-target=\"#applyModal\" "+
+          "<div class=\"row text-center interview-row-submitApproval\">"+
+            "<button type=\"button\" id=\"{{buttonDisable}}\" class=\"menu-btn-group btn submit-approval-form\" data-toggle=\"modal\" data-target=\"#applyModal\" "+
             "ng-click=\"goApply( promo.id, promo.customerName, promo.customerBilling, promo.name, promo.longDesc, promo.selectedTC, "+
             "promo.startDate, promo.endDate, promo.enrollmentDeadline, promo.postPromoBilling )\">Apply for Promotion</button>"+
             "<div class=\"modal fade\" id=\"applyModal\" tabindex=\"-1\" role=\"dialog\">"+
