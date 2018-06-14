@@ -1190,14 +1190,15 @@ angular.module('blockApp', ['ui.router'])
             "\"promoLongDescription\" : \""+promoDesc+"\", "+
             "\"businessBenefit\" : \""+promoBenefit+"\", "+
             "\"tc\" : \""+promoTerms+"\", "+
-            "\"startDate\" : \""+promoStart+"\", "+
-            "\"endDate\" : \""+promoEnd+"\", "+
+            "\"startDate\" : \""+promoStart.value+"\", "+
+            "\"endDate\" : \""+promoEnd.value+"\", "+
             "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
             "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
             "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
             "\"benefit\" : \""+promoCusBenefit+"\", "+
             "\"status\" : \""+promoStatus+"\" "+
           "}";
+          console.log(postData);
           $http.post('/create/promotion', postData)
           .then(function (data) {
             $scope.promo.id = data["data"]["hash"];
