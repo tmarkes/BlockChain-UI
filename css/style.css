@@ -49,10 +49,10 @@
 
 .link {color:blue}
 
-.login-btn {background-color:#39B9E2;border-color:transparent;width:35%;border-radius:50px}
+.login-btn {font-size:16px;background-color:#39B9E2;border-color:transparent;width:35%;border-radius:50px}
 
 .login-field {
-  background-color:#F3F3F3;border: 0px solid #ccc;border-bottom: 0.25px solid #685277;
+  background-color:#F3F3F3;border: 0px solid #ccc;
   color:#685277;font-family:Verdana;width:100%;height:auto;padding: 6px 12px
 }
 
@@ -60,7 +60,7 @@ textarea, select, input, button { outline: none; }
 
 .login-form-group {padding-top: 25px;padding-bottom:50px}
 
-.login-form-group-input {padding-top: 25px;padding-bottom:50px}
+.login-form-group-input {padding-top: 25px;padding-bottom:50px;border-bottom: 0.25px solid #685277}
 
 .login-image {float:left}
 
