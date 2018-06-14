@@ -1105,7 +1105,7 @@ angular.module('blockApp', ['ui.router'])
         });
       }
   })
-  .controller("PromoApplyCtrl", function($scope, $state, $stateParams) {
+  .controller("PromoApplyCtrl", function($scope, $state, $http, $stateParams) {
       $scope.promoApplyDisable = false;
       $scope.user = {
         name: $stateParams.customerName,
@@ -1127,7 +1127,7 @@ angular.module('blockApp', ['ui.router'])
           "\"hashCode\" : \""+$stateParams.promoId+"\" "+
         "}";
       }
-
+      console.log(putData);
       $http.put('/retrieve/promotionByHashCode', putData)
       .then(function (data) {
         $scope.promo = {
@@ -1137,8 +1137,8 @@ angular.module('blockApp', ['ui.router'])
           customerBilling: '$35 per month',
           longDesc: data["data"]["data"].promoLongDescription,
           selectedTC: data["data"]["data"].tc,
-          startDate: new Date(data["data"]["data"].startDate),
-          endDate: new Date(data["data"]["data"].endDate),
+          startDate: data["data"]["data"].startDate,
+          endDate: data["data"]["data"].endDate,
           enrollmentDeadline: data["data"]["data"].enrollmentDeadlineDays,
           deadlineList: [ "5", "10", "15" ],
           postPromoBilling: data["data"]["data"].benefit
@@ -1173,7 +1173,7 @@ angular.module('blockApp', ['ui.router'])
         // Submit Service Call
       }
   })
-  .controller("PromotionAcceptedCtrl", function($scope, $state, $stateParams) {
+  .controller("PromotionAcceptedCtrl", function($scope, $state, $http, $stateParams) {
       $scope.user = {
         name: $stateParams.customerName,
         role: 'Customer'
@@ -1183,6 +1183,37 @@ angular.module('blockApp', ['ui.router'])
         $state.go("login");
       }
 
+      var putData = '';
+
+      if( $stateParams.passwordPromoId != 'Revenue' ) {
+        putData = "{ "+
+          "\"hashCode\" : \""+$stateParams.passwordPromoId+"\" "+
+        "}";
+      } else {
+        putData = "{ "+
+          "\"hashCode\" : \""+$stateParams.promoId+"\" "+
+        "}";
+      }
+      console.log(putData);
+      $http.put('/retrieve/promotionByHashCode', putData)
+      .then(function (data) {
+        $scope.promo = {
+          id: data["data"]["hash"],
+          name: data["data"]["data"].promoName,
+          customerName: $stateParams.customerName,
+          customerBilling: '$35 per month',
+          longDesc: data["data"]["data"].promoLongDescription,
+          selectedTC: data["data"]["data"].tc,
+          startDate: data["data"]["data"].startDate,
+          endDate: data["data"]["data"].endDate,
+          enrollmentDeadline: data["data"]["data"].enrollmentDeadlineDays,
+          deadlineList: [ "5", "10", "15" ],
+          postPromoBilling: data["data"]["data"].benefit
+        };
+      }).catch(function(error) {
+        console.log(error);
+      });
+/*
       $scope.promo = {
         id: $stateParams.promoId,
         name: $stateParams.promoName,
@@ -1196,6 +1227,7 @@ angular.module('blockApp', ['ui.router'])
         enrollmentDeadline: $stateParams.promoEnrollment,
         deadlineList: [ "5", "10", "15" ],
       };
+      */
   })
   .controller("PromotionRejectedCtrl", function($scope, $state, $stateParams) {
       $scope.user = {
