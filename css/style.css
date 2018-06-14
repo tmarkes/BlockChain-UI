@@ -75,7 +75,7 @@
 
 .modal-color {background-color: #ececec}
 
-.modal-color-login {background-color: #F3F3F3}
+.modal-color-login {background-color: #F3F3F3;border-radius:4%}
 
 .modal-content {background-color: deepskyblue}
 
