@@ -62,7 +62,7 @@ textarea, select, input, button { outline: none; }
 
 .login-form-group-input {padding-top: 25px;padding-bottom:50px;border-bottom: 0.25px solid #685277}
 
-.login-image {float:left}
+.login-image {float:left;display:block}
 
 #login_lost_btn {
   float:right;color:#bebbc3;background-color:transparent;border-color:transparent;
