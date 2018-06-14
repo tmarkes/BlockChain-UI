@@ -53,7 +53,7 @@
 
 .login-field {
   background-color:#F3F3F3;border: 0px solid #ccc;border-bottom: 1px solid grey;
-  color:#685277;font-family:Verdana;width:100%;height:auto;
+  color:#685277;font-family:Verdana;width:100%;height:auto;padding: 6px 12px
 }
 
 .login-form-group {padding-top: 25px;margin-bottom:50px}
