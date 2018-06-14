@@ -387,7 +387,9 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Customer Benefits: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoCustomerBenefit\" type=\"text\" ng-model=\"promo.benefit\"/>"+
+              "<select class=\"col-md-2 text-center form-textBox interview-col-select\" ng-model=\"promo.benefit\" "+
+                  "ng-options=\"benefit for benefit in promo.benefitList\">"+
+              "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Description: </label>"+
@@ -640,7 +642,9 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Customer Benefits: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoCustomerBenefit\" type=\"text\" ng-model=\"promo.benefit\"/>"+
+              "<select class=\"col-md-2 text-center form-textBox interview-col-select\" ng-model=\"promo.benefit\" "+
+                  "ng-options=\"benefit for benefit in promo.benefitList\">"+
+              "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Description: </label>"+
@@ -1035,6 +1039,8 @@ angular.module('blockApp', ['ui.router'])
       selectedTC: $stateParams.promoTerms,
       startDate: startEnterDate,
       endDate: endEnterDate,
+      benefitList: [ "$5 discount per month", "$10 discount per month",
+        "$50 one-time discount", "$100 one-time discount" ],
       ruleTyp: $stateParams.promoRuleTyp,
       ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
       ruleVal: $stateParams.promoRuleVal,
@@ -1087,9 +1093,8 @@ angular.module('blockApp', ['ui.router'])
         $http.post('/update/promotion', postData)
         .then(function (data) {
           $scope.promo.id = data["data"]["hash"];
-          console.log( data["data"] );
-        //  $scope.promo.startDate = data["data"][0]["startDate"];
-        //  $scope.promo.endDate = data["data"][0]["endDate"];
+          $scope.promo.startDate = data["data"]["startDate"];
+          $scope.promo.endDate = data["data"]["endDate"];
         }).catch(function(error) {
           console.log(error);
         });
@@ -1178,6 +1183,8 @@ angular.module('blockApp', ['ui.router'])
       }
 
       $scope.promo = {
+        benefitList: [ "$5 discount per month", "$10 discount per month",
+          "$50 one-time discount", "$100 one-time discount" ],
         ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
         ruleValues: [
           { ruleType: "Rate_Plan", ruleValue: "TMO_One" },
@@ -1207,6 +1214,8 @@ angular.module('blockApp', ['ui.router'])
             endDate: "",
             ruleTyp: "",
             ruleVal: "",
+            benefitList: [ "$5 discount per month", "$10 discount per month",
+              "$50 one-time discount", "$100 one-time discount" ],
             ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
             ruleValues: [
               { ruleType: "Rate_Plan", ruleValue: "TMO_One" },
