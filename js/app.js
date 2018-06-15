@@ -205,10 +205,8 @@ angular.module('blockApp', ['ui.router'])
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
-              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
-              "<select class=\"col-md-2 text-center form-textBox interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
-                  "ng-options=\"deadline for deadline in promo.deadlineList\">"+
-              "</select>"+
+              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEnrollment\" type=\"date\" ng-model=\"promo.enrollmentDeadline\"/>"+
             "</div>"+
           "<div class=\"row text-center interview-row-submitApproval\">"+
             "<button type=\"button\" id=\"{{buttonDisable}}\" class=\"menu-btn-group btn submit-approval-form\" data-toggle=\"modal\" data-target=\"#createModal\" "+
@@ -344,10 +342,8 @@ angular.module('blockApp', ['ui.router'])
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
-              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
-              "<select class=\"col-md-2 form-textBox text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
-                  "ng-options=\"deadline for deadline in promo.deadlineList\" disabled=\"true\">"+
-              "</select>"+
+              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
+              "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoEnrollment\" type=\"text\" ng-model=\"promo.enrollmentDeadline\"/ disabled>"+
             "</div>"+
           "<div class=\"row text-center interview-row-submit\">"+
             "<button ng-hide=\"promo.status != 'Approved'\" class=\"menu-btn-group btn approval-form\" type=\"button\" ng-click=\"logUser()\">Go Back</button>"+
@@ -460,10 +456,8 @@ angular.module('blockApp', ['ui.router'])
               "</select>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
-              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
-              "<select class=\"col-md-2 form-textBox text-center interview-col-select\" ng-model=\"promo.enrollmentDeadline\" "+
-                  "ng-options=\"deadline for deadline in promo.deadlineList\">"+
-              "</select>"+
+              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEnrollment\" type=\"date\" ng-model=\"promo.enrollmentDeadline\"/>"+
             "</div>"+
           "<div class=\"row text-center interview-row-submit\">"+
           "<button type=\"button\" ng-click=\"goSave( promo.id, promo.name, promo.selectedBenefit, promo.longDesc, promo.selectedTC, "+
@@ -539,7 +533,7 @@ angular.module('blockApp', ['ui.router'])
               "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoEndDate\" type=\"text\" ng-model=\"promo.endDate\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
-              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Days: </label>"+
+              "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
               "<input class=\"col-md-2 form-textBox readonlyText\" name=\"promoEnrollment\" type=\"text\" ng-model=\"promo.enrollmentDeadline\"/ disabled>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
@@ -730,7 +724,6 @@ angular.module('blockApp', ['ui.router'])
         reminderList: [ "5", "10", "15" ],
         enrollmentDeadline: $stateParams.promoEnrollment,
         benefit: $stateParams.promoCusBenefit,
-        deadlineList: [ "5", "10", "15" ],
         status: $stateParams.promoStatus
       };
 
@@ -747,7 +740,7 @@ angular.module('blockApp', ['ui.router'])
             "\"endDate\" : \""+new Date(promoEnd).toDateString()+"\", "+
             "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
             "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
-            "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
+            "\"enrollmentDeadlineDays\" : \""+new Date(promoEnrollment).toDateString()+"\", "+
             "\"benefit\" : \""+promoCusBenefit+"\", "+
             "\"status\" : \"Approved\" "+
           "}";
@@ -772,7 +765,7 @@ angular.module('blockApp', ['ui.router'])
             "\"endDate\" : \""+new Date(promoEnd).toDateString()+"\", "+
             "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
             "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
-            "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
+            "\"enrollmentDeadlineDays\" : \""+new Date(promoEnrollment).toDateString()+"\", "+
             "\"benefit\" : \""+promoCusBenefit+"\", "+
             "\"status\" : \"Denied\" "+
           "}";
@@ -809,6 +802,8 @@ angular.module('blockApp', ['ui.router'])
     startEnterDate.setDate(startEnterDate.getDate()+1);
     var endEnterDate = new Date($stateParams.promoEndDate);
     endEnterDate.setDate(endEnterDate.getDate()+1);
+    var enrollmentDate = new Date($stateParams.promoEnrollment);
+    enrollmentDate.setDate(enrollmentDate.getDate()+1);
 
     $scope.promo = {
       id: $stateParams.promoId,
@@ -830,8 +825,7 @@ angular.module('blockApp', ['ui.router'])
       ],
       notificationDaysRemind: $stateParams.promoReminder,
       reminderList: [ "5", "10", "15" ],
-      enrollmentDeadline: $stateParams.promoEnrollment,
-      deadlineList: [ "5", "10", "15" ],
+      enrollmentDeadline: enrollmentDate,
       benefit: $stateParams.promoCusBenefit,
       status: $stateParams.promoStatus
     };
@@ -845,16 +839,20 @@ angular.module('blockApp', ['ui.router'])
       promoReminder, promoEnrollment, promoStatus, promoCusBenefit ) {
         var newStartDate = new Date(promoStart);
         var newEndDate = new Date(promoEnd);
+        var newEnrollmentDate = new Date(promoEnrollment);
+
         var startDateFormat = ("0" + (newStartDate.getMonth() + 1)).slice(-2)
         +"/"+("0" + newStartDate.getDate()).slice(-2)+"/"+newStartDate.getFullYear();
         var endDateFormat = ("0" + (newEndDate.getMonth() + 1)).slice(-2)
         +"/"+("0" + newEndDate.getDate()).slice(-2)+"/"+newEndDate.getFullYear();
+        var enrollmentDateFormat = ("0" + (newEnrollmentDate.getMonth() + 1)).slice(-2)
+        +"/"+("0" + newEnrollmentDate.getDate()).slice(-2)+"/"+newEnrollmentDate.getFullYear();
 
       $state.go( "promoApproval", { promoId : promoId, promoName : promoName,
         promoBenefit : promoBenefit, promoDesc : promoDesc,
         promoTerms : promoTerms, promoStartDate : startDateFormat,
         promoEndDate : endDateFormat, promoRuleTyp : promoRuleTyp, promoRuleVal : promoRuleVal,
-        promoReminder : promoReminder, promoEnrollment : promoEnrollment,
+        promoReminder : promoReminder, promoEnrollment : enrollmentDateFormat,
         promoStatus : promoStatus, promoCusBenefit : promoCusBenefit }
       );
     }
@@ -872,7 +870,7 @@ angular.module('blockApp', ['ui.router'])
           "\"endDate\" : \""+new Date(promoEnd).toDateString()+"\", "+
           "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
           "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
-          "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
+          "\"enrollmentDeadlineDays\" : \""+new Date(promoEnrollment).toDateString()+"\", "+
           "\"benefit\" : \""+promoCusBenefit+"\", "+
           "\"status\" : \""+promoStatus+"\" "+
         "}";
@@ -1009,8 +1007,6 @@ angular.module('blockApp', ['ui.router'])
         ],
         notificationDaysRemind: "5",
         reminderList: [ "5", "10", "15" ],
-        enrollmentDeadline: "5",
-        deadlineList: [ "5", "10", "15" ],
         status: "Pending Approval"
       };
 
@@ -1040,8 +1036,7 @@ angular.module('blockApp', ['ui.router'])
             ],
             notificationDaysRemind: "5",
             reminderList: [ "5", "10", "15" ],
-            enrollmentDeadline: "5",
-            deadlineList: [ "5", "10", "15" ],
+            enrollmentDeadline: "",
             status: "Pending Approval"
           };
           $scope.promoCreateDisable = false;
@@ -1099,7 +1094,6 @@ angular.module('blockApp', ['ui.router'])
           notificationDaysRemind: data["data"][0]["data"].reminderNotificationDays,
           reminderList: [ "5", "10", "15" ],
           enrollmentDeadline: data["data"][0]["data"].enrollmentDeadlineDays,
-          deadlineList: [ "5", "10", "15" ],
           postPromoBilling: data["data"][0]["data"].benefit,
           status: data["data"][0]["data"].status
         };
