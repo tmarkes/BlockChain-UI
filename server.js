@@ -73,7 +73,7 @@ app.post('/approve/promotion', function (req, res) {
     endDate : moment(req.body.endDate).format('YYYY-MM-DD'),
     rules : req.body.rule,
     reminderNotificationDays : req.body.reminderNotificationDays,
-    enrollmentDeadlineDays : req.body.enrollmentDeadlineDays,
+    enrollmentDeadlineDays : moment(req.body.enrollmentDeadlineDays).format('YYYY-MM-DD'),
     benefit : req.body.benefit,
     status : req.body.status
     }
@@ -102,7 +102,7 @@ app.post('/deny/promotion', function (req, res) {
     endDate : moment(req.body.endDate).format('YYYY-MM-DD'),
     rules : req.body.rule,
     reminderNotificationDays : req.body.reminderNotificationDays,
-    enrollmentDeadlineDays : req.body.enrollmentDeadlineDays,
+    enrollmentDeadlineDays : moment(req.body.enrollmentDeadlineDays).format('YYYY-MM-DD'),
     benefit : req.body.benefit,
     status : req.body.status
     }
@@ -131,7 +131,7 @@ app.post('/update/promotion', function (req, res) {
     endDate : moment(req.body.endDate).format('YYYY-MM-DD'),
     rules : req.body.rule,
     reminderNotificationDays : req.body.reminderNotificationDays,
-    enrollmentDeadlineDays : req.body.enrollmentDeadlineDays,
+    enrollmentDeadlineDays : moment(req.body.enrollmentDeadlineDays).format('YYYY-MM-DD'),
     benefit : req.body.benefit,
     status : req.body.status
     }
@@ -151,7 +151,7 @@ app.post('/update/promotion', function (req, res) {
             endDate : moment(req.body.endDate).format('YYYY-MM-DD'),
             rules : req.body.rule,
             reminderNotificationDays : req.body.reminderNotificationDays,
-            enrollmentDeadlineDays : req.body.enrollmentDeadlineDays,
+            enrollmentDeadlineDays : moment(req.body.enrollmentDeadlineDays).format('YYYY-MM-DD'),
             benefit : req.body.benefit,
             status : 'Denied'
             }
@@ -182,7 +182,7 @@ app.post('/create/promotion', function (req, res) {
     endDate : moment(req.body.endDate).format('YYYY-MM-DD'),
     rules : req.body.rule,
     reminderNotificationDays : req.body.reminderNotificationDays,
-    enrollmentDeadlineDays : req.body.enrollmentDeadlineDays,
+    enrollmentDeadlineDays : moment(req.body.enrollmentDeadlineDays).format('YYYY-MM-DD'),
     benefit : req.body.benefit,
     status : req.body.status
     }
