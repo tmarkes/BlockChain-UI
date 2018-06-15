@@ -1127,7 +1127,6 @@ angular.module('blockApp', ['ui.router'])
       }
       $http.put('/retrieve/promotionByHashCode', putData)
       .then(function (data) {
-        console.log(data["data"]);
         $scope.promo = {
           id: data["data"]["hash"],
           name: data["data"]["data"].promoName,
