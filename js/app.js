@@ -114,7 +114,7 @@ angular.module('blockApp', ['ui.router'])
                     "</div>"+
                     "<div class=\"login-form-group\">"+
                     "<div class=\"form-horizontal col-sm-12 login-button-pw-line\">"+
-                        "<button type=\"button\" ng-click=\"logCustomer(login.customerPW,promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+                        "<button type=\"button\" ng-click=\"logCustomer( login.customerPW,promo.id, promo.customerName, promo.customerBilling, promo.name, "+
                         "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
                         "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary login-btn\">"+
                           "Login"+
@@ -134,8 +134,6 @@ angular.module('blockApp', ['ui.router'])
                   "View Customer Status"+
                 "</button></div>"+
               "</div>"+
-          "</div>"+
-          "<div id=\"viewCustomerStatus-line\">"+
           "</div>"+
           "</div>"
       })
@@ -787,7 +785,7 @@ angular.module('blockApp', ['ui.router'])
         "</form>"+
         "</div>",
         params: {
-          promoId: null, promoName: null, customerName : null, promoDesc : null, promoTerms : null,
+          passwordPromoId, promoId: null, promoName: null, customerName : null, promoDesc : null, promoTerms : null,
           promoStartDate : null, promoEndDate : null, customerBilling : null, promoReminder : null,
           promoEnrollment : null, postPromoBilling : null
         }
@@ -820,7 +818,7 @@ angular.module('blockApp', ['ui.router'])
         "</div>"+
         "</div>",
         params: {
-          promoId: null, promoName: null, customerName : null, promoDesc : null, promoTerms : null,
+          passwordPromoId, promoId: null, promoName: null, customerName : null, promoDesc : null, promoTerms : null,
           promoStartDate : null, promoEndDate : null, customerBilling : null, promoReminder : null,
           promoEnrollment : null, postPromoBilling : null
         }
