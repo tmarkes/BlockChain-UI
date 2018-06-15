@@ -1125,9 +1125,9 @@ angular.module('blockApp', ['ui.router'])
           "\"hashCode\" : \""+$stateParams.promoId+"\" "+
         "}";
       }
-      console.log(putData);
       $http.put('/retrieve/promotionByHashCode', putData)
       .then(function (data) {
+        console.log(data["data"]);
         $scope.promo = {
           id: data["data"]["hash"],
           name: data["data"]["data"].promoName,
@@ -1145,21 +1145,6 @@ angular.module('blockApp', ['ui.router'])
         console.log(error);
       });
 
-/*
-      $scope.promo = {
-        id: $stateParams.promoId,
-        name: $stateParams.promoName,
-        customerName: $stateParams.customerName,
-        customerBilling: $stateParams.customerBilling,
-        postPromoBilling: $stateParams.postPromoBilling,
-        longDesc: $stateParams.promoDesc,
-        selectedTC: $stateParams.promoTerms,
-        startDate: $stateParams.promoStartDate,
-        endDate: $stateParams.promoEndDate,
-        enrollmentDeadline: $stateParams.promoEnrollment,
-        deadlineList: [ "5", "10", "15" ],
-      };
-*/
       $scope.changeButtonColor = function() {
         $scope.buttonDisable="button-disable";
       }
@@ -1192,7 +1177,6 @@ angular.module('blockApp', ['ui.router'])
           "\"hashCode\" : \""+$stateParams.promoId+"\" "+
         "}";
       }
-      console.log(putData);
       $http.put('/retrieve/promotionByHashCode', putData)
       .then(function (data) {
         $scope.promo = {
@@ -1211,21 +1195,6 @@ angular.module('blockApp', ['ui.router'])
       }).catch(function(error) {
         console.log(error);
       });
-/*
-      $scope.promo = {
-        id: $stateParams.promoId,
-        name: $stateParams.promoName,
-        customerName: $stateParams.customerName,
-        customerBilling: $stateParams.customerBilling,
-        postPromoBilling: $stateParams.postPromoBilling,
-        longDesc: $stateParams.promoDesc,
-        selectedTC: $stateParams.promoTerms,
-        startDate: $stateParams.promoStartDate,
-        endDate: $stateParams.promoEndDate,
-        enrollmentDeadline: $stateParams.promoEnrollment,
-        deadlineList: [ "5", "10", "15" ],
-      };
-      */
   })
   .controller("PromotionRejectedCtrl", function($scope, $state, $stateParams) {
       $scope.user = {
