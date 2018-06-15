@@ -124,15 +124,15 @@ angular.module('blockApp', ['ui.router'])
                     "</div>"+
                     "</div>"+
                   "</form>"+
-                  "<div class=\"col-sm-10 login-newUser-line\">"+
+                  "<div class=\"form-horizontal col-sm-12 login-newUser-line\">"+
                       "<button type=\"button\" class=\"btn new_user_btn\">Register Now</button>"+
+                      "<button type=\"button\" ng-click=\"logCustomerSuccess( login.customerPW,promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+                      "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
+                      "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary viewStatus-btn\">"+
+                        "View Customer Status"+
+                      "</button>"+
                   "</div>"+
                 "</div>"+
-                "<div id=\"viewCusStatusDiv\"><button type=\"button\" ng-click=\"logCustomerSuccess( login.customerPW,promo.id, promo.customerName, promo.customerBilling, promo.name, "+
-                "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
-                "promo.enrollmentDeadline, promo.postPromoBilling )\" class=\"btn btn-primary viewStatus-btn\">"+
-                  "View Customer Status"+
-                "</button></div>"+
               "</div>"+
           "</div>"+
           "</div>"
