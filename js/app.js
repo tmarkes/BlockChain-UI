@@ -785,7 +785,7 @@ angular.module('blockApp', ['ui.router'])
         "</form>"+
         "</div>",
         params: {
-          passwordPromoId, promoId: null, promoName: null, customerName : null, promoDesc : null, promoTerms : null,
+          passwordPromoId: null, promoId: null, promoName: null, customerName : null, promoDesc : null, promoTerms : null,
           promoStartDate : null, promoEndDate : null, customerBilling : null, promoReminder : null,
           promoEnrollment : null, postPromoBilling : null
         }
@@ -818,7 +818,7 @@ angular.module('blockApp', ['ui.router'])
         "</div>"+
         "</div>",
         params: {
-          passwordPromoId, promoId: null, promoName: null, customerName : null, promoDesc : null, promoTerms : null,
+          passwordPromoId: null, promoId: null, promoName: null, customerName : null, promoDesc : null, promoTerms : null,
           promoStartDate : null, promoEndDate : null, customerBilling : null, promoReminder : null,
           promoEnrollment : null, postPromoBilling : null
         }
