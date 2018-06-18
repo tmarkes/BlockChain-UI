@@ -180,11 +180,11 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
       				"<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-      				"<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/>"+
+      				"<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"datetime-local\" ng-model=\"promo.startDate\"/>"+
       			"</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"datetime-local\" ng-model=\"promo.endDate\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Type: </label>"+
@@ -206,7 +206,7 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoEnrollment\" type=\"date\" ng-model=\"promo.enrollmentDeadline\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEnrollment\" type=\"datetime-local\" ng-model=\"promo.enrollmentDeadline\"/>"+
             "</div>"+
           "<div class=\"row text-center interview-row-submitApproval\">"+
             "<button type=\"button\" id=\"{{buttonDisable}}\" class=\"menu-btn-group btn submit-approval-form\" data-toggle=\"modal\" data-target=\"#createModal\" "+
@@ -431,11 +431,11 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"date\" ng-model=\"promo.startDate\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"datetime-local\" ng-model=\"promo.startDate\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"date\" ng-model=\"promo.endDate\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"datetime-local\" ng-model=\"promo.endDate\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Type: </label>"+
@@ -457,7 +457,7 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoEnrollment\" type=\"date\" ng-model=\"promo.enrollmentDeadline\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEnrollment\" type=\"datetime-local\" ng-model=\"promo.enrollmentDeadline\"/>"+
             "</div>"+
           "<div class=\"row text-center interview-row-submit\">"+
           "<button type=\"button\" ng-click=\"goSave( promo.id, promo.name, promo.selectedBenefit, promo.longDesc, promo.selectedTC, "+
@@ -799,11 +799,11 @@ angular.module('blockApp', ['ui.router'])
     };
 
     var startEnterDate = new Date($stateParams.promoStartDate);
-    startEnterDate.setDate(startEnterDate.getDate()+1);
+  //  startEnterDate.setDate(startEnterDate.getDate()+1);
     var endEnterDate = new Date($stateParams.promoEndDate);
-    endEnterDate.setDate(endEnterDate.getDate()+1);
+  //  endEnterDate.setDate(endEnterDate.getDate()+1);
     var enrollmentDate = new Date($stateParams.promoEnrollment);
-    enrollmentDate.setDate(enrollmentDate.getDate()+1);
+  //  enrollmentDate.setDate(enrollmentDate.getDate()+1);
 
     $scope.promo = {
       id: $stateParams.promoId,
