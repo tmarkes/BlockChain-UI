@@ -180,11 +180,11 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
       				"<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-      				"<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"datetime-local\" ng-model=\"promo.startDate\"/>"+
+      				"<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"text\" id=\"startdatepicker\" ng-model=\"promo.startDate\"/>"+
       			"</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"datetime-local\" ng-model=\"promo.endDate\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"text\" id=\"enddatepicker\" ng-model=\"promo.endDate\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Type: </label>"+
@@ -206,7 +206,7 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoEnrollment\" type=\"datetime-local\" ng-model=\"promo.enrollmentDeadline\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEnrollment\" type=\"text\" id=\"enrollmentdatepicker\" ng-model=\"promo.enrollmentDeadline\"/>"+
             "</div>"+
           "<div class=\"row text-center interview-row-submitApproval\">"+
             "<button type=\"button\" id=\"{{buttonDisable}}\" class=\"menu-btn-group btn submit-approval-form\" data-toggle=\"modal\" data-target=\"#createModal\" "+
@@ -431,11 +431,11 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Start Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"datetime-local\" ng-model=\"promo.startDate\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoStartDate\" type=\"text\" id=\"startdatepicker\" ng-model=\"promo.startDate\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">End Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"datetime-local\" ng-model=\"promo.endDate\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEndDate\" type=\"text\" id=\"enddatepicker\" ng-model=\"promo.endDate\"/>"+
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Rule Type: </label>"+
@@ -457,7 +457,7 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Enrollment Deadline Date: </label>"+
-              "<input class=\"col-md-2 form-textBox\" name=\"promoEnrollment\" type=\"datetime-local\" ng-model=\"promo.enrollmentDeadline\"/>"+
+              "<input class=\"col-md-2 form-textBox\" name=\"promoEnrollment\" type=\"text\" id=\"enrollmentdatepicker\" ng-model=\"promo.enrollmentDeadline\"/>"+
             "</div>"+
           "<div class=\"row text-center interview-row-submit\">"+
           "<button type=\"button\" ng-click=\"goSave( promo.id, promo.name, promo.selectedBenefit, promo.longDesc, promo.selectedTC, "+
@@ -736,11 +736,11 @@ angular.module('blockApp', ['ui.router'])
             "\"promoLongDescription\" : \""+promoDesc+"\", "+
             "\"businessBenefit\" : \""+promoBenefit+"\", "+
             "\"tc\" : \""+promoTerms+"\", "+
-            "\"startDate\" : \""+new Date(promoStart).toDateString()+"\", "+
-            "\"endDate\" : \""+new Date(promoEnd).toDateString()+"\", "+
+            "\"startDate\" : \""+promoStart+"\", "+
+            "\"endDate\" : \""+promoEnd+"\", "+
             "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
             "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
-            "\"enrollmentDeadlineDays\" : \""+new Date(promoEnrollment).toDateString()+"\", "+
+            "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
             "\"benefit\" : \""+promoCusBenefit+"\", "+
             "\"status\" : \"Approved\" "+
           "}";
@@ -761,11 +761,11 @@ angular.module('blockApp', ['ui.router'])
             "\"promoLongDescription\" : \""+promoDesc+"\", "+
             "\"businessBenefit\" : \""+promoBenefit+"\", "+
             "\"tc\" : \""+promoTerms+"\", "+
-            "\"startDate\" : \""+new Date(promoStart).toDateString()+"\", "+
-            "\"endDate\" : \""+new Date(promoEnd).toDateString()+"\", "+
+            "\"startDate\" : \""+promoStart+"\", "+
+            "\"endDate\" : \""+promoEnd+"\", "+
             "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
             "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
-            "\"enrollmentDeadlineDays\" : \""+new Date(promoEnrollment).toDateString()+"\", "+
+            "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
             "\"benefit\" : \""+promoCusBenefit+"\", "+
             "\"status\" : \"Denied\" "+
           "}";
@@ -798,12 +798,21 @@ angular.module('blockApp', ['ui.router'])
       role: 'Marketing Director'
     };
 
-    var startEnterDate = new Date($stateParams.promoStartDate);
-  //  startEnterDate.setDate(startEnterDate.getDate()+1);
-    var endEnterDate = new Date($stateParams.promoEndDate);
-  //  endEnterDate.setDate(endEnterDate.getDate()+1);
-    var enrollmentDate = new Date($stateParams.promoEnrollment);
-  //  enrollmentDate.setDate(enrollmentDate.getDate()+1);
+    $( "#startdatepicker" ).datepicker({
+      onSelect: function() {
+        $scope.promo.startDate = $('#startdatepicker').datepicker().val();
+      }
+    });
+    $( "#enddatepicker" ).datepicker({
+      onSelect: function() {
+        $scope.promo.endDate = $('#enddatepicker').datepicker().val();
+      }
+    });
+    $( "#enrollmentdatepicker" ).datepicker({
+      onSelect: function() {
+        $scope.promo.enrollmentDeadline = $('#enrollmentdatepicker').datepicker().val();
+      }
+    });
 
     $scope.promo = {
       id: $stateParams.promoId,
@@ -811,8 +820,8 @@ angular.module('blockApp', ['ui.router'])
       selectedBenefit: $stateParams.promoBenefit,
       longDesc: $stateParams.promoDesc,
       selectedTC: $stateParams.promoTerms,
-      startDate: startEnterDate,
-      endDate: endEnterDate,
+      startDate: $stateParams.promoStartDate,
+      endDate: $stateParams.promoEndDate,
       benefitList: [ "$5 discount per month", "$10 discount per month",
         "$50 one-time discount", "$100 one-time discount" ],
       ruleTyp: $stateParams.promoRuleTyp,
@@ -825,7 +834,7 @@ angular.module('blockApp', ['ui.router'])
       ],
       notificationDaysRemind: $stateParams.promoReminder,
       reminderList: [ "5", "10", "15" ],
-      enrollmentDeadline: enrollmentDate,
+      enrollmentDeadline: $stateParams.promoEnrollment,
       benefit: $stateParams.promoCusBenefit,
       status: $stateParams.promoStatus
     };
@@ -837,22 +846,11 @@ angular.module('blockApp', ['ui.router'])
     $scope.goBackToEdit = function( promoId, promoName, promoBenefit,
       promoDesc, promoTerms, promoStart, promoEnd, promoRuleTyp, promoRuleVal,
       promoReminder, promoEnrollment, promoStatus, promoCusBenefit ) {
-        var newStartDate = new Date(promoStart);
-        var newEndDate = new Date(promoEnd);
-        var newEnrollmentDate = new Date(promoEnrollment);
-
-        var startDateFormat = ("0" + (newStartDate.getMonth() + 1)).slice(-2)
-        +"/"+("0" + newStartDate.getDate()).slice(-2)+"/"+newStartDate.getFullYear();
-        var endDateFormat = ("0" + (newEndDate.getMonth() + 1)).slice(-2)
-        +"/"+("0" + newEndDate.getDate()).slice(-2)+"/"+newEndDate.getFullYear();
-        var enrollmentDateFormat = ("0" + (newEnrollmentDate.getMonth() + 1)).slice(-2)
-        +"/"+("0" + newEnrollmentDate.getDate()).slice(-2)+"/"+newEnrollmentDate.getFullYear();
-
       $state.go( "promoApproval", { promoId : promoId, promoName : promoName,
         promoBenefit : promoBenefit, promoDesc : promoDesc,
-        promoTerms : promoTerms, promoStartDate : startDateFormat,
-        promoEndDate : endDateFormat, promoRuleTyp : promoRuleTyp, promoRuleVal : promoRuleVal,
-        promoReminder : promoReminder, promoEnrollment : enrollmentDateFormat,
+        promoTerms : promoTerms, promoStartDate : promoStart,
+        promoEndDate : promoEnd, promoRuleTyp : promoRuleTyp, promoRuleVal : promoRuleVal,
+        promoReminder : promoReminder, promoEnrollment : promoEnrollment,
         promoStatus : promoStatus, promoCusBenefit : promoCusBenefit }
       );
     }
@@ -866,11 +864,11 @@ angular.module('blockApp', ['ui.router'])
           "\"promoLongDescription\" : \""+promoDesc+"\", "+
           "\"businessBenefit\" : \""+promoBenefit+"\", "+
           "\"tc\" : \""+promoTerms+"\", "+
-          "\"startDate\" : \""+new Date(promoStart).toDateString()+"\", "+
-          "\"endDate\" : \""+new Date(promoEnd).toDateString()+"\", "+
+          "\"startDate\" : \""+promoStart+"\", "+
+          "\"endDate\" : \""+promoEnd+"\", "+
           "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
           "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
-          "\"enrollmentDeadlineDays\" : \""+new Date(promoEnrollment).toDateString()+"\", "+
+          "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
           "\"benefit\" : \""+promoCusBenefit+"\", "+
           "\"status\" : \""+promoStatus+"\" "+
         "}";
@@ -992,11 +990,29 @@ angular.module('blockApp', ['ui.router'])
         role: 'Marketing Associate'
       };
 
+      $( "#startdatepicker" ).datepicker({
+        onSelect: function() {
+          $scope.promo.startDate = $('#startdatepicker').datepicker().val();
+        }
+      });
+      $( "#enddatepicker" ).datepicker({
+        onSelect: function() {
+          $scope.promo.endDate = $('#enddatepicker').datepicker().val();
+        }
+      });
+      $( "#enrollmentdatepicker" ).datepicker({
+        onSelect: function() {
+          $scope.promo.enrollmentDeadline = $('#enrollmentdatepicker').datepicker().val();
+        }
+      });
+
       $scope.logout = function() {
         $state.go("login");
       }
 
       $scope.promo = {
+        startDate: "mm/dd/yyyy",
+        endDate: "mm/dd/yyyy",
         benefitList: [ "$5 discount per month", "$10 discount per month",
           "$50 one-time discount", "$100 one-time discount" ],
         ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
@@ -1054,8 +1070,8 @@ angular.module('blockApp', ['ui.router'])
             "\"promoLongDescription\" : \""+promoDesc+"\", "+
             "\"businessBenefit\" : \""+promoBenefit+"\", "+
             "\"tc\" : \""+promoTerms+"\", "+
-            "\"startDate\" : \""+new Date(promoStart).toDateString()+"\", "+
-            "\"endDate\" : \""+new Date(promoEnd).toDateString()+"\", "+
+            "\"startDate\" : \""+promoStart+"\", "+
+            "\"endDate\" : \""+promoEnd+"\", "+
             "\"rule\" : { \""+promoRuleTyp+"\" : \""+promoRuleVal+"\" }, "+
             "\"reminderNotificationDays\" : \""+promoReminder+"\", "+
             "\"enrollmentDeadlineDays\" : \""+promoEnrollment+"\", "+
