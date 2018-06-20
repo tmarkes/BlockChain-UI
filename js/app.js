@@ -52,7 +52,7 @@ angular.module('blockApp', ['ui.router'])
           "</div>"+
           "<div class=\"sign-in-screen\">"+
           "<div class=\"row\">"+
-          "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
+          "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
           "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
           "</div>"+
           "<div class=\"row modal-color-login\">"+
@@ -91,7 +91,7 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
             "<div class=\"sign-in-screen\" style=\"margin-right:0px\" >"+
             "<div class=\"row\">"+
-            "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
+            "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
             "<img src=\"resources/static/director_company_logo.png\" class=\"company-icon-login-director\" />"+
             "</div>"+
             "<div class=\"row modal-color-login\">"+
@@ -141,7 +141,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promoCreation",
         controller: "PromoCreationCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-        	"<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
+        	"<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
           "<img ng-click=\"logUser( user.name )\" src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
           "<div class=\"header-page-title\" ng-click=\"logUser( user.name )\" >New Promotion</div>"+
           "<div class=\"header-main-rightside\">"+
@@ -238,7 +238,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promoList",
         controller: "LoadPromosCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
+        "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
         "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
         "<div class=\"header-page-title\">Marketing Promotions</div>"+
         "<div class=\"header-main-rightside\">"+
@@ -280,7 +280,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promoApproval",
         controller: "PromoApprovalCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
+        "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
         "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
         "<div class=\"header-page-title\">Approve/Deny Promotion</div>"+
         "<div class=\"header-main-rightside\">"+
@@ -393,7 +393,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/editPromotion",
         controller: "PromoEditCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-          "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
+          "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
           "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
           "<div class=\"header-page-title\">Update Promotion</div>"+
           "<div class=\"header-main-rightside\">"+
@@ -489,7 +489,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promoApply",
         controller: "PromoApplyCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-          "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
+          "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
           "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
           "<div class=\"header-page-title\">Apply for Promotion</div>"+
           "<div class=\"header-main-rightside\">"+
@@ -569,7 +569,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promotionAccepted",
         controller: "PromotionAcceptedCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
+        "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
         "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
         "<div class=\"header-page-title\">Promotion Status</div>"+
         "<div class=\"header-main-rightside\">"+
@@ -602,7 +602,7 @@ angular.module('blockApp', ['ui.router'])
         url: "/promotionRejected",
         controller: "PromotionRejectedCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
-        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
+        "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
         "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
         "<div class=\"header-page-title\">Promotion Status</div>"+
         "<div class=\"header-main-rightside\">"+
@@ -632,7 +632,7 @@ angular.module('blockApp', ['ui.router'])
       }
     })
   })
-  .controller("LoadPromosCtrl", function($scope, $state, $http) {
+  .controller("LoadPromosCtrl", function($scope, $state, $http, $window) {
     $http.get('/retrieve/promotion')
       .then(function (data) {
         var promoList = [];
@@ -661,6 +661,10 @@ angular.module('blockApp', ['ui.router'])
         }
         $scope.promos = promoList;
     });
+    $scope.backToLandingPage = function() {
+      console.log("Getting in here!");
+      $window.location.href = "http://54.146.42.88:8080";
+    }
 
     $scope.logout = function() {
       $state.go("login");
@@ -683,7 +687,7 @@ angular.module('blockApp', ['ui.router'])
       );
     }
   })
-  .controller("PromoApprovalCtrl", function($scope, $state, $http, $stateParams) {
+  .controller("PromoApprovalCtrl", function($scope, $state, $http, $stateParams, $window) {
       if( $stateParams.promoStatus == 'Approved' ) {
         $scope.promoUpdateDisable = true;
         $scope.buttonDisableApprove="button-disable";
@@ -694,6 +698,10 @@ angular.module('blockApp', ['ui.router'])
         $scope.buttonDisableApprove="";
         $scope.buttonDisableDeny="";
         $scope.buttonDisableEdit="";
+      }
+      $scope.backToLandingPage = function() {
+        console.log("Getting in here!");
+        $window.location.href = "http://54.146.42.88:8080";
       }
       $scope.user = {
         name: 'Williams',
@@ -792,7 +800,11 @@ angular.module('blockApp', ['ui.router'])
         $state.go("promoList");
       }
   })
-  .controller("PromoEditCtrl", function($scope, $state, $http, $stateParams) {
+  .controller("PromoEditCtrl", function($scope, $state, $http, $stateParams, $window) {
+    $scope.backToLandingPage = function() {
+      console.log("Getting in here!");
+      $window.location.href = "http://54.146.42.88:8080";
+    }
     $scope.user = {
       name: 'Williams',
       role: 'Marketing Director'
@@ -880,12 +892,16 @@ angular.module('blockApp', ['ui.router'])
         });
       }
   })
-  .controller("PromoApplyCtrl", function($scope, $state, $http, $stateParams) {
+  .controller("PromoApplyCtrl", function($scope, $state, $http, $stateParams, $window) {
       $scope.promoApplyDisable = false;
       $scope.user = {
         name: $stateParams.customerName,
         role: 'Customer'
       };
+      $scope.backToLandingPage = function() {
+        console.log("Getting in here!");
+        $window.location.href = "http://54.146.42.88:8080";
+      }
 
       $scope.logout = function() {
         $state.go("login");
@@ -932,11 +948,15 @@ angular.module('blockApp', ['ui.router'])
         // Submit Service Call
       }
   })
-  .controller("PromotionAcceptedCtrl", function($scope, $state, $http, $stateParams) {
+  .controller("PromotionAcceptedCtrl", function($scope, $state, $http, $stateParams, $window) {
       $scope.user = {
         name: $stateParams.customerName,
         role: 'Customer'
       };
+      $scope.backToLandingPage = function() {
+        console.log("Getting in here!");
+        $window.location.href = "http://54.146.42.88:8080";
+      }
 
       $scope.logout = function() {
         $state.go("login");
@@ -972,19 +992,27 @@ angular.module('blockApp', ['ui.router'])
         console.log(error);
       });
   })
-  .controller("PromotionRejectedCtrl", function($scope, $state, $stateParams) {
+  .controller("PromotionRejectedCtrl", function($scope, $state, $stateParams, $window) {
       $scope.user = {
         name: $stateParams.customerName,
         role: 'Customer',
         promo: $stateParams.promoName
       };
+      $scope.backToLandingPage = function() {
+        console.log("Getting in here!");
+        $window.location.href = "http://54.146.42.88:8080";
+      }
 
       $scope.logout = function() {
         $state.go("login");
       }
   })
-  .controller("PromoCreationCtrl", function($scope, $state, $http, $stateParams) {
+  .controller("PromoCreationCtrl", function($scope, $state, $http, $stateParams, $window) {
       $scope.promoCreateDisable = false;
+      $scope.backToLandingPage = function() {
+        console.log("Getting in here!");
+        $window.location.href = "http://54.146.42.88:8080";
+      }
       $scope.user = {
         name: $stateParams.userName,
         role: 'Marketing Associate'
