@@ -1086,7 +1086,7 @@ angular.module('blockApp', ['ui.router'])
           });
       }
   })
-  .controller("LoginCtrl", function($scope, $state, $http, $location) {
+  .controller("LoginCtrl", function($scope, $state, $http) {
     $scope.login = {
         customer: 'Joshua Smith',
         customerPW: 'Revenue',
@@ -1098,7 +1098,7 @@ angular.module('blockApp', ['ui.router'])
 
     $scope.backToLandingPage = function() {
       console.log("Getting in here!");
-      $location.path("http://54.146.42.88:8080");
+      $window.location.href = "http://54.146.42.88:8080";
     }
 
     $http.get('/retrieve/approvedPromotion')
