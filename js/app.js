@@ -1086,7 +1086,7 @@ angular.module('blockApp', ['ui.router'])
           });
       }
   })
-  .controller("LoginCtrl", function($scope, $state, $http) {
+  .controller("LoginCtrl", function($scope, $state, $http, $window) {
     $scope.login = {
         customer: 'Joshua Smith',
         customerPW: 'Revenue',
