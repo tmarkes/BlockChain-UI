@@ -1038,8 +1038,8 @@ angular.module('blockApp', ['ui.router'])
             benefit: "",
             longDesc: "",
             selectedTC: "",
-            startDate: "",
-            endDate: "",
+            startDate: "mm/dd/yyyy",
+            endDate: "mm/dd/yyyy",
             ruleTyp: "",
             ruleVal: "",
             benefitList: [ "$5 discount per month", "$10 discount per month",
@@ -1052,7 +1052,7 @@ angular.module('blockApp', ['ui.router'])
             ],
             notificationDaysRemind: "5",
             reminderList: [ "5", "10", "15" ],
-            enrollmentDeadline: "",
+            enrollmentDeadline: "mm/dd/yyyy",
             status: "Pending Approval"
           };
           $scope.promoCreateDisable = false;
