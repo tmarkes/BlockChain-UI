@@ -662,7 +662,6 @@ angular.module('blockApp', ['ui.router'])
         $scope.promos = promoList;
     });
     $scope.backToLandingPage = function() {
-      console.log("Getting in here!");
       $window.location.href = "http://54.146.42.88:8080";
     }
 
@@ -700,7 +699,6 @@ angular.module('blockApp', ['ui.router'])
         $scope.buttonDisableEdit="";
       }
       $scope.backToLandingPage = function() {
-        console.log("Getting in here!");
         $window.location.href = "http://54.146.42.88:8080";
       }
       $scope.user = {
@@ -802,7 +800,6 @@ angular.module('blockApp', ['ui.router'])
   })
   .controller("PromoEditCtrl", function($scope, $state, $http, $stateParams, $window) {
     $scope.backToLandingPage = function() {
-      console.log("Getting in here!");
       $window.location.href = "http://54.146.42.88:8080";
     }
     $scope.user = {
@@ -899,7 +896,6 @@ angular.module('blockApp', ['ui.router'])
         role: 'Customer'
       };
       $scope.backToLandingPage = function() {
-        console.log("Getting in here!");
         $window.location.href = "http://54.146.42.88:8080";
       }
 
@@ -954,7 +950,6 @@ angular.module('blockApp', ['ui.router'])
         role: 'Customer'
       };
       $scope.backToLandingPage = function() {
-        console.log("Getting in here!");
         $window.location.href = "http://54.146.42.88:8080";
       }
 
@@ -999,7 +994,6 @@ angular.module('blockApp', ['ui.router'])
         promo: $stateParams.promoName
       };
       $scope.backToLandingPage = function() {
-        console.log("Getting in here!");
         $window.location.href = "http://54.146.42.88:8080";
       }
 
@@ -1010,7 +1004,6 @@ angular.module('blockApp', ['ui.router'])
   .controller("PromoCreationCtrl", function($scope, $state, $http, $stateParams, $window) {
       $scope.promoCreateDisable = false;
       $scope.backToLandingPage = function() {
-        console.log("Getting in here!");
         $window.location.href = "http://54.146.42.88:8080";
       }
       $scope.user = {
@@ -1125,7 +1118,6 @@ angular.module('blockApp', ['ui.router'])
     };
 
     $scope.backToLandingPage = function() {
-      console.log("Getting in here!");
       $window.location.href = "http://54.146.42.88:8080";
     }
 
