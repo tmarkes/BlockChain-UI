@@ -13,7 +13,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "LoginCtrl",
         template: "<div><div class=\"sign-in-screen\">"+
         "<div class=\"row\">"+
-        "<img src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
+        "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-login\" />"+
         "<img src=\"resources/static/associate_company_logo.png\" class=\"company-icon-login\" />"+
         "</div>"+
         "<div class=\"row modal-color-login\">"+
@@ -1095,6 +1095,10 @@ angular.module('blockApp', ['ui.router'])
         associate: 'Christopher',
         associatePW: 'Margin'
     };
+
+    $scope.backToLandingPage = function() {
+      $location.path("http://54.146.42.88:8080");
+    }
 
     $http.get('/retrieve/approvedPromotion')
       .then(function (data) {
