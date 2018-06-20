@@ -1097,6 +1097,7 @@ angular.module('blockApp', ['ui.router'])
     };
 
     $scope.backToLandingPage = function() {
+      console.log("Getting in here!");
       $location.path("http://54.146.42.88:8080");
     }
 
