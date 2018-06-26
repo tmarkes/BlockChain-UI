@@ -722,7 +722,6 @@ angular.module('blockApp', ['ui.router'])
         ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
         ruleVal: $stateParams.promoRuleVal,
         ruleValues: [
-          { ruleType: "Rate_Plan", ruleValue: "TMO_One" },
           { ruleType: "Rate_Plan", ruleValue: "Simple_Choice" },
           { ruleType: "SKU", ruleValue: "Any_Number_Values" }
         ],
@@ -837,7 +836,6 @@ angular.module('blockApp', ['ui.router'])
       ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
       ruleVal: $stateParams.promoRuleVal,
       ruleValues: [
-        { ruleType: "Rate_Plan", ruleValue: "TMO_One" },
         { ruleType: "Rate_Plan", ruleValue: "Simple_Choice" },
         { ruleType: "SKU", ruleValue: "Any_Number_Values" }
       ],
@@ -1038,7 +1036,6 @@ angular.module('blockApp', ['ui.router'])
           "$50 one-time discount", "$100 one-time discount" ],
         ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
         ruleValues: [
-          { ruleType: "Rate_Plan", ruleValue: "TMO_One" },
           { ruleType: "Rate_Plan", ruleValue: "Simple_Choice" },
           { ruleType: "SKU", ruleValue: "Any_Number_Values" }
         ],
@@ -1067,7 +1064,6 @@ angular.module('blockApp', ['ui.router'])
               "$50 one-time discount", "$100 one-time discount" ],
             ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
             ruleValues: [
-              { ruleType: "Rate_Plan", ruleValue: "TMO_One" },
               { ruleType: "Rate_Plan", ruleValue: "Simple_Choice" },
               { ruleType: "SKU", ruleValue: "Any_Number_Values" }
             ],
