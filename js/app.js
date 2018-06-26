@@ -722,7 +722,9 @@ angular.module('blockApp', ['ui.router'])
         ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
         ruleVal: $stateParams.promoRuleVal,
         ruleValues: [
-          { ruleType: "Rate_Plan", ruleValue: "Simple_Choice" },
+          { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_A" },
+          { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_B" },
+          { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_C" },
           { ruleType: "SKU", ruleValue: "Any_Number_Values" }
         ],
         notificationDaysRemind: $stateParams.promoReminder,
@@ -836,7 +838,9 @@ angular.module('blockApp', ['ui.router'])
       ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
       ruleVal: $stateParams.promoRuleVal,
       ruleValues: [
-        { ruleType: "Rate_Plan", ruleValue: "Simple_Choice" },
+        { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_A" },
+        { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_B" },
+        { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_C" },
         { ruleType: "SKU", ruleValue: "Any_Number_Values" }
       ],
       notificationDaysRemind: $stateParams.promoReminder,
@@ -1036,7 +1040,9 @@ angular.module('blockApp', ['ui.router'])
           "$50 one-time discount", "$100 one-time discount" ],
         ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
         ruleValues: [
-          { ruleType: "Rate_Plan", ruleValue: "Simple_Choice" },
+          { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_A" },
+          { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_B" },
+          { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_C" },
           { ruleType: "SKU", ruleValue: "Any_Number_Values" }
         ],
         notificationDaysRemind: "5",
@@ -1064,7 +1070,9 @@ angular.module('blockApp', ['ui.router'])
               "$50 one-time discount", "$100 one-time discount" ],
             ruleTypes: [ {type: "Rate_Plan"}, {type:"SKU"} ],
             ruleValues: [
-              { ruleType: "Rate_Plan", ruleValue: "Simple_Choice" },
+              { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_A" },
+              { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_B" },
+              { ruleType: "Rate_Plan", ruleValue: "Rate_Plan_C" },
               { ruleType: "SKU", ruleValue: "Any_Number_Values" }
             ],
             notificationDaysRemind: "5",
