@@ -662,7 +662,7 @@ angular.module('blockApp', ['ui.router'])
         $scope.promos = promoList;
     });
     $scope.backToLandingPage = function() {
-      $window.location.href = "http://54.146.42.88:8080";
+      $window.location.href = "http://54.146.42.88:8080/landingPage";
     }
 
     $scope.logout = function() {
@@ -699,7 +699,7 @@ angular.module('blockApp', ['ui.router'])
         $scope.buttonDisableEdit="";
       }
       $scope.backToLandingPage = function() {
-        $window.location.href = "http://54.146.42.88:8080";
+        $window.location.href = "http://54.146.42.88:8080/landingPage";
       }
       $scope.user = {
         name: 'Williams',
@@ -801,7 +801,7 @@ angular.module('blockApp', ['ui.router'])
   })
   .controller("PromoEditCtrl", function($scope, $state, $http, $stateParams, $window) {
     $scope.backToLandingPage = function() {
-      $window.location.href = "http://54.146.42.88:8080";
+      $window.location.href = "http://54.146.42.88:8080/landingPage";
     }
     $scope.user = {
       name: 'Williams',
@@ -898,7 +898,7 @@ angular.module('blockApp', ['ui.router'])
         role: 'Customer'
       };
       $scope.backToLandingPage = function() {
-        $window.location.href = "http://54.146.42.88:8080";
+        $window.location.href = "http://54.146.42.88:8080/landingPage";
       }
 
       $scope.logout = function() {
@@ -952,7 +952,7 @@ angular.module('blockApp', ['ui.router'])
         role: 'Customer'
       };
       $scope.backToLandingPage = function() {
-        $window.location.href = "http://54.146.42.88:8080";
+        $window.location.href = "http://54.146.42.88:8080/landingPage";
       }
 
       $scope.logout = function() {
@@ -996,7 +996,7 @@ angular.module('blockApp', ['ui.router'])
         promo: $stateParams.promoName
       };
       $scope.backToLandingPage = function() {
-        $window.location.href = "http://54.146.42.88:8080";
+        $window.location.href = "http://54.146.42.88:8080/landingPage";
       }
 
       $scope.logout = function() {
@@ -1006,7 +1006,7 @@ angular.module('blockApp', ['ui.router'])
   .controller("PromoCreationCtrl", function($scope, $state, $http, $stateParams, $window) {
       $scope.promoCreateDisable = false;
       $scope.backToLandingPage = function() {
-        $window.location.href = "http://54.146.42.88:8080";
+        $window.location.href = "http://54.146.42.88:8080/landingPage";
       }
       $scope.user = {
         name: $stateParams.userName,
@@ -1122,7 +1122,7 @@ angular.module('blockApp', ['ui.router'])
     };
 
     $scope.backToLandingPage = function() {
-      $window.location.href = "http://54.146.42.88:8080";
+      $window.location.href = "http://54.146.42.88:8080/landingPage";
     }
 
     $http.get('/retrieve/approvedPromotion')
