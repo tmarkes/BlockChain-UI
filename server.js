@@ -199,6 +199,32 @@ app.post('/create/promotion', function (req, res) {
   });
 });
 
+app.post('/apply/promotion', function (req, res) {
+  var promoData = { data : {
+    customerName : req.body.customerName,
+    billingInfo : req.body.billingInfo,
+    promoName : req.body.promoName,
+    promoHash : req.body.promoHash,
+    promoDesc : req.body.promoDesc,
+    tc : req.body.tc,
+    startDate : moment(req.body.startDate).format('YYYY-MM-DD'),
+    endDate : moment(req.body.endDate).format('YYYY-MM-DD'),
+    enrollmentDeadlineDate : moment(req.body.enrollmentDeadlineDate).format('YYYY-MM-DD'),
+    postPromoBillingInfo : req.body.postPromoBillingInfo
+    }
+  };
+  request.post(process.env.PROMO_API_HOSTNAME+'/promotion/applyForPromotion',
+      { json: promoData },
+      function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+          res.status(200).send(body);
+        } else {
+          console.log(error);
+          res.status(404).send(body);
+        }
+  });
+});
+
 app.get('/', function (req, res) {
   res.send();
   res.status(404).send('No file found.');

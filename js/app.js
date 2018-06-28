@@ -943,7 +943,24 @@ angular.module('blockApp', ['ui.router'])
         promoDesc, promoTerms, promoStart, promoEnd, promoEnrollment,
         postPromoBilling )
       {
-        // Submit Service Call
+        var postData = "{ "+
+          "\"customerName\" : \""+customerName+"\", "+
+          "\"billingInfo\" : \""+customerBilling+"\", "+
+          "\"promoName\" : \""+promoName+"\", "+
+          "\"promoHash\" : \""+promoId+"\", "+
+          "\"promoDesc\" : \""+promoDesc+"\", "+
+          "\"tc\" : \""+promoTerms+"\", "+
+          "\"startDate\" : \""+promoStart+"\", "+
+          "\"endDate\" : \""+promoEnd+"\", "+
+          "\"enrollmentDeadlineDate\" : \""+promoEnrollment+"\", "+
+          "\"postPromoBillingInfo\" : \""+postPromoBilling+"\" "+
+        "}";
+        $http.post('/apply/promotion', postData)
+        .then(function (data) {
+          $scope.promo.id = data["data"]["hash"];
+        }).catch(function(error) {
+          console.log(error);
+        });
       }
   })
   .controller("PromotionAcceptedCtrl", function($scope, $state, $http, $stateParams, $window) {
