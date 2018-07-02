@@ -153,7 +153,56 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
           "</div>"+
         "</div>"+
-        "<div class=\"modal-color\">"+
+        "<nav id=\"sidebar\">"+
+          "<ul class=\"list-unstyled components\">"+
+            "<li>"+
+              "<img src=\"resources/static/associate_profile_picture.png\">"+
+              "<span>{{user.name}}</span>"+
+              "<hr class=\"sidebar-profileBar\">"+
+            "</li>"+
+            "<li class=\"active\">"+
+              "<a>"+
+                "<i>"+
+                  "<img src=\"/resources/static/dashboard_icon.png\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-dashboard\">"+Dashboard"</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img src=\"/resources/static/report-icon.png\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\">"+Billing"</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img src=\"/resources/static/report-icon.png\>"+
+                "</i>"+
+                "<span class=\"components iotsidebar-trackorder\" *ngIf=\"contenthide\">"+Current Promotions"</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img src=\"/resources/static/report-icon.png\">"+
+                "</i>"+
+                "<span class=\"iotsidebar-more\" *ngIf=\"contenthide\">"+Rate Plans"</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img src=\"/resources/static/report-icon.png\">"+
+                "</i>"+
+                "<span class=\"iotsidebar-more\" *ngIf=\"contenthide\">"+Update Device"</span>"+
+              "</a>"+
+            "</li>"+
+          "</ul>"+
+        "</nav>"+
+        "<div class=\"modal-color\" style=\"width=75%\">"+
         "<form id=\"reviewPromoForm\" action=\"\" name=\"reviewPromoForm\" class=\"form-font\" method=\"POST\">"+
           "<fieldset ng-disabled=\"promoCreateDisable\">"+
             "<div class=\"row interview-row\">"+

@@ -189,3 +189,168 @@ table.promo-table-borders tr {border: solid grey}
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: #dff0d8;
 }
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    overflow-x:hidden ;
+}
+
+.navbar-header {
+  margin-top:15px;
+}
+
+.sidebar-profileBar {
+  margin-top:10px;
+}
+
+.dashboard_header {
+  float:left;
+  font-family:Verdana;
+  font-size:20px;
+  font-weight:bold;
+  margin-left:10px;
+  color:#2b0a3d;
+}
+
+.dashboard_header_icon {
+  float:left;
+}
+
+.menusidebar-confirmations {
+  margin-left:9px;
+}
+.menusidebar-billing {
+  margin-left:2px;
+}
+.menusidebar-capacity {
+  margin-left:3px;
+}
+.menusidebar-reports {
+  margin-left:12px;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    color: #12abdb;
+    transition: all 0.3s;
+    background-color: #0070ad;
+
+}
+
+#sidebar.active {
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+
+#sidebar ul li a {
+    text-align: left;
+}
+
+#sidebar.active ul li a {
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+#sidebar.active ul li a i {
+    margin-right:  0;
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+#sidebar.active ul ul a {
+    padding: 10px !important;
+}
+
+#sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
+    top: auto;
+    bottom: 5px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a i {
+    margin-right: 10px;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #12abdb;
+
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 47px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+    top:33px;
+}
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 1.0em !important;
+    padding-left: 30px !important;
+
+}
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+a{
+    cursor: pointer;
+}
+.srchstyl,.srchstyl:hover{
+    box-shadow: none;
+    outline: none;
+    background-color: none;
+}
+
+.search{
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #8f8f8f
+}
+
+.logopointer{
+    cursor: pointer;
+}
+.components
+{
+    background-color: #0070ad;
+    color:white;
+}
+.iotsidebar-dashboard {
+  margin-left:8px;
+}
+.iotsidebar-trackorder {
+  margin-left:8px;
+}
+.iotsidebar-more {
+  margin-left:13px;
+}
