@@ -61,7 +61,7 @@
 
 .interview-row-submit {background-color: white;padding-top: 20px;border-top: 0px;margin-right:0px}
 
-.interview-row-submitApproval {background-color: white;padding-top: 20px;border-top: 0px}
+.interview-row-submitApproval {background-color: white;padding-top: 20px;border-top: 0px;margin-left:0px}
 
 .interview-col-textarea {width:25%}
 
@@ -219,6 +219,10 @@ table.promo-table-borders tr {border: solid grey}
 .dashboard_header_icon {
   float:left;
 }
+.sidebar-profilePic {
+  margin-left: 20px;
+  margin-top: 10px;
+}
 
 .menusidebar-confirmations {
   margin-left:9px;
@@ -234,8 +238,6 @@ table.promo-table-borders tr {border: solid grey}
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
     color: #12abdb;
     transition: all 0.3s;
     background-color: #0070ad;
@@ -243,8 +245,6 @@ table.promo-table-borders tr {border: solid grey}
 }
 
 #sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
     text-align: center;
 }
 
@@ -344,6 +344,8 @@ a{
 {
     background-color: #0070ad;
     color:white;
+    font-famiy:Verdana;
+    font-size:18px;
 }
 .iotsidebar-dashboard {
   margin-left:8px;
