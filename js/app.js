@@ -556,7 +556,7 @@ angular.module('blockApp', ['ui.router'])
           "<nav id=\"sidebar\" style=\"width:25%;float:left;padding-bottom:40%\">"+
           "<ul class=\"list-unstyled components\">"+
             "<li>"+
-              "<img class=\"sidebar-profilePic\" src=\"resources/static/customer_profile_picture.png\">"+
+              "<img class=\"sidebar-profilePic\" src=\"resources/static/customer_profile_picture-sidebar.png\">"+
               "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
               "<hr class=\"sidebar-profileBar\">"+
             "</li>"+
@@ -571,7 +571,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/billing-icon.png\">"+
+                  "<img src=\"/resources/static/customer/billing-icon.png\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Billing</span>"+
               "</a>"+
@@ -579,7 +579,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/promotions-icon.png\">"+
+                  "<img src=\"/resources/static/customer/promotions-icon.png\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Current Promotions</span>"+
               "</a>"+
@@ -587,7 +587,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/rate-plans-icon.png\">"+
+                  "<img src=\"/resources/static/customer/rate-plans-icon.png\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Rate Plans</span>"+
               "</a>"+
@@ -595,7 +595,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/report-icon.png\">"+
+                  "<img src=\"/resources/static/customer/update-device-icon.png\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Update Device</span>"+
               "</a>"+
