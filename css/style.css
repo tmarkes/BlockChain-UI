@@ -205,6 +205,7 @@ table.promo-table-borders tr {border: solid grey}
 
 .sidebar-profileBar {
   margin-top:10px;
+  margin-bottom:0px;
 }
 
 .dashboard_header {
@@ -222,6 +223,9 @@ table.promo-table-borders tr {border: solid grey}
 .sidebar-profilePic {
   margin-left: 20px;
   margin-top: 10px;
+}
+.sidebar-profileName {
+  margin-left: 15px;
 }
 
 .menusidebar-confirmations {

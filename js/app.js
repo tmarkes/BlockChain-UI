@@ -158,7 +158,7 @@ angular.module('blockApp', ['ui.router'])
           "<ul class=\"list-unstyled components\">"+
             "<li>"+
               "<img class=\"sidebar-profilePic\" src=\"resources/static/associate_profile_picture.png\">"+
-              "<span>{{user.name}}</span>"+
+              "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
               "<hr class=\"sidebar-profileBar\">"+
             "</li>"+
             "<li class=\"active\">"+
@@ -172,7 +172,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/report-icon.png\">"+
+                  "<img src=\"/resources/static/billing-icon.png\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Billing</span>"+
               "</a>"+
@@ -180,7 +180,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/report-icon.png\">"+
+                  "<img src=\"/resources/static/promotions-icon.png\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Current Promotions</span>"+
               "</a>"+
@@ -188,7 +188,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/report-icon.png\">"+
+                  "<img src=\"/resources/static/rate-plans-icon.png\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Rate Plans</span>"+
               "</a>"+
@@ -552,7 +552,57 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
           "</div>"+
         "</div>"+
-        "<div class=\"modal-color\">"+
+        "<div class=\"row\">"+
+          "<nav id=\"sidebar\" style=\"width:25%;float:left;padding-bottom:40%\">"+
+          "<ul class=\"list-unstyled components\">"+
+            "<li>"+
+              "<img class=\"sidebar-profilePic\" src=\"resources/static/customer_profile_picture.png\">"+
+              "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
+              "<hr class=\"sidebar-profileBar\">"+
+            "</li>"+
+            "<li class=\"active\">"+
+              "<a>"+
+                "<i>"+
+                  "<img src=\"/resources/static/dashboard_icon.png\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img src=\"/resources/static/billing-icon.png\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Billing</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img src=\"/resources/static/promotions-icon.png\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Current Promotions</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img src=\"/resources/static/rate-plans-icon.png\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Rate Plans</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img src=\"/resources/static/report-icon.png\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Update Device</span>"+
+              "</a>"+
+            "</li>"+
+          "</ul>"+
+        "</nav>"+
+        "<div class=\"modal-color\" style=\"width:74.5%;float:right\">"+
         "<form id=\"applyPromoForm\" action=\"\" name=\"applyPromoForm\" class=\"form-font\" method=\"POST\">"+
           "<fieldset ng-disabled=\"promoApplyDisable\">"+
             "<div class=\"row interview-row\">"+
@@ -609,7 +659,8 @@ angular.module('blockApp', ['ui.router'])
           "</div>"+
           "</fieldset>"+
         "</form>"+
-        "</div>",
+        "</div>"+
+      "</div>",
         params: {
           passwordPromoId: null, promoId: null, promoName: null, customerName : null, promoDesc : null, promoTerms : null,
           promoStartDate : null, promoEndDate : null, customerBilling : null, promoReminder : null,
