@@ -19,7 +19,7 @@
 
 .companyDir-icon-not-login {width:65px;height:auto}
 
-.customer-menu {padding: 40px;font-weight:bold;margin:0px auto;margin-top:100px;width:80%}
+.customer-menu {padding: 20% 40px 20% 40px;font-weight:bold;margin:0px auto}
 
 .customer-msg-text {text-align:center;font-size:x-large}
 
@@ -228,6 +228,7 @@ table.promo-table-borders tr {border: solid grey}
 .sidebar-profilePic {
   margin-left: 20px;
   margin-top: 10px;
+  width:45px;
 }
 .sidebar-profileName {
   margin-left: 15px;

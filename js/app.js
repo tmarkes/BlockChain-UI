@@ -683,7 +683,57 @@ angular.module('blockApp', ['ui.router'])
           "</div>"+
         "</div>"+
       "</div>"+
-      "<div class=\"row modal-color customer-menu\">"+
+      "<div class=\"row\">"+
+        "<nav id=\"sidebar\" style=\"width:25%;float:left;padding-bottom:40%\">"+
+        "<ul class=\"list-unstyled components\">"+
+          "<li>"+
+            "<img class=\"sidebar-profilePic\" src=\"resources/static/customer_profile_picture-sidebar.png\">"+
+            "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
+            "<hr class=\"sidebar-profileBar\">"+
+          "</li>"+
+          "<li class=\"active\">"+
+            "<a>"+
+              "<i>"+
+                "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
+              "</i>"+
+              "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
+            "</a>"+
+          "</li>"+
+          "<li>"+
+            "<a ng-click=\"logout()\">"+
+              "<i>"+
+                "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/billing-icon.png\">"+
+              "</i>"+
+              "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Billing</span>"+
+            "</a>"+
+          "</li>"+
+          "<li>"+
+            "<a ng-click=\"logout()\">"+
+              "<i>"+
+                "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/promotions-icon.PNG\">"+
+              "</i>"+
+              "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Current Promotions</span>"+
+            "</a>"+
+          "</li>"+
+          "<li>"+
+            "<a ng-click=\"logout()\">"+
+              "<i>"+
+                "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/rate-plans-icon.PNG\">"+
+              "</i>"+
+              "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Rate Plans</span>"+
+            "</a>"+
+          "</li>"+
+          "<li>"+
+            "<a ng-click=\"logout()\">"+
+              "<i>"+
+                "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/update-device-icon.PNG\">"+
+              "</i>"+
+              "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Update Device</span>"+
+            "</a>"+
+          "</li>"+
+        "</ul>"+
+      "</nav>"+
+      "<div class=\"modal-color customer-menu\" style=\"width:74.5%;float:right\">"+
       "<div class=\"customer-msg-text\">"+
           "<p>Congratulations, {{promo.customerName}}!<br />"+
             "Thank you for being a valued customer.<br />"+
@@ -693,7 +743,8 @@ angular.module('blockApp', ['ui.router'])
             "Block 3 is complete."+
           "</p>"+
         "</div>"+
-        "</div>",
+        "</div>"+
+      "</div>",
         params: {
           passwordPromoId: null, promoId: null, promoName: null, customerName : null, promoDesc : null, promoTerms : null,
           promoStartDate : null, promoEndDate : null, customerBilling : null, promoReminder : null,
