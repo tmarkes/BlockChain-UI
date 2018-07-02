@@ -571,7 +571,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/customer/billing-icon.png\">"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/billing-icon.png\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Billing</span>"+
               "</a>"+

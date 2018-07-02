@@ -210,6 +210,7 @@ table.promo-table-borders tr {border: solid grey}
 
 .sidebar-nav-icon {
   width:34px;
+  margin-left:20px;
 }
 
 .dashboard_header {
@@ -230,6 +231,7 @@ table.promo-table-borders tr {border: solid grey}
 }
 .sidebar-profileName {
   margin-left: 15px;
+  font-family:Verdana;
 }
 
 .menusidebar-confirmations {
