@@ -314,7 +314,7 @@ a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
     display: block;
     position: absolute;
     right: 47px;
-    font-family: 'Glyphicons Halflings';
+    font-family: 'Verdana';
     font-size: 0.6em;
     top:33px;
 }
@@ -335,6 +335,37 @@ a.download {
 a{
     cursor: pointer;
 }
+
+/* Nominators line css */
+.set_line, .set_line ul, .set_line li {
+    position: relative;
+}
+.set_line li::before, .set_line li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+
+
+
+.set_line li::before {
+    border-top: 1px solid white;
+    top: 20px;
+    width: 32px;
+    height: 0;
+}
+
+.set_line li::after {
+    border-left: 1px solid white;
+    height: 100%;
+    width: 0px;
+    top: 2px;
+}
+
+.set_line ul > li:last-child::after {
+    height: 8px;
+}
+
 .srchstyl,.srchstyl:hover{
     box-shadow: none;
     outline: none;

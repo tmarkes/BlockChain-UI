@@ -157,48 +157,52 @@ angular.module('blockApp', ['ui.router'])
           "<nav id=\"sidebar\" style=\"width:25%;float:left;padding-bottom:40%\">"+
           "<ul class=\"list-unstyled components\">"+
             "<li>"+
-              "<img class=\"sidebar-profilePic\" src=\"resources/static/associate_profile_picture.png\">"+
+              "<img class=\"sidebar-profilePic\" src=\"resources/static/associate_profile_picture-sidebar.png\">"+
               "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
               "<hr class=\"sidebar-profileBar\">"+
             "</li>"+
             "<li class=\"active\">"+
               "<a>"+
                 "<i>"+
-                  "<img src=\"/resources/static/dashboard_icon.png\">"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
+              "<a data-toggle=\"collapse\" aria-expanded=\"true\" class=\"collapsed\">"+
+                  "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/associate/promotions-icon.PNG\"></i>"+
+               "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
+              "</a>"+
+              "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"list-style: none\">"+
+                "<li>"+
+                  "<a class=\"components\" ng-click=\"logout()\">Create New</a>"+
+                "</li>"+
+                "<li>"+
+                  "<a class=\"components\" ng-click=\"logout()\">View Active</a>"+
+                "</li>"+
+                "<li>"+
+                  "<a class=\"components\" ng-click=\"logout()\">View Pending</a>"+
+                "</li>"+
+                "<li>"+
+                  "<a class=\"components\" ng-click=\"logout()\">View Rejected</a>"+
+                "</li>"+
+              "</ul>"+
+            "</li>"+
+            "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/billing-icon.png\">"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/associate/brochures-icon.PNG\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Billing</span>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Marketing Brochures</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/promotions-icon.png\">"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/associate/report-icon.PNG\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Current Promotions</span>"+
-              "</a>"+
-            "</li>"+
-            "<li>"+
-              "<a ng-click=\"logout()\">"+
-                "<i>"+
-                  "<img src=\"/resources/static/rate-plans-icon.png\">"+
-                "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Rate Plans</span>"+
-              "</a>"+
-            "</li>"+
-            "<li>"+
-              "<a ng-click=\"logout()\">"+
-                "<i>"+
-                  "<img src=\"/resources/static/report-icon.png\">"+
-                "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Update Device</span>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
               "</a>"+
             "</li>"+
           "</ul>"+
