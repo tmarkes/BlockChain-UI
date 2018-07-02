@@ -165,7 +165,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img src=\"/resources/static/dashboard_icon.png\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-dashboard\">"+Dashboard"</span>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-dashboard\">Dashboard</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
@@ -173,7 +173,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img src=\"/resources/static/report-icon.png\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\">"+Billing"</span>"+
+                "<span *ngIf=\"contenthide\">Billing</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
@@ -181,7 +181,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img src=\"/resources/static/report-icon.png\>"+
                 "</i>"+
-                "<span class=\"components iotsidebar-trackorder\" *ngIf=\"contenthide\">"+Current Promotions"</span>"+
+                "<span class=\"components iotsidebar-trackorder\" *ngIf=\"contenthide\">Current Promotions</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
@@ -189,7 +189,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img src=\"/resources/static/report-icon.png\">"+
                 "</i>"+
-                "<span class=\"iotsidebar-more\" *ngIf=\"contenthide\">"+Rate Plans"</span>"+
+                "<span class=\"iotsidebar-more\" *ngIf=\"contenthide\">Rate Plans</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
@@ -197,7 +197,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img src=\"/resources/static/report-icon.png\">"+
                 "</i>"+
-                "<span class=\"iotsidebar-more\" *ngIf=\"contenthide\">"+Update Device"</span>"+
+                "<span class=\"iotsidebar-more\" *ngIf=\"contenthide\">Update Device</span>"+
               "</a>"+
             "</li>"+
           "</ul>"+
