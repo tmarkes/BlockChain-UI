@@ -208,6 +208,10 @@ table.promo-table-borders tr {border: solid grey}
   margin-bottom:0px;
 }
 
+.sidebar-nav-icon {
+  width:34px;
+}
+
 .dashboard_header {
   float:left;
   font-family:Verdana;
