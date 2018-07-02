@@ -563,7 +563,7 @@ angular.module('blockApp', ['ui.router'])
             "<li class=\"active\">"+
               "<a>"+
                 "<i>"+
-                  "<img src=\"/resources/static/dashboard_icon.png\">"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
               "</a>"+
@@ -579,7 +579,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/customer/promotions-icon.PNG\">"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/promotions-icon.PNG\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Current Promotions</span>"+
               "</a>"+
@@ -587,7 +587,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/customer/rate-plans-icon.PNG\">"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/rate-plans-icon.PNG\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Rate Plans</span>"+
               "</a>"+
@@ -595,7 +595,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img src=\"/resources/static/customer/update-device-icon.PNG\">"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/update-device-icon.PNG\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Update Device</span>"+
               "</a>"+
