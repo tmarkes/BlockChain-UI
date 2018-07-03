@@ -366,7 +366,7 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
         "</div>"+
 
-      "<div class=\"row modal-color\" style=\"width:74.5%;float:right;margin-top:20px\">"+
+      "<div class=\"modal-color\" style=\"width:74.5%;float:right;margin-top:10px\">"+
           "<table class=\"table table-hover promosTable-content\">"+
             "<tr ng-click=\"goPromoApproval( promo.id, promo.promoName, promo.businessBenefit, promo.promoLongDescription, promo.tc, "+
               "promo.startDate, promo.endDate, promo.ruleTyp, promo.ruleVal, promo.notificationDaysRemind, promo.enrollmentDeadline, promo.status, promo.benefit)\" "+
