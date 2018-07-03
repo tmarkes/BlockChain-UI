@@ -355,19 +355,18 @@ angular.module('blockApp', ['ui.router'])
         "</nav>"+
         "<div class=\"modal-color\" style=\"width:74.5%;float:right\">"+
             "<div id=\"customerlist\">"+
-            "<table class=\"promosTable-Header\">"+
-              "<tr style=\"color:#5d546d;font-size:large\">"+
-                  "<th class=\"text-center\" style=\"width:30%\">Promotion Name</th>"+
-                  "<th class=\"text-center\" style=\"width:20%\">Start Date</th>"+
-                  "<th class=\"text-center\" style=\"width:20%\">End Date</th>"+
-                  "<th class=\"text-center\">Status</th>"+
-              "</tr>"+
-            "</table>"+
-          "</div>"+
+              "<table class=\"promosTable-Header\">"+
+                "<tr style=\"color:#5d546d;font-size:large\">"+
+                    "<th class=\"text-center\" style=\"width:30%\">Promotion Name</th>"+
+                    "<th class=\"text-center\" style=\"width:20%\">Start Date</th>"+
+                    "<th class=\"text-center\" style=\"width:20%\">End Date</th>"+
+                    "<th class=\"text-center\">Status</th>"+
+                "</tr>"+
+              "</table>"+
+            "</div>"+
         "</div>"+
-      "</div>"+
 
-      "<div class=\"row modal-color\" style=\"margin-top:20px\">"+
+      "<div class=\"row modal-color\" style=\"width:74.5%;float:right;margin-top:20px\">"+
           "<table class=\"table table-hover promosTable-content\">"+
             "<tr ng-click=\"goPromoApproval( promo.id, promo.promoName, promo.businessBenefit, promo.promoLongDescription, promo.tc, "+
               "promo.startDate, promo.endDate, promo.ruleTyp, promo.ruleVal, promo.notificationDaysRemind, promo.enrollmentDeadline, promo.status, promo.benefit)\" "+
@@ -378,7 +377,9 @@ angular.module('blockApp', ['ui.router'])
               "<td class=\"text-center\" >{{promo.endDate}}</td>"+
               "<td class=\"text-center\" >{{promo.status}}</td>"+
             "</tr>"+
-        "</table>"
+        "</table>"+
+        "</div>"+
+      "</div>"
       })
       .state('promoApproval', {
         url: "/promoApproval",
