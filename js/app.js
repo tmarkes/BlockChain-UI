@@ -174,7 +174,7 @@ angular.module('blockApp', ['ui.router'])
                   "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/associate/promotions-icon.PNG\"></i>"+
                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
               "</a>"+
-              "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"list-style: none\">"+
+              "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                 "<li>"+
                   "<a class=\"components\" ng-click=\"logout()\">Create New</a>"+
                 "</li>"+
@@ -200,7 +200,7 @@ angular.module('blockApp', ['ui.router'])
             "<li>"+
               "<a ng-click=\"logout()\">"+
                 "<i>"+
-                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/associate/report-icon.PNG\">"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/associate/report-icon.png\">"+
                 "</i>"+
                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
               "</a>"+
