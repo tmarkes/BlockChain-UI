@@ -25,7 +25,7 @@
 
 .approval-form {
   float:right;color:white;font-size:16px;background-color:#39B9E2;
-  border-color:transparent;width:10%;border-radius:50px;font-weight:bold
+  border-color:transparent;border-radius:50px;font-weight:bold
 }
 
 .submit-approval-form {
@@ -59,7 +59,7 @@
 
 .interview-col-select {color: #14a3e7}
 
-.interview-row-submit {background-color: white;padding-top: 20px;border-top: 0px;margin-right:0px}
+.interview-row-submit {background-color: white;padding-top: 20px;border-top: 0px;margin-right:0px;margin-left:0px}
 
 .interview-row-submitApproval {background-color: white;padding-top: 20px;border-top: 0px;margin-left:0px}
 
