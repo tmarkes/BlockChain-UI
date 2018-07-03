@@ -328,7 +328,7 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
               "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                 "<li>"+
-                  "<a class=\"components\" ng-click=\"logout()\">View Actice</a>"+
+                  "<a class=\"components\" ng-click=\"logout()\">View Active</a>"+
                 "</li>"+
                 "<li>"+
                   "<a class=\"components\" ng-click=\"logout()\">View Pending</a>"+
@@ -366,7 +366,7 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
         "</div>"+
 
-      "<div class=\"modal-color\" style=\"width:74.5%;float:right;margin-top:10px\">"+
+      "<div class=\"modal-color\" style=\"width:74.5%;float:right;margin-top:20px\">"+
           "<table class=\"table table-hover promosTable-content\">"+
             "<tr ng-click=\"goPromoApproval( promo.id, promo.promoName, promo.businessBenefit, promo.promoLongDescription, promo.tc, "+
               "promo.startDate, promo.endDate, promo.ruleTyp, promo.ruleVal, promo.notificationDaysRemind, promo.enrollmentDeadline, promo.status, promo.benefit)\" "+
@@ -420,7 +420,7 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
               "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                 "<li>"+
-                  "<a class=\"components\" ng-click=\"logout()\">View Actice</a>"+
+                  "<a class=\"components\" ng-click=\"logout()\">View Active</a>"+
                 "</li>"+
                 "<li>"+
                   "<a class=\"components\" ng-click=\"logout()\">View Pending</a>"+
@@ -582,7 +582,7 @@ angular.module('blockApp', ['ui.router'])
                 "</a>"+
                 "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                   "<li>"+
-                    "<a class=\"components\" ng-click=\"logout()\">View Actice</a>"+
+                    "<a class=\"components\" ng-click=\"logout()\">View Active</a>"+
                   "</li>"+
                   "<li>"+
                     "<a class=\"components\" ng-click=\"logout()\">View Pending</a>"+
