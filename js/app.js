@@ -305,16 +305,65 @@ angular.module('blockApp', ['ui.router'])
           "</div>"+
         "</div>"+
       "</div>"+
-      "<div class=\"row modal-color\">"+
-        "<div id=\"customerlist\">"+
-          "<table class=\"promosTable-Header\">"+
-            "<tr style=\"color:#5d546d;font-size:large\">"+
-                "<th class=\"text-center\" style=\"width:30%\">Promotion Name</th>"+
-                "<th class=\"text-center\" style=\"width:20%\">Start Date</th>"+
-                "<th class=\"text-center\" style=\"width:20%\">End Date</th>"+
-                "<th class=\"text-center\">Status</th>"+
-            "</tr>"+
-          "</table>"+
+      "<div class=\"row\">"+
+          "<nav id=\"sidebar\" style=\"width:25%;float:left;padding-bottom:40%\">"+
+          "<ul class=\"list-unstyled components\">"+
+            "<li>"+
+              "<img class=\"sidebar-profilePic\" src=\"resources/static/director_profile_picture-sidebar.png\">"+
+              "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
+              "<hr class=\"sidebar-profileBar\">"+
+            "</li>"+
+            "<li class=\"active\">"+
+              "<a>"+
+                "<i>"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a data-toggle=\"collapse\" aria-expanded=\"true\" class=\"collapsed\">"+
+                  "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/director/promotions-icon.PNG\"></i>"+
+               "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
+              "</a>"+
+              "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
+                "<li>"+
+                  "<a class=\"components\" ng-click=\"logout()\">View Actice</a>"+
+                "</li>"+
+                "<li>"+
+                  "<a class=\"components\" ng-click=\"logout()\">View Pending</a>"+
+                "</li>"+
+              "</ul>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/customers-icon.PNG\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Customers</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/report-icon.png\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
+              "</a>"+
+            "</li>"+
+          "</ul>"+
+        "</nav>"+
+        "<div class=\"modal-color\" style=\"width:74.5%;float:right\">"+
+            "<div id=\"customerlist\">"+
+            "<table class=\"promosTable-Header\">"+
+              "<tr style=\"color:#5d546d;font-size:large\">"+
+                  "<th class=\"text-center\" style=\"width:30%\">Promotion Name</th>"+
+                  "<th class=\"text-center\" style=\"width:20%\">Start Date</th>"+
+                  "<th class=\"text-center\" style=\"width:20%\">End Date</th>"+
+                  "<th class=\"text-center\">Status</th>"+
+              "</tr>"+
+            "</table>"+
+          "</div>"+
         "</div>"+
       "</div>"+
 
@@ -347,7 +396,55 @@ angular.module('blockApp', ['ui.router'])
           "</div>"+
         "</div>"+
       "</div>"+
-      "<div class=\"modal-color\">"+
+      "<div class=\"row\">"+
+          "<nav id=\"sidebar\" style=\"width:25%;float:left;padding-bottom:40%\">"+
+          "<ul class=\"list-unstyled components\">"+
+            "<li>"+
+              "<img class=\"sidebar-profilePic\" src=\"resources/static/director_profile_picture-sidebar.png\">"+
+              "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
+              "<hr class=\"sidebar-profileBar\">"+
+            "</li>"+
+            "<li class=\"active\">"+
+              "<a>"+
+                "<i>"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a data-toggle=\"collapse\" aria-expanded=\"true\" class=\"collapsed\">"+
+                  "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/director/promotions-icon.PNG\"></i>"+
+               "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
+              "</a>"+
+              "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
+                "<li>"+
+                  "<a class=\"components\" ng-click=\"logout()\">View Actice</a>"+
+                "</li>"+
+                "<li>"+
+                  "<a class=\"components\" ng-click=\"logout()\">View Pending</a>"+
+                "</li>"+
+              "</ul>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/customers-icon.PNG\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Customers</span>"+
+              "</a>"+
+            "</li>"+
+            "<li>"+
+              "<a ng-click=\"logout()\">"+
+                "<i>"+
+                  "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/report-icon.png\">"+
+                "</i>"+
+                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
+              "</a>"+
+            "</li>"+
+          "</ul>"+
+        "</nav>"+
+        "<div class=\"modal-color\" style=\"width:74.5%;float:right\">"+
         "<form id=\"reviewPromoForm\" action=\"\" name=\"reviewPromoForm\" class=\"form-font\" method=\"POST\">"+
           "<fieldset ng-disabled=\"promoUpdateDisable && promo.status != 'Approved'\" \">"+
             "<div class=\"row interview-row\">"+
@@ -437,7 +534,8 @@ angular.module('blockApp', ['ui.router'])
           "</div>"+
           "</fieldset>"+
         "</form>"+
-        "</div>",
+        "</div>"+
+      "</div>",
         params: {
           promoId: null, promoName: null, promoBenefit : null, promoDesc : null, promoTerms : null,
           promoStartDate : null, promoEndDate : null, promoRuleTyp : null, promoRuleVal : null, promoReminder : null,
@@ -460,7 +558,55 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
           "</div>"+
         "</div>"+
-        "<div class=\"modal-color\">"+
+        "<div class=\"row\">"+
+            "<nav id=\"sidebar\" style=\"width:25%;float:left;padding-bottom:40%\">"+
+            "<ul class=\"list-unstyled components\">"+
+              "<li>"+
+                "<img class=\"sidebar-profilePic\" src=\"resources/static/director_profile_picture-sidebar.png\">"+
+                "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
+                "<hr class=\"sidebar-profileBar\">"+
+              "</li>"+
+              "<li class=\"active\">"+
+                "<a>"+
+                  "<i>"+
+                    "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
+                  "</i>"+
+                  "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
+                "</a>"+
+              "</li>"+
+              "<li>"+
+                "<a data-toggle=\"collapse\" aria-expanded=\"true\" class=\"collapsed\">"+
+                    "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/director/promotions-icon.PNG\"></i>"+
+                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
+                "</a>"+
+                "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
+                  "<li>"+
+                    "<a class=\"components\" ng-click=\"logout()\">View Actice</a>"+
+                  "</li>"+
+                  "<li>"+
+                    "<a class=\"components\" ng-click=\"logout()\">View Pending</a>"+
+                  "</li>"+
+                "</ul>"+
+              "</li>"+
+              "<li>"+
+                "<a ng-click=\"logout()\">"+
+                  "<i>"+
+                    "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/customers-icon.PNG\">"+
+                  "</i>"+
+                  "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Customers</span>"+
+                "</a>"+
+              "</li>"+
+              "<li>"+
+                "<a ng-click=\"logout()\">"+
+                  "<i>"+
+                    "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/report-icon.png\">"+
+                  "</i>"+
+                  "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
+                "</a>"+
+              "</li>"+
+            "</ul>"+
+          "</nav>"+
+        "<div class=\"modal-color\" style=\"width:74.5%;float:right\">"+
         "<form id=\"reviewPromoForm\" action=\"\" name=\"reviewPromoForm\" class=\"form-font\" method=\"POST\">"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Promotion Name: </label>"+
@@ -533,7 +679,8 @@ angular.module('blockApp', ['ui.router'])
           "</div>"+
           "</div>"+
         "</form>"+
-        "</div>",
+        "</div>"+
+      "</div>",
         params: {
           promoId: null, promoName: null, promoBenefit : null, promoDesc : null, promoTerms : null,
           promoStartDate : null, promoEndDate : null, promoRuleTyp : null, promoRuleVal : null, promoReminder : null,
