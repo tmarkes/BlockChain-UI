@@ -336,9 +336,13 @@ a{
     cursor: pointer;
 }
 
+#pageSubmenu {
+  margin-left: 7%;
+}
+
 /* Nominators line css */
 .set_line, .set_line ul, .set_line li {
-    position: relative;
+    /*position: relative;*/
 }
 .set_line li::before, .set_line li::after {
     content: "";
