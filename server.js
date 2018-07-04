@@ -217,7 +217,7 @@ app.post('/apply/promotion', function (req, res) {
       { json: promoData },
       function (error, response, body) {
         if (!error && response.statusCode == 200) {
-          console.log("Applied for Promotion: "+body+" ]")
+          console.log("Applied for Promotion: "+JSON.parse(body)+" ]")
           res.status(200).send(body);
         } else {
           console.log(error);

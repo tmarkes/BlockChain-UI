@@ -1265,7 +1265,7 @@ angular.module('blockApp', ['ui.router'])
         "}";
         $http.post('/apply/promotion', postData)
         .then(function (data) {
-          console.log("Applied for Promotion: "+data["data"]["previousHash"]+" ]");
+          console.log("Applied for Promotion: "+data["data"]["hash"]+" ]");
           $scope.promo.id = data["data"]["hash"];
           $scope.promo.realID = data["data"]["previousHash"];
         }).catch(function(error) {
