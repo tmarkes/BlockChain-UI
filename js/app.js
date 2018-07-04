@@ -745,7 +745,7 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
             "</li>"+
             "<li>"+
-              "<a ng-click=\"logCustomerSuccess( promo.id,promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+              "<a ng-click=\"logCustomerSuccess( 'TILE',promo.id, promo.customerName, promo.customerBilling, promo.name, "+
               "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
               "promo.enrollmentDeadline, promo.postPromoBilling )\">"+
                 "<i>"+
@@ -1273,6 +1273,9 @@ angular.module('blockApp', ['ui.router'])
       $scope.logCustomerSuccess = function( passwordPromoId, promoId, customerName, customerBilling, promoName,
         promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
         promoEnrollment, postPromoBilling ) {
+          console.log( "Intro ["+passwordPromoId + promoId + customerName + customerBilling + promoName,
+        promoDesc + promoTerms + promoStart + promoEnd + promoReminder,
+        promoEnrollment + postPromoBilling+"] Outro");
           $state.go("customerBillingSuccess", { passwordPromoId : passwordPromoId,
             promoId : promoId, customerName : customerName, promoDesc : promoDesc,
             promoTerms : promoTerms, promoStartDate : promoStart,
