@@ -729,7 +729,9 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
             "</li>"+
             "<li>"+
-              "<a>"+
+              "<a ng-click=\"logCustomer( promo.previousId,promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+              "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
+              "promo.enrollmentDeadline, promo.postPromoBilling )\">"+
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/promotions-icon.PNG\">"+
                 "</i>"+
@@ -854,7 +856,7 @@ angular.module('blockApp', ['ui.router'])
             "</a>"+
           "</li>"+
           "<li>"+
-            "<a ng-click=\"logout()\">"+
+            "<a>"+
               "<i>"+
                 "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/billing-icon.png\">"+
               "</i>"+
@@ -862,7 +864,9 @@ angular.module('blockApp', ['ui.router'])
             "</a>"+
           "</li>"+
           "<li>"+
-            "<a ng-click=\"logout()\">"+
+            "<a ng-click=\"logCustomer( promo.previousId,promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+            "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
+            "promo.enrollmentDeadline, promo.postPromoBilling )\">"+
               "<i>"+
                 "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/promotions-icon.PNG\">"+
               "</i>"+
@@ -870,7 +874,7 @@ angular.module('blockApp', ['ui.router'])
             "</a>"+
           "</li>"+
           "<li>"+
-            "<a ng-click=\"logout()\">"+
+            "<a>"+
               "<i>"+
                 "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/rate-plans-icon.PNG\">"+
               "</i>"+
@@ -878,7 +882,7 @@ angular.module('blockApp', ['ui.router'])
             "</a>"+
           "</li>"+
           "<li>"+
-            "<a ng-click=\"logout()\">"+
+            "<a>"+
               "<i>"+
                 "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/update-device-icon.PNG\">"+
               "</i>"+
@@ -1271,6 +1275,18 @@ angular.module('blockApp', ['ui.router'])
         });
       }
 
+      $scope.logCustomer = function( passwordPromoId, promoId, customerName, customerBilling, promoName,
+        promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
+        promoEnrollment, postPromoBilling ) {
+          $state.go("customerAppliesForPromo", { passwordPromoId : passwordPromoId,
+            promoId : promoId, customerName : customerName, promoDesc : promoDesc,
+            promoTerms : promoTerms, promoStartDate : promoStart,
+            promoEndDate : promoEnd, customerBilling : customerBilling,
+            promoReminder : promoReminder, promoEnrollment : promoEnrollment,
+            postPromoBilling : postPromoBilling }
+          );
+      }
+
       $scope.logCustomerSuccess = function( passwordPromoId, promoId, customerName, customerBilling, promoName,
         promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
         promoEnrollment, postPromoBilling ) {
@@ -1314,6 +1330,7 @@ angular.module('blockApp', ['ui.router'])
       .then(function (data) {
         $scope.promo = {
           id: data["data"]["hash"],
+          previousId: data["data"]["hash"],
           name: data["data"]["data"].promoName,
           customerName: $stateParams.customerName,
           customerBilling: '$35 per month',
@@ -1328,6 +1345,18 @@ angular.module('blockApp', ['ui.router'])
       }).catch(function(error) {
         console.log(error);
       });
+
+      $scope.logCustomer = function( passwordPromoId, promoId, customerName, customerBilling, promoName,
+        promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
+        promoEnrollment, postPromoBilling ) {
+          $state.go("customerAppliesForPromo", { passwordPromoId : passwordPromoId,
+            promoId : promoId, customerName : customerName, promoDesc : promoDesc,
+            promoTerms : promoTerms, promoStartDate : promoStart,
+            promoEndDate : promoEnd, customerBilling : customerBilling,
+            promoReminder : promoReminder, promoEnrollment : promoEnrollment,
+            postPromoBilling : postPromoBilling }
+          );
+      }
   })
   .controller("PromotionRejectedCtrl", function($scope, $state, $stateParams, $window) {
       $scope.user = {
