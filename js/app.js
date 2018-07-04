@@ -1227,6 +1227,7 @@ angular.module('blockApp', ['ui.router'])
       .then(function (data) {
         $scope.promo = {
           id: data["data"]["hash"],
+          realID: data["data"]["previousHash"],
           name: data["data"]["data"].promoName,
           customerName: $stateParams.customerName,
           customerBilling: '$35 per month',
@@ -1264,7 +1265,7 @@ angular.module('blockApp', ['ui.router'])
         "}";
         $http.post('/apply/promotion', postData)
         .then(function (data) {
-          console.log("Applied for Promotion: "+data["data"]+" ]");
+          console.log("Applied for Promotion: "+data["data"]["previousHash"]+" ]");
           $scope.promo.id = data["data"]["hash"];
           $scope.promo.realID = data["data"]["previousHash"];
         }).catch(function(error) {
