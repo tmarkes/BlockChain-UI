@@ -745,7 +745,7 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
             "</li>"+
             "<li>"+
-              "<a ng-click=\"logCustomerSuccess( promo.realID,promo.id, promo.customerName, promo.customerBilling, promo.name, "+
+              "<a ng-click=\"logCustomerSuccess( promo.previousId,promo.id, promo.customerName, promo.customerBilling, promo.name, "+
               "promo.longDesc, promo.selectedTC, promo.startDate, promo.endDate, promo.notificationDaysRemind, "+
               "promo.enrollmentDeadline, promo.postPromoBilling )\">"+
                 "<i>"+
@@ -1227,7 +1227,7 @@ angular.module('blockApp', ['ui.router'])
       .then(function (data) {
         $scope.promo = {
           id: data["data"]["hash"],
-          realID: data["data"]["previousHash"],
+          previousId: data["data"]["hash"],
           name: data["data"]["data"].promoName,
           customerName: $stateParams.customerName,
           customerBilling: '$35 per month',
@@ -1265,9 +1265,7 @@ angular.module('blockApp', ['ui.router'])
         "}";
         $http.post('/apply/promotion', postData)
         .then(function (data) {
-          console.log("Applied for Promotion: "+data["data"]["hash"]+" ]");
           $scope.promo.id = data["data"]["hash"];
-          $scope.promo.realID = data["data"]["previousHash"];
         }).catch(function(error) {
           console.log(error);
         });
