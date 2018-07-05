@@ -176,21 +176,21 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
               "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                 "<li>"+
-                  "<a class=\"components\" ng-click=\"logout()\">Create New</a>"+
+                  "<a class=\"components\" ng-click=\"logUser( user.name )\">Create New</a>"+
                 "</li>"+
                 "<li>"+
-                  "<a class=\"components\" ng-click=\"logout()\">View Active</a>"+
+                  "<a class=\"components\">View Active</a>"+
                 "</li>"+
                 "<li>"+
-                  "<a class=\"components\" ng-click=\"logout()\">View Pending</a>"+
+                  "<a class=\"components\">View Pending</a>"+
                 "</li>"+
                 "<li>"+
-                  "<a class=\"components\" ng-click=\"logout()\">View Rejected</a>"+
+                  "<a class=\"components\">View Rejected</a>"+
                 "</li>"+
               "</ul>"+
             "</li>"+
             "<li>"+
-              "<a ng-click=\"logout()\">"+
+              "<a>"+
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/associate/brochures-icon.PNG\">"+
                 "</i>"+
@@ -198,7 +198,7 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
             "</li>"+
             "<li>"+
-              "<a ng-click=\"logout()\">"+
+              "<a>"+
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/associate/report-icon.png\">"+
                 "</i>"+
@@ -328,15 +328,15 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
               "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                 "<li>"+
-                  "<a class=\"components\" ng-click=\"logout()\">View Active</a>"+
+                  "<a class=\"components\">View Active</a>"+
                 "</li>"+
                 "<li>"+
-                  "<a class=\"components\" ng-click=\"logout()\">View Pending</a>"+
+                  "<a class=\"components\">View Pending</a>"+
                 "</li>"+
               "</ul>"+
             "</li>"+
             "<li>"+
-              "<a ng-click=\"logout()\">"+
+              "<a>"+
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/customers-icon.PNG\">"+
                 "</i>"+
@@ -344,7 +344,7 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
             "</li>"+
             "<li>"+
-              "<a ng-click=\"logout()\">"+
+              "<a>"+
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/report-icon.png\">"+
                 "</i>"+
@@ -420,15 +420,15 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
               "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                 "<li>"+
-                  "<a class=\"components\" ng-click=\"logout()\">View Active</a>"+
+                  "<a class=\"components\">View Active</a>"+
                 "</li>"+
                 "<li>"+
-                  "<a class=\"components\" ng-click=\"logout()\">View Pending</a>"+
+                  "<a class=\"components\">View Pending</a>"+
                 "</li>"+
               "</ul>"+
             "</li>"+
             "<li>"+
-              "<a ng-click=\"logout()\">"+
+              "<a>"+
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/customers-icon.PNG\">"+
                 "</i>"+
@@ -436,7 +436,7 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
             "</li>"+
             "<li>"+
-              "<a ng-click=\"logout()\">"+
+              "<a>"+
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/report-icon.png\">"+
                 "</i>"+
@@ -582,15 +582,15 @@ angular.module('blockApp', ['ui.router'])
                 "</a>"+
                 "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                   "<li>"+
-                    "<a class=\"components\" ng-click=\"logout()\">View Active</a>"+
+                    "<a class=\"components\">View Active</a>"+
                   "</li>"+
                   "<li>"+
-                    "<a class=\"components\" ng-click=\"logout()\">View Pending</a>"+
+                    "<a class=\"components\">View Pending</a>"+
                   "</li>"+
                 "</ul>"+
               "</li>"+
               "<li>"+
-                "<a ng-click=\"logout()\">"+
+                "<a>"+
                   "<i>"+
                     "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/customers-icon.PNG\">"+
                   "</i>"+
@@ -598,7 +598,7 @@ angular.module('blockApp', ['ui.router'])
                 "</a>"+
               "</li>"+
               "<li>"+
-                "<a ng-click=\"logout()\">"+
+                "<a>"+
                   "<i>"+
                     "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/report-icon.png\">"+
                   "</i>"+
@@ -721,7 +721,7 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
             "</li>"+
             "<li>"+
-              "<a ng-click=\"logout()\">"+
+              "<a>"+
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/billing-icon.png\">"+
                 "</i>"+
@@ -739,7 +739,7 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
             "</li>"+
             "<li>"+
-              "<a ng-click=\"logout()\">"+
+              "<a>"+
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/rate-plans-icon.PNG\">"+
                 "</i>"+
