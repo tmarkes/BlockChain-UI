@@ -909,7 +909,7 @@ angular.module('blockApp', ['ui.router'])
           promoEnrollment : null, postPromoBilling : null
         }
       })
-      .state('customerBillingRejection', {
+      /*.state('customerBillingRejection', {
         url: "/promotionRejected",
         controller: "PromotionRejectedCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
@@ -942,7 +942,7 @@ angular.module('blockApp', ['ui.router'])
         promoEnrollment : null, postPromoBilling : null
       }
     })
-  })
+  })*/
   .controller("LoadPromosCtrl", function($scope, $state, $http, $window) {
     $http.get('/retrieve/promotion')
       .then(function (data) {
@@ -1303,6 +1303,7 @@ angular.module('blockApp', ['ui.router'])
       }
   })
   .controller("PromotionAcceptedCtrl", function($scope, $state, $http, $stateParams, $window) {
+      $scope.contenthide = false;
       $scope.user = {
         name: $stateParams.customerName,
         role: 'Customer'
@@ -1358,7 +1359,7 @@ angular.module('blockApp', ['ui.router'])
           );
       }
   })
-  .controller("PromotionRejectedCtrl", function($scope, $state, $stateParams, $window) {
+  /*.controller("PromotionRejectedCtrl", function($scope, $state, $stateParams, $window) {
       $scope.user = {
         name: $stateParams.customerName,
         role: 'Customer',
@@ -1371,7 +1372,7 @@ angular.module('blockApp', ['ui.router'])
       $scope.logout = function() {
         $state.go("login");
       }
-  })
+  })*/
   .controller("PromoCreationCtrl", function($scope, $state, $http, $stateParams, $window) {
       $scope.promoCreateDisable = false;
       $scope.contenthide = false;
