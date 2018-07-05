@@ -909,40 +909,7 @@ angular.module('blockApp', ['ui.router'])
           promoEnrollment : null, postPromoBilling : null
         }
       })
-      /*.state('customerBillingRejection', {
-        url: "/promotionRejected",
-        controller: "PromotionRejectedCtrl",
-        template: "<div class=\"row subtitle-row-small\">"+
-        "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
-        "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
-        "<div class=\"header-page-title\">Promotion Status</div>"+
-        "<div class=\"header-main-rightside\">"+
-          "<div style=\"float:right\">"+
-            "<div class=\"header-profile-namerole\">{{user.name}}<br/>{{user.role}}</div>"+
-            "<img src=\"resources/static/customer_profile_picture.png\" class=\"header-profile-pic\" />"+
-            "<img ng-click=\"logout()\" src=\"resources/static/logout_icon.png\" class=\"header-logout-icon\" />"+
-            "<img src=\"resources/static/director_company_logo.png\" class=\"companyDir-icon-not-login\" />"+
-          "</div>"+
-        "</div>"+
-      "</div>"+
-        "<div class=\"row modal-color customer-menu\">"+
-        "<div class=\"customer-msg-text\">"+
-          "<p>{{user.name}},<br />"+
-            "Thank you for being a valued customer.<br />"+
-            "Unfortunately, we are not able to approve your application<br />"+
-            "for \"{{user.promo}}\" at this time<br />"+
-            "due to extenuating circumstances.<br />"+
-            "Block 3 is complete."+
-          "</p>"+
-        "</div>"+
-      "</div>",
-      params: {
-        promoId: null, promoName: null, customerName : null, promoDesc : null, promoTerms : null,
-        promoStartDate : null, promoEndDate : null, customerBilling : null, promoReminder : null,
-        promoEnrollment : null, postPromoBilling : null
-      }
-    })
-  })*/
+  })
   .controller("LoadPromosCtrl", function($scope, $state, $http, $window) {
     $http.get('/retrieve/promotion')
       .then(function (data) {
@@ -1421,20 +1388,6 @@ angular.module('blockApp', ['ui.router'])
           );
       }
   })
-  /*.controller("PromotionRejectedCtrl", function($scope, $state, $stateParams, $window) {
-      $scope.user = {
-        name: $stateParams.customerName,
-        role: 'Customer',
-        promo: $stateParams.promoName
-      };
-      $scope.backToLandingPage = function() {
-        $window.location.href = "http://54.146.42.88:8080/landingPage";
-      }
-
-      $scope.logout = function() {
-        $state.go("login");
-      }
-  })*/
   .controller("PromoCreationCtrl", function($scope, $state, $http, $stateParams, $window) {
       $scope.promoCreateDisable = false;
       $scope.contenthide = false;
