@@ -353,7 +353,7 @@ angular.module('blockApp', ['ui.router'])
             "</li>"+
           "</ul>"+
         "</nav>"+
-        "<div id=\"mainmenu\" class=\"modal-color\" style=\"width:74.5%;float:right\">"+
+        "<div id=\"mainmenu-header\" class=\"modal-color\" style=\"width:74.5%;float:right\">"+
             "<div id=\"customerlist\">"+
               "<table class=\"promosTable-Header\">"+
                 "<tr style=\"color:#5d546d;font-size:large\">"+
@@ -366,7 +366,7 @@ angular.module('blockApp', ['ui.router'])
             "</div>"+
         "</div>"+
 
-      "<div class=\"modal-color\" style=\"width:74.5%;float:right;margin-top:20px\">"+
+      "<div id=\"mainmenu-content\" class=\"modal-color\" style=\"width:74.5%;float:right;margin-top:20px\">"+
           "<table class=\"table table-hover promosTable-content\">"+
             "<tr ng-click=\"goPromoApproval( promo.id, promo.promoName, promo.businessBenefit, promo.promoLongDescription, promo.tc, "+
               "promo.startDate, promo.endDate, promo.ruleTyp, promo.ruleVal, promo.notificationDaysRemind, promo.enrollmentDeadline, promo.status, promo.benefit)\" "+
@@ -948,10 +948,12 @@ angular.module('blockApp', ['ui.router'])
     $scope.toggleMethod = function() {
       if( $scope.contenthide ) {
         document.getElementById("sidebar").style.width = "25%";
-        document.getElementById("mainmenu").style.width = "74.5%";
+        document.getElementById("mainmenu-header").style.width = "74.5%";
+        document.getElementById("mainmenu-content").style.width = "74.5%";
       } else {
         document.getElementById("sidebar").style.width = "7%";
-        document.getElementById("mainmenu").style.width = "92.5%";
+        document.getElementById("mainmenu-header").style.width = "92.5%";
+        document.getElementById("mainmenu-content").style.width = "92.5%";
       }
       this.contenthide=!this.contenthide
     }
