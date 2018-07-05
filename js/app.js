@@ -294,7 +294,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "LoadPromosCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
         "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
-        "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
+        "<img ng-click=\"toggleMethod()\" src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
         "<div class=\"header-page-title\">Marketing Promotions</div>"+
         "<div class=\"header-main-rightside\">"+
           "<div style=\"float:right\">"+
@@ -386,7 +386,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "PromoApprovalCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
         "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
-        "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
+        "<img ng-click=\"toggleMethod()\" src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
         "<div class=\"header-page-title\">Approve/Deny Promotion</div>"+
         "<div class=\"header-main-rightside\">"+
           "<div style=\"float:right\">"+
@@ -548,7 +548,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "PromoEditCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
           "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
-          "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
+          "<img ng-click=\"toggleMethod()\" src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
           "<div class=\"header-page-title\">Update Promotion</div>"+
           "<div class=\"header-main-rightside\">"+
             "<div style=\"float:right\">"+
@@ -693,7 +693,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "PromoApplyCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
           "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
-          "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
+          "<img ng-click=\"toggleMethod()\" src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
           "<div class=\"header-page-title\">Apply for Promotion</div>"+
           "<div class=\"header-main-rightside\">"+
             "<div style=\"float:right\">"+
