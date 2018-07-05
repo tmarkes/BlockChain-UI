@@ -142,7 +142,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "PromoCreationCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
         	"<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
-          "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
+          "<img ng-click=\"toggleMethod()\" src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
           "<div class=\"header-page-title\" ng-click=\"logUser( user.name )\" >New Promotion</div>"+
           "<div class=\"header-main-rightside\">"+
             "<div style=\"float:right\">"+
@@ -166,15 +166,15 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
-              "<a data-toggle=\"collapse\" aria-expanded=\"true\" class=\"collapsed\">"+
+              "<a data-toggle=\"collapse\" data-target=\"#pageSubmenu\" aria-expanded=\"false\" class=\"collapsed\">"+
                   "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/associate/promotions-icon.PNG\"></i>"+
-               "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
+               "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
               "</a>"+
-              "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
+              "<ul class=\"set_line collapse\" id=\"pageSubmenu\">"+
                 "<li>"+
                   "<a class=\"components\" ng-click=\"logUser( user.name )\">Create New</a>"+
                 "</li>"+
@@ -194,7 +194,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/associate/brochures-icon.PNG\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Marketing Brochures</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Marketing Brochures</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
@@ -202,12 +202,12 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/associate/report-icon.png\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
               "</a>"+
             "</li>"+
           "</ul>"+
         "</nav>"+
-        "<div class=\"modal-color\" style=\"width:74.5%;float:right\">"+
+        "<div id=\"mainmenu\" class=\"modal-color\" style=\"width:74.5%;float:right\">"+
         "<form id=\"reviewPromoForm\" action=\"\" name=\"reviewPromoForm\" class=\"form-font\" method=\"POST\">"+
           "<fieldset ng-disabled=\"promoCreateDisable\">"+
             "<div class=\"row interview-row\">"+
@@ -318,13 +318,13 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
               "<a data-toggle=\"collapse\" aria-expanded=\"true\" class=\"collapsed\">"+
                   "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/director/promotions-icon.PNG\"></i>"+
-               "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
+               "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
               "</a>"+
               "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                 "<li>"+
@@ -340,7 +340,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/customers-icon.PNG\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Customers</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Customers</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
@@ -348,7 +348,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/report-icon.png\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
               "</a>"+
             "</li>"+
           "</ul>"+
@@ -410,13 +410,13 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
               "<a data-toggle=\"collapse\" aria-expanded=\"true\" class=\"collapsed\">"+
                   "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/director/promotions-icon.PNG\"></i>"+
-               "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
+               "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
               "</a>"+
               "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                 "<li>"+
@@ -432,7 +432,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/customers-icon.PNG\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Customers</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Customers</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
@@ -440,7 +440,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/report-icon.png\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
               "</a>"+
             "</li>"+
           "</ul>"+
@@ -572,13 +572,13 @@ angular.module('blockApp', ['ui.router'])
                   "<i>"+
                     "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
                   "</i>"+
-                  "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
+                  "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
                 "</a>"+
               "</li>"+
               "<li>"+
                 "<a data-toggle=\"collapse\" aria-expanded=\"true\" class=\"collapsed\">"+
                     "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/director/promotions-icon.PNG\"></i>"+
-                 "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
+                 "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
                 "</a>"+
                 "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                   "<li>"+
@@ -594,7 +594,7 @@ angular.module('blockApp', ['ui.router'])
                   "<i>"+
                     "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/customers-icon.PNG\">"+
                   "</i>"+
-                  "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Customers</span>"+
+                  "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Customers</span>"+
                 "</a>"+
               "</li>"+
               "<li>"+
@@ -602,7 +602,7 @@ angular.module('blockApp', ['ui.router'])
                   "<i>"+
                     "<img class=\"sidebar-nav-icon\" src=\"/resources/static/director/report-icon.png\">"+
                   "</i>"+
-                  "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
+                  "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Reporting</span>"+
                 "</a>"+
               "</li>"+
             "</ul>"+
@@ -717,7 +717,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
@@ -725,7 +725,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/billing-icon.png\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Billing</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Billing</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
@@ -735,7 +735,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/promotions-icon.PNG\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Current Promotions</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Current Promotions</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
@@ -743,7 +743,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/rate-plans-icon.PNG\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Rate Plans</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Rate Plans</span>"+
               "</a>"+
             "</li>"+
             "<li>"+
@@ -753,7 +753,7 @@ angular.module('blockApp', ['ui.router'])
                 "<i>"+
                   "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/update-device-icon.PNG\">"+
                 "</i>"+
-                "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Update Device</span>"+
+                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Update Device</span>"+
               "</a>"+
             "</li>"+
           "</ul>"+
@@ -852,7 +852,7 @@ angular.module('blockApp', ['ui.router'])
               "<i>"+
                 "<img class=\"sidebar-nav-icon\" src=\"/resources/static/dashboard_icon.png\">"+
               "</i>"+
-              "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
+              "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Dashboard</span>"+
             "</a>"+
           "</li>"+
           "<li>"+
@@ -860,7 +860,7 @@ angular.module('blockApp', ['ui.router'])
               "<i>"+
                 "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/billing-icon.png\">"+
               "</i>"+
-              "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Billing</span>"+
+              "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Billing</span>"+
             "</a>"+
           "</li>"+
           "<li>"+
@@ -870,7 +870,7 @@ angular.module('blockApp', ['ui.router'])
               "<i>"+
                 "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/promotions-icon.PNG\">"+
               "</i>"+
-              "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Current Promotions</span>"+
+              "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Current Promotions</span>"+
             "</a>"+
           "</li>"+
           "<li>"+
@@ -878,7 +878,7 @@ angular.module('blockApp', ['ui.router'])
               "<i>"+
                 "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/rate-plans-icon.PNG\">"+
               "</i>"+
-              "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Rate Plans</span>"+
+              "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Rate Plans</span>"+
             "</a>"+
           "</li>"+
           "<li>"+
@@ -886,7 +886,7 @@ angular.module('blockApp', ['ui.router'])
               "<i>"+
                 "<img class=\"sidebar-nav-icon\" src=\"/resources/static/customer/update-device-icon.PNG\">"+
               "</i>"+
-              "<span *ngIf=\"contenthide\" class=\"components iotsidebar-more\">Update Device</span>"+
+              "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Update Device</span>"+
             "</a>"+
           "</li>"+
         "</ul>"+
@@ -1374,6 +1374,7 @@ angular.module('blockApp', ['ui.router'])
   })
   .controller("PromoCreationCtrl", function($scope, $state, $http, $stateParams, $window) {
       $scope.promoCreateDisable = false;
+      $scope.contenthide = false;
       $scope.backToLandingPage = function() {
         $window.location.href = "http://54.146.42.88:8080/landingPage";
       }
@@ -1398,6 +1399,17 @@ angular.module('blockApp', ['ui.router'])
         }
       });
 
+      $scope.toggleMethod = function() {
+        if( $scope.contenthide ) {
+          document.getElementById("sidebar").style.width = "25%";
+          document.getElementById("mainmenu").style.width = "74.5%";
+        } else {
+          document.getElementById("sidebar").style.width = "7%";
+          document.getElementById("mainmenu").style.width = "92.5%";
+        }
+        this.contenthide=!this.contenthide
+      }
+
       $scope.logout = function() {
         $state.go("login");
       }
@@ -1415,6 +1427,7 @@ angular.module('blockApp', ['ui.router'])
           { ruleType: "SKU", ruleValue: "Any_Number_Values" }
         ],
         notificationDaysRemind: "5",
+        enrollmentDeadline: "mm/dd/yyyy",
         reminderList: [ "5", "10", "15" ],
         status: "Pending Approval"
       };
