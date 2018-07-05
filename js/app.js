@@ -310,7 +310,7 @@ angular.module('blockApp', ['ui.router'])
           "<ul class=\"list-unstyled components\">"+
             "<li>"+
               "<img class=\"sidebar-profilePic\" src=\"resources/static/director_profile_picture-sidebar.png\">"+
-              "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
+              "<span ng-hide=\"contenthide\" class=\"sidebar-profileName\">{{user.name}}</span>"+
               "<hr class=\"sidebar-profileBar\">"+
             "</li>"+
             "<li class=\"active\">"+
@@ -402,7 +402,7 @@ angular.module('blockApp', ['ui.router'])
           "<ul class=\"list-unstyled components\">"+
             "<li>"+
               "<img class=\"sidebar-profilePic\" src=\"resources/static/director_profile_picture-sidebar.png\">"+
-              "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
+              "<span ng-hide=\"contenthide\" class=\"sidebar-profileName\">{{user.name}}</span>"+
               "<hr class=\"sidebar-profileBar\">"+
             "</li>"+
             "<li class=\"active\">"+
@@ -564,7 +564,7 @@ angular.module('blockApp', ['ui.router'])
             "<ul class=\"list-unstyled components\">"+
               "<li>"+
                 "<img class=\"sidebar-profilePic\" src=\"resources/static/director_profile_picture-sidebar.png\">"+
-                "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
+                "<span ng-hide=\"contenthide\" class=\"sidebar-profileName\">{{user.name}}</span>"+
                 "<hr class=\"sidebar-profileBar\">"+
               "</li>"+
               "<li class=\"active\">"+
@@ -709,7 +709,7 @@ angular.module('blockApp', ['ui.router'])
           "<ul class=\"list-unstyled components\">"+
             "<li>"+
               "<img class=\"sidebar-profilePic\" src=\"resources/static/customer_profile_picture-sidebar.png\">"+
-              "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
+              "<span ng-hide=\"contenthide\" class=\"sidebar-profileName\">{{user.name}}</span>"+
               "<hr class=\"sidebar-profileBar\">"+
             "</li>"+
             "<li class=\"active\">"+
@@ -828,7 +828,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "PromotionAcceptedCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
         "<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
-        "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
+        "<img ng-click=\"toggleMethod()\" src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
         "<div class=\"header-page-title\">Promotion Status</div>"+
         "<div class=\"header-main-rightside\">"+
           "<div style=\"float:right\">"+
@@ -844,7 +844,7 @@ angular.module('blockApp', ['ui.router'])
         "<ul class=\"list-unstyled components\">"+
           "<li>"+
             "<img class=\"sidebar-profilePic\" src=\"resources/static/customer_profile_picture-sidebar.png\">"+
-            "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
+            "<span ng-hide=\"contenthide\" class=\"sidebar-profileName\">{{user.name}}</span>"+
             "<hr class=\"sidebar-profileBar\">"+
           "</li>"+
           "<li class=\"active\">"+
@@ -1304,12 +1304,24 @@ angular.module('blockApp', ['ui.router'])
   })
   .controller("PromotionAcceptedCtrl", function($scope, $state, $http, $stateParams, $window) {
       $scope.contenthide = false;
+
       $scope.user = {
         name: $stateParams.customerName,
         role: 'Customer'
       };
       $scope.backToLandingPage = function() {
         $window.location.href = "http://54.146.42.88:8080/landingPage";
+      }
+
+      $scope.toggleMethod = function() {
+        if( $scope.contenthide ) {
+          document.getElementById("sidebar").style.width = "25%";
+          document.getElementById("mainmenu").style.width = "74.5%";
+        } else {
+          document.getElementById("sidebar").style.width = "7%";
+          document.getElementById("mainmenu").style.width = "92.5%";
+        }
+        this.contenthide=!this.contenthide
       }
 
       $scope.logout = function() {
