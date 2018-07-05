@@ -891,7 +891,7 @@ angular.module('blockApp', ['ui.router'])
           "</li>"+
         "</ul>"+
       "</nav>"+
-      "<div class=\"modal-color customer-menu\" style=\"width:74.5%;float:right\">"+
+      "<div id=\"mainmenu\" class=\"modal-color customer-menu\" style=\"width:74.5%;float:right\">"+
       "<div class=\"customer-msg-text\">"+
           "<p>Congratulations, {{promo.customerName}}!<br />"+
             "Thank you for being a valued customer.<br />"+
@@ -1307,9 +1307,6 @@ angular.module('blockApp', ['ui.router'])
       $scope.logCustomerSuccess = function( passwordPromoId, promoId, customerName, customerBilling, promoName,
         promoDesc, promoTerms, promoStart, promoEnd, promoReminder,
         promoEnrollment, postPromoBilling ) {
-          console.log( "Intro ["+passwordPromoId + promoId + customerName + customerBilling + promoName,
-        promoDesc + promoTerms + promoStart + promoEnd + promoReminder,
-        promoEnrollment + postPromoBilling+"] Outro");
           $state.go("customerBillingSuccess", { passwordPromoId : passwordPromoId,
             promoId : promoId, customerName : customerName, promoDesc : promoDesc,
             promoTerms : promoTerms, promoStartDate : promoStart,
