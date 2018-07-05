@@ -306,7 +306,6 @@ table.promo-table-borders tr {border: solid grey}
 
 
 a[data-toggle="collapse"] {
-    position: relative;
 }
 
 a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {

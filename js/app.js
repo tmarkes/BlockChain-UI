@@ -1431,7 +1431,7 @@ angular.module('blockApp', ['ui.router'])
             benefit: "",
             longDesc: "",
             selectedTC: "",
-            startDate: "",
+            startDate: "mm/dd/yyyy",
             endDate: "mm/dd/yyyy",
             ruleTyp: "",
             ruleVal: "",
