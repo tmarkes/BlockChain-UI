@@ -322,11 +322,11 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
             "</li>"+
             "<li>"+
-              "<a data-toggle=\"collapse\" aria-expanded=\"true\" class=\"collapsed\">"+
+              "<a data-toggle=\"collapse\" data-target=\"#pageSubmenu\" aria-expanded=\"false\" class=\"collapsed\">"+
                   "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/director/promotions-icon.PNG\"></i>"+
                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
               "</a>"+
-              "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
+              "<ul class=\"set_line collapse\" id=\"pageSubmenu\">"+
                 "<li>"+
                   "<a class=\"components\">Update Promotion</a>"+
                 "</li>"+
@@ -353,7 +353,7 @@ angular.module('blockApp', ['ui.router'])
             "</li>"+
           "</ul>"+
         "</nav>"+
-        "<div class=\"modal-color\" style=\"width:74.5%;float:right\">"+
+        "<div id=\"mainmenu\" class=\"modal-color\" style=\"width:74.5%;float:right\">"+
             "<div id=\"customerlist\">"+
               "<table class=\"promosTable-Header\">"+
                 "<tr style=\"color:#5d546d;font-size:large\">"+
@@ -414,11 +414,11 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
             "</li>"+
             "<li>"+
-              "<a data-toggle=\"collapse\" aria-expanded=\"true\" class=\"collapsed\">"+
+              "<a data-toggle=\"collapse\" data-target=\"#pageSubmenu\" aria-expanded=\"false\" class=\"collapsed\">"+
                   "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/director/promotions-icon.PNG\"></i>"+
                "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
               "</a>"+
-              "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
+              "<ul class=\"set_line collapse\" id=\"pageSubmenu\">"+
                 "<li>"+
                   "<a class=\"components\">Update Promotion</a>"+
                 "</li>"+
@@ -445,7 +445,7 @@ angular.module('blockApp', ['ui.router'])
             "</li>"+
           "</ul>"+
         "</nav>"+
-        "<div class=\"modal-color\" style=\"width:74.5%;float:right\">"+
+        "<div id=\"mainmenu\" class=\"modal-color\" style=\"width:74.5%;float:right\">"+
         "<form id=\"reviewPromoForm\" action=\"\" name=\"reviewPromoForm\" class=\"form-font\" method=\"POST\">"+
           "<fieldset ng-disabled=\"promoUpdateDisable && promo.status != 'Approved'\" \">"+
             "<div class=\"row interview-row\">"+
@@ -576,11 +576,11 @@ angular.module('blockApp', ['ui.router'])
                 "</a>"+
               "</li>"+
               "<li>"+
-                "<a data-toggle=\"collapse\" aria-expanded=\"true\" class=\"collapsed\">"+
+                "<a data-toggle=\"collapse\" data-target=\"#pageSubmenu\" aria-expanded=\"false\" class=\"collapsed\">"+
                     "<i> <img class=\"sidebar-nav-icon\" src=\"/resources/static/director/promotions-icon.PNG\"></i>"+
                  "<span ng-hide=\"contenthide\" class=\"components iotsidebar-more\">Promotions</span>"+
                 "</a>"+
-                "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
+                "<ul class=\"set_line collapse\" id=\"pageSubmenu\">"+
                   "<li>"+
                     "<a class=\"components\">Update Promotion</a>"+
                   "</li>"+
@@ -607,7 +607,7 @@ angular.module('blockApp', ['ui.router'])
               "</li>"+
             "</ul>"+
           "</nav>"+
-        "<div class=\"modal-color\" style=\"width:74.5%;float:right\">"+
+        "<div id=\"mainmenu\" class=\"modal-color\" style=\"width:74.5%;float:right\">"+
         "<form id=\"reviewPromoForm\" action=\"\" name=\"reviewPromoForm\" class=\"form-font\" method=\"POST\">"+
             "<div class=\"row interview-row\">"+
               "<label class=\"col-sm-6 col-sm-offset-1 form-rowB\">Promotion Name: </label>"+
@@ -758,7 +758,7 @@ angular.module('blockApp', ['ui.router'])
             "</li>"+
           "</ul>"+
         "</nav>"+
-        "<div class=\"modal-color\" style=\"width:74.5%;float:right\">"+
+        "<div id=\"mainmenu\" class=\"modal-color\" style=\"width:74.5%;float:right\">"+
         "<form id=\"applyPromoForm\" action=\"\" name=\"applyPromoForm\" class=\"form-font\" method=\"POST\">"+
           "<fieldset ng-disabled=\"promoApplyDisable\">"+
             "<div class=\"row interview-row\">"+
@@ -972,8 +972,21 @@ angular.module('blockApp', ['ui.router'])
         }
         $scope.promos = promoList;
     });
+    $scope.contenthide = false;
+
     $scope.backToLandingPage = function() {
       $window.location.href = "http://54.146.42.88:8080/landingPage";
+    }
+
+    $scope.toggleMethod = function() {
+      if( $scope.contenthide ) {
+        document.getElementById("sidebar").style.width = "25%";
+        document.getElementById("mainmenu").style.width = "74.5%";
+      } else {
+        document.getElementById("sidebar").style.width = "7%";
+        document.getElementById("mainmenu").style.width = "92.5%";
+      }
+      this.contenthide=!this.contenthide
     }
 
     $scope.logout = function() {
@@ -1009,6 +1022,7 @@ angular.module('blockApp', ['ui.router'])
         $scope.buttonDisableDeny="";
         $scope.buttonDisableEdit="";
       }
+      $scope.contenthide = false;
       $scope.backToLandingPage = function() {
         $window.location.href = "http://54.146.42.88:8080/landingPage";
       }
@@ -1016,6 +1030,17 @@ angular.module('blockApp', ['ui.router'])
         name: 'Williams',
         role: 'Marketing Director'
       };
+
+      $scope.toggleMethod = function() {
+        if( $scope.contenthide ) {
+          document.getElementById("sidebar").style.width = "25%";
+          document.getElementById("mainmenu").style.width = "74.5%";
+        } else {
+          document.getElementById("sidebar").style.width = "7%";
+          document.getElementById("mainmenu").style.width = "92.5%";
+        }
+        this.contenthide=!this.contenthide
+      }
 
       $scope.logout = function() {
         $state.go("login");
@@ -1111,6 +1136,8 @@ angular.module('blockApp', ['ui.router'])
       }
   })
   .controller("PromoEditCtrl", function($scope, $state, $http, $stateParams, $window) {
+    $scope.contenthide = false;
+
     $scope.backToLandingPage = function() {
       $window.location.href = "http://54.146.42.88:8080/landingPage";
     }
@@ -1161,6 +1188,17 @@ angular.module('blockApp', ['ui.router'])
       status: $stateParams.promoStatus
     };
 
+    $scope.toggleMethod = function() {
+      if( $scope.contenthide ) {
+        document.getElementById("sidebar").style.width = "25%";
+        document.getElementById("mainmenu").style.width = "74.5%";
+      } else {
+        document.getElementById("sidebar").style.width = "7%";
+        document.getElementById("mainmenu").style.width = "92.5%";
+      }
+      this.contenthide=!this.contenthide
+    }
+
     $scope.logout = function() {
       $state.go("login");
     }
@@ -1204,12 +1242,24 @@ angular.module('blockApp', ['ui.router'])
   })
   .controller("PromoApplyCtrl", function($scope, $state, $http, $stateParams, $window) {
       $scope.promoApplyDisable = false;
+      $scope.contenthide = false;
       $scope.user = {
         name: $stateParams.customerName,
         role: 'Customer'
       };
       $scope.backToLandingPage = function() {
         $window.location.href = "http://54.146.42.88:8080/landingPage";
+      }
+
+      $scope.toggleMethod = function() {
+        if( $scope.contenthide ) {
+          document.getElementById("sidebar").style.width = "25%";
+          document.getElementById("mainmenu").style.width = "74.5%";
+        } else {
+          document.getElementById("sidebar").style.width = "7%";
+          document.getElementById("mainmenu").style.width = "92.5%";
+        }
+        this.contenthide=!this.contenthide
       }
 
       $scope.logout = function() {
