@@ -272,7 +272,7 @@ angular.module('blockApp', ['ui.router'])
                 "<div class=\"modal-content\">"+
                   "<img src=\"resources/static/check_mark_icon.png\" class=\"cap-icon-small-special\" />"+
                   "<div class=\"modal-body\">"+
-                    "<p>Promotion submitted<br />with<br />Hash Code: {{promo.id}}<br />Block 1 is complete</p>"+
+                    "<p>Promotion submitted<br />with<br />Hash Code: {{promo.id}}</p>"+
                   "</div>"+
                   "<button type=\"button\" class=\"btn btn-primary modal-btn\" ng-click=\"promoCreateDisable = true;changeButtonColor();\" data-dismiss=\"modal\">OK</button>"+
                 "</div>"+
@@ -522,7 +522,7 @@ angular.module('blockApp', ['ui.router'])
                 "<div class=\"modal-content\">"+
                   "<img src=\"resources/static/check_mark_icon.png\" class=\"cap-icon-small-special\" />"+
                   "<div class=\"modal-body\">"+
-                    "<p>Promotion approved<br />with<br />Hash Code: {{promo.id}}<br />Block 2 is complete.</p>"+
+                    "<p>Promotion approved<br />with<br />Hash Code: {{promo.id}}</p>"+
                   "</div>"+
                   "<button type=\"button\" class=\"btn btn-primary modal-btn\" ng-click=\"logUser()\" data-dismiss=\"modal\">OK</button>"+
                 "</div>"+
@@ -806,7 +806,10 @@ angular.module('blockApp', ['ui.router'])
                 "<div class=\"modal-content\">"+
                   "<img src=\"resources/static/check_mark_icon.png\" class=\"cap-icon-small-special\" />"+
                   "<div class=\"modal-body\">"+
-                    "<p>Your request for the promotion has been submitted<br />with<br />Hash Code: {{promo.id}}<br />Please check back for your approval status.</p>"+
+                    "<p>Your request for the promotion has been submitted<br />with<br />Hash Code: {{promo.id}}"+
+                    "<br />Please check back for your approval status.<br />Note: Automated evaluation of customer’s "+
+                    "eligibility to be approved for the promotion will be executed based on criteria committed earlier"+
+                    " in the blockchain by the Marketing Associate and Marketing Director.</p>"+
                   "</div>"+
                   "<button type=\"button\" class=\"btn btn-primary modal-btn\" ng-click=\"promoApplyDisable = true;changeButtonColor();\" data-dismiss=\"modal\">OK</button>"+
                 "</div>"+
@@ -898,7 +901,7 @@ angular.module('blockApp', ['ui.router'])
             "Your request for promotion has been approved.<br />"+
             "Your current bill is {{promo.customerBilling}}. With \"{{promo.name}}\", your<br />"+
             "new bill will be {{promo.postPromoBilling}} starting {{promo.startDate}} to {{promo.endDate}}<br />"+
-            "Block 3 is complete."+
+            "Hash Code: {{promo.id}}"+
           "</p>"+
         "</div>"+
         "</div>"+
