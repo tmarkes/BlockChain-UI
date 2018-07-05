@@ -585,7 +585,7 @@ angular.module('blockApp', ['ui.router'])
                     "<a class=\"components\">Update Promotion</a>"+
                   "</li>"+
                   "<li>"+
-                    "<a class=\"components\">View Pending</a>"+
+                    "<a class=\"components\">Approve/Deny Promotion</a>"+
                   "</li>"+
                 "</ul>"+
               "</li>"+
