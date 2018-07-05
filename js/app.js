@@ -328,10 +328,10 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
               "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                 "<li>"+
-                  "<a class=\"components\">View Active</a>"+
+                  "<a class=\"components\">Update Promotion</a>"+
                 "</li>"+
                 "<li>"+
-                  "<a class=\"components\">View Pending</a>"+
+                  "<a class=\"components\">Approve/Deny Promotion</a>"+
                 "</li>"+
               "</ul>"+
             "</li>"+
@@ -420,10 +420,10 @@ angular.module('blockApp', ['ui.router'])
               "</a>"+
               "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                 "<li>"+
-                  "<a class=\"components\">View Active</a>"+
+                  "<a class=\"components\">Update Promotion</a>"+
                 "</li>"+
                 "<li>"+
-                  "<a class=\"components\">View Pending</a>"+
+                  "<a class=\"components\">Approve/Deny Promotion</a>"+
                 "</li>"+
               "</ul>"+
             "</li>"+
@@ -582,7 +582,7 @@ angular.module('blockApp', ['ui.router'])
                 "</a>"+
                 "<ul class=\"set_line collapse\" id=\"pageSubmenu\" style=\"display: block\">"+
                   "<li>"+
-                    "<a class=\"components\">View Active</a>"+
+                    "<a class=\"components\">Update Promotion</a>"+
                   "</li>"+
                   "<li>"+
                     "<a class=\"components\">View Pending</a>"+
@@ -1431,7 +1431,7 @@ angular.module('blockApp', ['ui.router'])
             benefit: "",
             longDesc: "",
             selectedTC: "",
-            startDate: "mm/dd/yyyy",
+            startDate: "",
             endDate: "mm/dd/yyyy",
             ruleTyp: "",
             ruleVal: "",
