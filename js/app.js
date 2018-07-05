@@ -142,7 +142,7 @@ angular.module('blockApp', ['ui.router'])
         controller: "PromoCreationCtrl",
         template: "<div class=\"row subtitle-row-small\">"+
         	"<img ng-click=\"backToLandingPage()\" src=\"resources/static/Company_DCP_logo.png\" class=\"cap-icon-normal-pageHeader\" />"+
-          "<img ng-click=\"logUser( user.name )\" src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
+          "<img src=\"resources/static/Page_Header_Title_Icon.png\" class=\"header-title-icon\" />"+
           "<div class=\"header-page-title\" ng-click=\"logUser( user.name )\" >New Promotion</div>"+
           "<div class=\"header-main-rightside\">"+
             "<div style=\"float:right\">"+
