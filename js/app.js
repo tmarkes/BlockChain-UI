@@ -158,7 +158,7 @@ angular.module('blockApp', ['ui.router'])
           "<ul class=\"list-unstyled components\">"+
             "<li>"+
               "<img class=\"sidebar-profilePic\" src=\"resources/static/associate_profile_picture-sidebar.png\">"+
-              "<span class=\"sidebar-profileName\">{{user.name}}</span>"+
+              "<span ng-hide=\"contenthide\" class=\"sidebar-profileName\">{{user.name}}</span>"+
               "<hr class=\"sidebar-profileBar\">"+
             "</li>"+
             "<li class=\"active\">"+
