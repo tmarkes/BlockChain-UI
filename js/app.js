@@ -945,7 +945,7 @@ angular.module('blockApp', ['ui.router'])
     $scope.contenthide = false;
 
     $scope.backToLandingPage = function() {
-      $window.location.href = "http://34.232.142.117:8080/landingPage";
+      $window.location.href = "http://capgeminidcp.tk/landingPage";
     }
 
     $scope.toggleMethod = function() {
@@ -996,7 +996,7 @@ angular.module('blockApp', ['ui.router'])
       }
       $scope.contenthide = false;
       $scope.backToLandingPage = function() {
-        $window.location.href = "http://34.232.142.117:8080/landingPage";
+        $window.location.href = "http://capgeminidcp.tk/landingPage";
       }
       $scope.user = {
         name: 'Williams',
@@ -1111,7 +1111,7 @@ angular.module('blockApp', ['ui.router'])
     $scope.contenthide = false;
 
     $scope.backToLandingPage = function() {
-      $window.location.href = "http://34.232.142.117:8080/landingPage";
+      $window.location.href = "http://capgeminidcp.tk/landingPage";
     }
     $scope.user = {
       name: 'Williams',
@@ -1220,7 +1220,7 @@ angular.module('blockApp', ['ui.router'])
         role: 'Customer'
       };
       $scope.backToLandingPage = function() {
-        $window.location.href = "http://34.232.142.117:8080/landingPage";
+        $window.location.href = "http://capgeminidcp.tk/landingPage";
       }
 
       $scope.toggleMethod = function() {
@@ -1329,7 +1329,7 @@ angular.module('blockApp', ['ui.router'])
         role: 'Customer'
       };
       $scope.backToLandingPage = function() {
-        $window.location.href = "http://34.232.142.117:8080/landingPage";
+        $window.location.href = "http://capgeminidcp.tk/landingPage";
       }
 
       $scope.toggleMethod = function() {
@@ -1394,7 +1394,7 @@ angular.module('blockApp', ['ui.router'])
       $scope.promoCreateDisable = false;
       $scope.contenthide = false;
       $scope.backToLandingPage = function() {
-        $window.location.href = "http://34.232.142.117:8080/landingPage";
+        $window.location.href = "http://capgeminidcp.tk/landingPage";
       }
       $scope.user = {
         name: $stateParams.userName,
@@ -1522,7 +1522,7 @@ angular.module('blockApp', ['ui.router'])
     };
 
     $scope.backToLandingPage = function() {
-      $window.location.href = "http://34.232.142.117:8080/landingPage";
+      $window.location.href = "http://capgeminidcp.tk/landingPage";
     }
 
     $http.get('/retrieve/approvedPromotion')
