@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
 });
 
 app.get('/retrieve/promotion', function (req, res, $http) {
-  request('http://http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/getAllPromotions',
+  request('http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/getAllPromotions',
     function (error, response, body) {
     if (!error && response.statusCode == 200) {
       res.status(200).send(body);
@@ -37,7 +37,7 @@ app.get('/retrieve/promotion', function (req, res, $http) {
 });
 
 app.get('/retrieve/approvedPromotion', function (req, res, $http) {
-  request('http://http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/getApprovedPromotions',
+  request('http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/getApprovedPromotions',
     function (error, response, body) {
     if (!error && response.statusCode == 200) {
       res.status(200).send(body);
@@ -49,7 +49,7 @@ app.put('/retrieve/promotionByHashCode', function (req, res) {
   var hashCode = {
     hash : req.body.hashCode,
   };
-  request.put('http://http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/getBlockByHashCode',
+  request.put('http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/getBlockByHashCode',
       { json: hashCode },
       function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -78,7 +78,7 @@ app.post('/approve/promotion', function (req, res) {
     status : req.body.status
     }
   };
-  request.post('http://http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/approvePromotion',
+  request.post('http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/approvePromotion',
       { json: promoData },
       function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -107,7 +107,7 @@ app.post('/deny/promotion', function (req, res) {
     status : req.body.status
     }
   };
-  request.post('http://http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/denyPromotion',
+  request.post('http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/denyPromotion',
     { json: promoData },
       function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -136,7 +136,7 @@ app.post('/update/promotion', function (req, res) {
     status : req.body.status
     }
   };
-  request.post('http://http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/savePromotion',
+  request.post('http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/savePromotion',
     { json: newPromoData },
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -156,7 +156,7 @@ app.post('/update/promotion', function (req, res) {
             status : 'Denied'
             }
           };
-          request.post('http://http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/denyPromotion',
+          request.post('http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/denyPromotion',
             { json: oldPromoData },
             function (error, response, body) {
               if (!error && response.statusCode == 200) {
@@ -187,7 +187,7 @@ app.post('/create/promotion', function (req, res) {
     status : req.body.status
     }
   };
-  request.post('http://http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/savePromotion',
+  request.post('http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/savePromotion',
       { json: newPromoData },
       function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -213,7 +213,7 @@ app.post('/apply/promotion', function (req, res) {
     postPromoBillingInfo : req.body.postPromoBillingInfo
     }
   };
-  request.post('http://http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/applyForPromotion',
+  request.post('http://promo-blockchain-service-dev.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/applyForPromotion',
       { json: promoData },
       function (error, response, body) {
         if (!error && response.statusCode == 200) {
