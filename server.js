@@ -49,7 +49,7 @@ app.put('/retrieve/promotionByHashCode', function (req, res) {
   var hashCode = {
     hash : req.body.hashCode,
   };
-  request.put('http://promo-blockchain-service.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/getCustomerBlockByHashCode',
+  request.put('http://promo-blockchain-service.us-east-1.elasticbeanstalk.com/api-service/v1'+'/promotion/getBlockByHashCode',
       { json: hashCode },
       function (error, response, body) {
         if (!error && response.statusCode == 200) {
