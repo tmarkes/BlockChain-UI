@@ -6,10 +6,19 @@ As our demo code is on the "blockchain-ui-test" environment, work deployed on th
 ### Prerequisites
 
 - Atom IDE (https://atom.io/)
-- AWS EB CLI (https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html)
 - PowerShell (or an equivalent) if working from a Windows environment
 
-### Installing
+### Running Locally
 
-After setting up the aws config file, a command run of 'eb status blockchain-ui-dev'
-  should allow you to validate the status of the application.
+Make sure you have Node.js installed.
+
+Clone your own fork from https://github.com/tmarkes/BlockChain-UI
+cd BlockChain
+npm install
+npm start
+Your app should now be running on localhost:8081.
+To have it run from a different port number, change the port number specified in server.js. The line is as follows:
+  app.listen(8081);
+
+If the URL location for the landingPage has changed, it will be necessary to "Replace All" for these in app.js.
+The window.location.href is specified in each $scope.backToLandingPage function call.
